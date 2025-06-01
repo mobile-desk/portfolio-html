@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechInnovom - All Projects</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#00F0FF',secondary:'#B026FF'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+:root {
+--dark-bg: #0A0F2D;
+--rich-black: #050505;
+--light-text: #E0E0E0;
+}
+body {
+background-color: var(--rich-black);
+color: var(--light-text);
+font-family: 'Rajdhani', sans-serif;
+overflow-x: hidden;
+}
+.orbitron {
+font-family: 'Orbitron', sans-serif;
+}
+.nav-link {
+position: relative;
+overflow: hidden;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+bottom: -2px;
+left: 0;
+width: 0;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--primary), transparent);
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.holographic-glow {
+position: relative;
+}
+.holographic-glow::before {
+content: '';
+position: absolute;
+top: -2px;
+left: -2px;
+right: -2px;
+bottom: -2px;
+background: linear-gradient(45deg, #00F0FF, #B026FF, #FF00E5, #00F0FF);
+background-size: 400% 400%;
+z-index: -1;
+filter: blur(5px);
+opacity: 0.7;
+border-radius: inherit;
+animation: glowAnimation 3s ease infinite;
+}
+@keyframes glowAnimation {
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+.project-card {
+transition: transform 0.5s ease, box-shadow 0.5s ease;
+transform-style: preserve-3d;
+}
+.project-card:hover {
+transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+box-shadow: 0 15px 30px rgba(0, 240, 255, 0.2);
+}
+.neon-button {
+position: relative;
+overflow: hidden;
+transition: all 0.3s ease;
+}
+.neon-button::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+transition: left 0.7s ease;
+}
+.neon-button:hover::before {
+left: 100%;
+}
+.gradient-text {
+background: linear-gradient(90deg, #00F0FF, #B026FF);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #4B5563;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+background-color: transparent;
+}
+.custom-checkbox:checked {
+background-color: var(--primary);
+border-color: var(--primary);
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 12px;
+height: 12px;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23050505'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+background-size: contain;
+background-repeat: no-repeat;
+}
+.custom-radio {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #4B5563;
+border-radius: 50%;
+outline: none;
+cursor: pointer;
+position: relative;
+background-color: transparent;
+}
+.custom-radio:checked {
+border-color: var(--primary);
+}
+.custom-radio:checked::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: var(--primary);
+}
+.filter-dropdown {
+position: relative;
+}
+.dropdown-content {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 10;
+min-width: 200px;
+background-color: var(--dark-bg);
+border: 1px solid #2D3748;
+border-radius: 8px;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.filter-dropdown:hover .dropdown-content {
+display: block;
+}
+.pagination-button {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+border-radius: 8px;
+border: 1px solid #2D3748;
+background-color: transparent;
+color: var(--light-text);
+transition: all 0.3s ease;
+}
+.pagination-button:hover {
+border-color: var(--primary);
+color: var(--primary);
+}
+.pagination-button.active {
+background-color: var(--primary);
+border-color: var(--primary);
+color: var(--rich-black);
+}
+.search-input {
+background-color: transparent;
+border: 1px solid #2D3748;
+border-radius: 8px;
+padding: 0.75rem 1rem 0.75rem 3rem;
+color: var(--light-text);
+width: 100%;
+transition: all 0.3s ease;
+}
+.search-input:focus {
+border-color: var(--primary);
+box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.2);
+outline: none;
+}
+.search-icon {
+position: absolute;
+left: 1rem;
+top: 50%;
+transform: translateY(-50%);
+color: #6B7280;
+}
+.filter-tag {
+display: inline-flex;
+align-items: center;
+padding: 0.25rem 0.75rem;
+background-color: rgba(0, 240, 255, 0.1);
+border-radius: 9999px;
+color: var(--primary);
+font-size: 0.875rem;
+margin-right: 0.5rem;
+margin-bottom: 0.5rem;
+}
+.filter-tag .remove-tag {
+margin-left: 0.5rem;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<!-- Header Section -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-rich-black/90 backdrop-blur-md shadow-lg" id="header">
+<div class="container mx-auto px-6 py-4">
+<nav class="flex items-center justify-between">
+<a href="#" class="text-3xl font-['Orbitron'] font-bold gradient-text">TechInnovom</a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="https://readdy.ai/home/e8e0def8-e920-4631-a367-a7bd6748f10c/61b12598-2e01-4d62-a103-215d3f6efdd8" data-readdy="true" class="nav-link text-gray-200 hover:text-primary transition-colors duration-300">Home</a>
+<a href="#" class="nav-link text-primary transition-colors duration-300">Works</a>
+<a href="#" class="nav-link text-gray-200 hover:text-primary transition-colors duration-300">Services</a>
+<a href="#" class="nav-link text-gray-200 hover:text-primary transition-colors duration-300">Testimonials</a>
+<a href="#" class="nav-link text-gray-200 hover:text-primary transition-colors duration-300">Contact</a>
+</div>
+<button class="neon-button !rounded-button bg-transparent border border-primary px-6 py-2 text-primary hover:bg-primary/10 transition-all duration-300 hidden md:block whitespace-nowrap">
+Get Started
+</button>
+<div class="md:hidden flex items-center">
+<button id="menuBtn" class="w-10 h-10 flex items-center justify-center text-gray-200 focus:outline-none">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</nav>
+</div>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed inset-0 bg-rich-black/95 z-50 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300">
+<button id="closeMenuBtn" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-gray-200">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<a href="https://readdy.ai/home/e8e0def8-e920-4631-a367-a7bd6748f10c/61b12598-2e01-4d62-a103-215d3f6efdd8" data-readdy="true" class="text-2xl text-gray-200 hover:text-primary transition-colors duration-300">Home</a>
+<a href="#" class="text-2xl text-primary transition-colors duration-300">Works</a>
+<a href="#" class="text-2xl text-gray-200 hover:text-primary transition-colors duration-300">Services</a>
+<a href="#" class="text-2xl text-gray-200 hover:text-primary transition-colors duration-300">Testimonials</a>
+<a href="#" class="text-2xl text-gray-200 hover:text-primary transition-colors duration-300">Contact</a>
+<button class="neon-button !rounded-button bg-transparent border border-primary px-8 py-3 mt-4 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
+Get Started
+</button>
+</div>
+</header>
+<!-- Page Title Section -->
+<section class="pt-32 pb-16 bg-dark-bg relative overflow-hidden">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center justify-between mb-10">
+<div>
+<a href="https://readdy.ai/home/e8e0def8-e920-4631-a367-a7bd6748f10c/61b12598-2e01-4d62-a103-215d3f6efdd8" data-readdy="true" class="inline-flex items-center text-gray-400 hover:text-primary mb-4 transition-colors duration-300">
+<i class="ri-arrow-left-line mr-2"></i>
+Back to Portfolio
+</a>
+<h1 class="orbitron text-4xl md:text-5xl font-bold mb-4">Our <span class="gradient-text">Projects</span></h1>
+<p class="text-xl max-w-2xl">Explore our complete portfolio of innovative technology solutions designed to transform businesses and industries.</p>
+</div>
+<div class="hidden md:block">
+<div class="relative w-48 h-48">
+<div class="holographic-glow rounded-full overflow-hidden absolute inset-0"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center">
+<div class="text-5xl font-bold gradient-text mb-2">24+</div>
+<div class="text-gray-300">Completed Projects</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter and Search Section -->
+<section class="py-8 bg-rich-black border-y border-gray-800">
+<div class="container mx-auto px-6">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-full lg:w-1/3">
+<div class="relative">
+<span class="search-icon">
+<i class="ri-search-line text-lg"></i>
+</span>
+<input type="text" class="search-input" placeholder="Search projects...">
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="inline-flex bg-rich-black/50 p-1 rounded-full">
+<button class="px-6 py-2 rounded-full bg-primary text-rich-black font-medium whitespace-nowrap">All</button>
+<button class="px-6 py-2 rounded-full text-gray-300 hover:text-white transition-colors duration-300 whitespace-nowrap">Web3</button>
+<button class="px-6 py-2 rounded-full text-gray-300 hover:text-white transition-colors duration-300 whitespace-nowrap">AI Solutions</button>
+<button class="px-6 py-2 rounded-full text-gray-300 hover:text-white transition-colors duration-300 whitespace-nowrap">AR/VR</button>
+</div>
+<div class="filter-dropdown">
+<button class="flex items-center space-x-2 px-4 py-2 bg-dark-bg rounded-lg border border-gray-700 hover:border-primary transition-colors duration-300 whitespace-nowrap">
+<span>Technology</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div class="dropdown-content p-3">
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="blockchain">
+<span>Blockchain</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="ai">
+<span>Artificial Intelligence</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="vr">
+<span>Virtual Reality</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="cloud">
+<span>Cloud Computing</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="iot">
+<span>IoT</span>
+</label>
+</div>
+<div>
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="cyber">
+<span>Cybersecurity</span>
+</label>
+</div>
+</div>
+</div>
+<div class="filter-dropdown">
+<button class="flex items-center space-x-2 px-4 py-2 bg-dark-bg rounded-lg border border-gray-700 hover:border-primary transition-colors duration-300 whitespace-nowrap">
+<span>Industry</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div class="dropdown-content p-3">
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="fintech">
+<span>Fintech</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="healthcare">
+<span>Healthcare</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="education">
+<span>Education</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="retail">
+<span>Retail</span>
+</label>
+</div>
+<div>
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="checkbox" class="custom-checkbox" value="manufacturing">
+<span>Manufacturing</span>
+</label>
+</div>
+</div>
+</div>
+<div class="filter-dropdown">
+<button class="flex items-center space-x-2 px-4 py-2 bg-dark-bg rounded-lg border border-gray-700 hover:border-primary transition-colors duration-300 whitespace-nowrap">
+<span>Sort By</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div class="dropdown-content p-3">
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="radio" name="sort" class="custom-radio" value="latest" checked>
+<span>Latest</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="radio" name="sort" class="custom-radio" value="oldest">
+<span>Oldest</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="radio" name="sort" class="custom-radio" value="az">
+<span>A-Z</span>
+</label>
+</div>
+<div>
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="radio" name="sort" class="custom-radio" value="za">
+<span>Z-A</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Filters Section -->
+<section class="py-6 bg-rich-black">
+<div class="container mx-auto px-6">
+<div class="flex flex-wrap items-center">
+<div class="mr-4 mb-2">
+<span class="text-gray-400">Active Filters:</span>
+</div>
+<div class="flex flex-wrap">
+<div class="filter-tag">
+<span>Blockchain</span>
+<span class="remove-tag">
+<i class="ri-close-line"></i>
+</span>
+</div>
+<div class="filter-tag">
+<span>Fintech</span>
+<span class="remove-tag">
+<i class="ri-close-line"></i>
+</span>
+</div>
+<div class="filter-tag">
+<span>Latest</span>
+<span class="remove-tag">
+<i class="ri-close-line"></i>
+</span>
+</div>
+</div>
+<button class="ml-auto text-primary hover:text-primary/80 text-sm transition-colors duration-300">
+Clear All Filters
+</button>
+</div>
+</div>
+</section>
+<!-- Projects Grid Section -->
+<section class="py-16 bg-dark-bg">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520blockchain%2520visualization%252C%2520digital%2520ledger%2520technology%252C%2520cryptocurrency%2520network%252C%2520secure%2520data%2520blocks%252C%2520blue%2520and%2520purple%2520neon%2520glow%252C%2520dark%2520background%252C%2520high-tech%2520interface%252C%25203D%2520rendering%252C%2520minimalist%2520design%252C%2520cyberpunk%2520aesthetic&width=600&height=400&seq=3&orientation=landscape" alt="Blockchain Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">NexusChain Platform</h3>
+<p class="text-gray-300 mb-4">Decentralized blockchain solution for secure data management and transparent transactions.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Blockchain</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Fintech</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">NexusChain Platform</h3>
+<p class="text-gray-300 mb-4">Revolutionizing financial transactions with secure blockchain technology and smart contracts for automated compliance.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: May 2025</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520AI%2520neural%2520network%2520visualization%252C%2520machine%2520learning%2520algorithm%252C%2520data%2520processing%252C%2520artificial%2520intelligence%2520brain%252C%2520glowing%2520connections%252C%2520blue%2520and%2520purple%2520digital%2520nodes%252C%2520dark%2520background%252C%2520high-tech%2520interface%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=4&orientation=landscape" alt="AI Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">CogniSense AI</h3>
+<p class="text-gray-300 mb-4">Advanced AI system for predictive analytics and intelligent decision-making processes across multiple industries.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Artificial Intelligence</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Machine Learning</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">CogniSense AI</h3>
+<p class="text-gray-300 mb-4">Intelligent systems that learn and adapt to optimize business processes and provide actionable insights from complex data.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: April 2025</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520virtual%2520reality%2520interface%252C%2520augmented%2520reality%2520headset%2520view%252C%2520immersive%2520digital%2520environment%252C%25203D%2520holographic%2520display%252C%2520interactive%2520VR%2520space%252C%2520blue%2520and%2520purple%2520neon%2520elements%252C%2520dark%2520background%252C%2520high-tech%2520visualization%252C%2520cyberpunk%2520aesthetic&width=600&height=400&seq=5&orientation=landscape" alt="VR Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">ImmersaVerse</h3>
+<p class="text-gray-300 mb-4">Immersive virtual reality platform for training, education, and interactive experiences with real-time collaboration.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Virtual Reality</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Augmented Reality</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">ImmersaVerse</h3>
+<p class="text-gray-300 mb-4">Creating immersive digital experiences that transform how we interact with technology and enable virtual collaboration.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: March 2025</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520IoT%2520smart%2520city%2520visualization%252C%2520connected%2520devices%2520network%252C%2520internet%2520of%2520things%2520infrastructure%252C%2520digital%2520urban%2520environment%252C%2520sensor%2520data%2520flow%252C%2520blue%2520and%2520purple%2520glowing%2520elements%252C%2520dark%2520background%252C%2520high-tech%2520interface%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=6&orientation=landscape" alt="IoT Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">SmartNexus IoT</h3>
+<p class="text-gray-300 mb-4">Comprehensive IoT ecosystem for smart cities and connected infrastructure management with real-time analytics.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">IoT</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Smart City</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">SmartNexus IoT</h3>
+<p class="text-gray-300 mb-4">Connecting devices and infrastructure for smarter, more efficient urban environments with predictive maintenance.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: February 2025</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520cybersecurity%2520visualization%252C%2520digital%2520security%2520shield%252C%2520data%2520protection%2520system%252C%2520network%2520firewall%252C%2520encryption%2520technology%252C%2520blue%2520and%2520purple%2520digital%2520fortress%252C%2520dark%2520background%252C%2520high-tech%2520interface%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=7&orientation=landscape" alt="Cybersecurity Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">QuantumShield</h3>
+<p class="text-gray-300 mb-4">Next-generation cybersecurity platform utilizing quantum encryption technologies and AI-powered threat detection.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Cybersecurity</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Quantum Computing</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">QuantumShield</h3>
+<p class="text-gray-300 mb-4">Protecting digital assets with advanced encryption and threat detection systems that adapt to evolving security threats.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: January 2025</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520cloud%2520computing%2520visualization%252C%2520data%2520center%2520infrastructure%252C%2520serverless%2520architecture%252C%2520digital%2520cloud%2520storage%252C%2520network%2520connectivity%252C%2520blue%2520and%2520purple%2520tech%2520elements%252C%2520dark%2520background%252C%2520high-tech%2520interface%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=8&orientation=landscape" alt="Cloud Computing Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">NimbusTech Cloud</h3>
+<p class="text-gray-300 mb-4">Scalable cloud infrastructure with advanced data processing and storage capabilities for enterprise applications.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Cloud Computing</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Serverless</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">NimbusTech Cloud</h3>
+<p class="text-gray-300 mb-4">Delivering flexible, scalable cloud solutions for modern business needs with automated scaling and disaster recovery.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: December 2024</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 7 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520healthcare%2520technology%2520visualization%252C%2520medical%2520data%2520analysis%252C%2520digital%2520health%2520monitoring%252C%2520patient%2520care%2520system%252C%2520telemedicine%2520platform%252C%2520blue%2520and%2520purple%2520medical%2520interface%252C%2520dark%2520background%252C%2520high-tech%2520visualization%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=14&orientation=landscape" alt="Healthcare Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">MediSync Platform</h3>
+<p class="text-gray-300 mb-4">Integrated healthcare management system with AI diagnostics and secure patient data sharing capabilities.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Healthcare</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">AI</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">MediSync Platform</h3>
+<p class="text-gray-300 mb-4">Revolutionizing patient care with integrated health records, telemedicine, and AI-powered diagnostic assistance.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: November 2024</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 8 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520education%2520technology%2520visualization%252C%2520digital%2520learning%2520platform%252C%2520virtual%2520classroom%252C%2520interactive%2520educational%2520content%252C%2520e-learning%2520system%252C%2520blue%2520and%2520purple%2520educational%2520interface%252C%2520dark%2520background%252C%2520high-tech%2520visualization%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=15&orientation=landscape" alt="Education Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">EduVerse Learning</h3>
+<p class="text-gray-300 mb-4">Comprehensive e-learning platform with personalized curriculum and immersive VR educational experiences.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Education</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">VR/AR</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">EduVerse Learning</h3>
+<p class="text-gray-300 mb-4">Transforming education with adaptive learning paths, interactive content, and virtual reality field trips.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: October 2024</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 9 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520retail%2520technology%2520visualization%252C%2520digital%2520shopping%2520experience%252C%2520e-commerce%2520platform%252C%2520virtual%2520store%252C%2520augmented%2520reality%2520shopping%252C%2520blue%2520and%2520purple%2520retail%2520interface%252C%2520dark%2520background%252C%2520high-tech%2520visualization%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=16&orientation=landscape" alt="Retail Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">RetailXperience</h3>
+<p class="text-gray-300 mb-4">Next-generation retail platform with AR product visualization and AI-powered customer recommendations.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Retail</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">AR</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">RetailXperience</h3>
+<p class="text-gray-300 mb-4">Enhancing shopping experiences with virtual try-ons, personalized recommendations, and seamless omnichannel integration.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: September 2024</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 10 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520manufacturing%2520technology%2520visualization%252C%2520smart%2520factory%2520system%252C%2520industrial%2520automation%252C%2520digital%2520twin%2520manufacturing%252C%2520robotic%2520assembly%2520line%252C%2520blue%2520and%2520purple%2520industrial%2520interface%252C%2520dark%2520background%252C%2520high-tech%2520visualization%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=17&orientation=landscape" alt="Manufacturing Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">SmartFactory OS</h3>
+<p class="text-gray-300 mb-4">Comprehensive manufacturing management system with IoT integration and predictive maintenance capabilities.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Manufacturing</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">IoT</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">SmartFactory OS</h3>
+<p class="text-gray-300 mb-4">Optimizing production processes with real-time monitoring, digital twins, and AI-driven quality control systems.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: August 2024</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 11 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520transportation%2520technology%2520visualization%252C%2520autonomous%2520vehicle%2520system%252C%2520smart%2520mobility%2520platform%252C%2520connected%2520transport%2520network%252C%2520traffic%2520management%252C%2520blue%2520and%2520purple%2520transportation%2520interface%252C%2520dark%2520background%252C%2520high-tech%2520visualization%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=18&orientation=landscape" alt="Transportation Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">AutoNav Fleet</h3>
+<p class="text-gray-300 mb-4">Intelligent transportation system for autonomous vehicle fleet management and smart traffic optimization.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Transportation</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">AI</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">AutoNav Fleet</h3>
+<p class="text-gray-300 mb-4">Revolutionizing urban mobility with autonomous vehicle coordination, predictive routing, and smart infrastructure integration.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: July 2024</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<!-- Project 12 -->
+<div class="project-card bg-rich-black rounded-xl overflow-hidden">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=futuristic%2520energy%2520technology%2520visualization%252C%2520renewable%2520power%2520grid%252C%2520smart%2520energy%2520management%252C%2520sustainable%2520power%2520distribution%252C%2520clean%2520energy%2520system%252C%2520blue%2520and%2520purple%2520energy%2520interface%252C%2520dark%2520background%252C%2520high-tech%2520visualization%252C%25203D%2520rendering%252C%2520minimalist%2520design&width=600&height=400&seq=19&orientation=landscape" alt="Energy Project" class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h3 class="orbitron text-xl font-bold mb-2">EcoGrid Network</h3>
+<p class="text-gray-300 mb-4">Smart energy management system for renewable power distribution and efficient consumption monitoring.</p>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap items-center mb-4 gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Energy</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">IoT</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-2">EcoGrid Network</h3>
+<p class="text-gray-300 mb-4">Optimizing energy distribution with blockchain-based trading, predictive demand analysis, and renewable integration.</p>
+<div class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">Completed: June 2024</span>
+<button class="view-project-btn neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap" data-project-id="1">
+View Project
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex flex-col md:flex-row items-center justify-between">
+<div class="mb-4 md:mb-0">
+<span class="text-gray-400">Showing 1-12 of 24 projects</span>
+</div>
+<div class="flex items-center space-x-2">
+<button class="pagination-button">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<button class="pagination-button active">1</button>
+<button class="pagination-button">2</button>
+<button class="pagination-button">3</button>
+<button class="pagination-button">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+</div>
+<div class="mt-4 md:mt-0">
+<div class="filter-dropdown">
+<button class="flex items-center space-x-2 px-4 py-2 bg-dark-bg rounded-lg border border-gray-700 hover:border-primary transition-colors duration-300 whitespace-nowrap">
+<span>12 per page</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div class="dropdown-content p-3">
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="radio" name="perPage" class="custom-radio" value="12" checked>
+<span>12 per page</span>
+</label>
+</div>
+<div class="mb-2">
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="radio" name="perPage" class="custom-radio" value="24">
+<span>24 per page</span>
+</label>
+</div>
+<div>
+<label class="flex items-center space-x-2 py-2 px-3 hover:bg-rich-black rounded cursor-pointer">
+<input type="radio" name="perPage" class="custom-radio" value="48">
+<span>48 per page</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 bg-rich-black relative overflow-hidden">
+<div class="container mx-auto px-6">
+<div class="bg-gradient-to-r from-[#0A0F2D] to-[#1A1A3A] rounded-2xl p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10" style="background-image: url('https://readdy.ai/api/search-image?query=abstract%2520digital%2520network%252C%2520tech%2520particles%252C%2520futuristic%2520data%2520visualization%252C%2520blue%2520and%2520purple%2520gradient%252C%2520cyberpunk%2520aesthetic%252C%2520minimalist%2520design%252C%2520dark%2520background&width=800&height=600&seq=13&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="relative z-10 max-w-3xl">
+<h2 class="orbitron text-3xl md:text-4xl font-bold mb-4">Ready to Build Your Next Project?</h2>
+<p class="text-xl mb-8">Let's discuss how our innovative technology solutions can transform your business and drive growth.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="holographic-glow neon-button !rounded-button bg-primary px-8 py-3 text-rich-black font-bold hover:bg-primary/90 transition-all duration-300 whitespace-nowrap">
+Schedule a Consultation
+</button>
+<button class="neon-button !rounded-button bg-transparent border border-primary px-8 py-3 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
+View Our Services
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-rich-black pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div>
+<a href="#" class="text-3xl font-['Orbitron'] font-bold gradient-text mb-6 inline-block">TechInnovom</a>
+<p class="text-gray-400 mb-6">Pioneering the future through innovative technology solutions that transform businesses and enhance lives.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-colors duration-300">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-colors duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-colors duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-colors duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Our Services</a></li>
+<li><a href="https://readdy.ai/home/e8e0def8-e920-4631-a367-a7bd6748f10c/61b12598-2e01-4d62-a103-215d3f6efdd8" data-readdy="true" class="text-gray-400 hover:text-primary transition-colors duration-300">Portfolio</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Testimonials</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Contact Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-6">Services</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Custom Software Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">AI & Machine Learning</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Blockchain Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">AR/VR Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Cloud Solutions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Cybersecurity Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-6">Contact</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
+<span class="text-gray-400">1250 Technology Drive, Suite 300<br>Silicon Valley, CA 94025</span>
+</li>
+<li class="flex items-start">
+<i class="ri-mail-line text-primary mt-1 mr-3"></i>
+<span class="text-gray-400">info@techinnovom.com</span>
+</li>
+<li class="flex items-start">
+<i class="ri-phone-line text-primary mt-1 mr-3"></i>
+<span class="text-gray-400">+1 (800) 555-TECH</span>
+</li>
+<li class="flex items-start">
+<i class="ri-time-line text-primary mt-1 mr-3"></i>
+<span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 mb-4 md:mb-0">© 2025 TechInnovom. All rights reserved.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Privacy Policy</a>
+<a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Terms of Service</a>
+<a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Cookie Policy</a>
+<a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Sitemap</a>
+</div>
+</div>
+</div>
+</div>
+<button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 flex items-center justify-center bg-primary rounded-full text-rich-black shadow-lg shadow-primary/20 transform translate-y-20 opacity-0 transition-all duration-300">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+</footer>
+<!-- Project Details Modal -->
+<div id="projectModal" class="fixed inset-0 bg-rich-black/90 backdrop-blur-md z-50 hidden">
+<div class="min-h-screen flex items-center justify-center p-6">
+<div class="bg-dark-bg rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
+<button id="closeProjectModal" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary transition-colors duration-300 z-10">
+<i class="ri-close-line ri-2x"></i>
+</button>
+<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/10 to-transparent rounded-tr-2xl pointer-events-none"></div>
+<div class="p-8">
+<div id="projectContent" class="space-y-8">
+<!-- Content will be dynamically inserted here -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<script id="mobileMenuToggle">
+document.addEventListener('DOMContentLoaded', function() {
+const menuBtn = document.getElementById('menuBtn');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', function() {
+mobileMenu.classList.remove('translate-x-full');
+document.body.style.overflow = 'hidden';
+});
+closeMenuBtn.addEventListener('click', function() {
+mobileMenu.classList.add('translate-x-full');
+document.body.style.overflow = '';
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('translate-x-full');
+document.body.style.overflow = '';
+});
+});
+});
+</script>
+<script id="backToTopButton">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTopBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 500) {
+backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+backToTopBtn.classList.add('translate-y-0', 'opacity-100');
+} else {
+backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+}
+});
+backToTopBtn.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+</script>
+<script id="filterTagsHandler">
+document.addEventListener('DOMContentLoaded', function() {
+const removeTags = document.querySelectorAll('.remove-tag');
+const clearAllBtn = document.querySelector('button:contains("Clear All Filters")');
+removeTags.forEach(tag => {
+tag.addEventListener('click', function() {
+this.closest('.filter-tag').remove();
+});
+});
+document.querySelector('button:contains("Clear All Filters")').addEventListener('click', function() {
+document.querySelectorAll('.filter-tag').forEach(tag => {
+tag.remove();
+});
+});
+// Checkbox and radio button handlers
+const checkboxes = document.querySelectorAll('.custom-checkbox');
+const radioButtons = document.querySelectorAll('.custom-radio');
+checkboxes.forEach(checkbox => {
+checkbox.addEventListener('change', function() {
+// In a real app, this would filter the projects
+console.log('Filter changed:', this.value, this.checked);
+});
+});
+radioButtons.forEach(radio => {
+radio.addEventListener('change', function() {
+// In a real app, this would sort or paginate the projects
+console.log('Option selected:', this.value);
+});
+});
+});
+</script>
+<script id="paginationHandler">
+document.addEventListener('DOMContentLoaded', function() {
+const paginationButtons = document.querySelectorAll('.pagination-button');
+paginationButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+paginationButtons.forEach(btn => {
+btn.classList.remove('active');
+});
+// Add active class to clicked button if it's a number
+if (!this.querySelector('i')) {
+this.classList.add('active');
+}
+// In a real app, this would load the corresponding page of projects
+console.log('Page selected:', this.textContent.trim());
+});
+});
+});
+</script>
+<script id="sliderHandler">
+document.addEventListener('DOMContentLoaded', function() {
+let currentSlide = 0;
+let slideInterval;
+function updateSlider() {
+const container = document.querySelector('.slider-container');
+const dots = document.querySelectorAll('.slider-dot');
+if (!container || !dots.length) return;
+container.style.transform = `translateX(-${currentSlide * 100}%)`;
+dots.forEach((dot, index) => {
+if (index === currentSlide) {
+dot.classList.add('bg-white');
+dot.classList.remove('bg-white/50');
+} else {
+dot.classList.remove('bg-white');
+dot.classList.add('bg-white/50');
+}
+});
+}
+function nextSlide() {
+const container = document.querySelector('.slider-container');
+if (!container) return;
+const totalSlides = container.children.length;
+currentSlide = (currentSlide + 1) % totalSlides;
+updateSlider();
+}
+function prevSlide() {
+const container = document.querySelector('.slider-container');
+if (!container) return;
+const totalSlides = container.children.length;
+currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+updateSlider();
+}
+function startSlideshow() {
+stopSlideshow();
+slideInterval = setInterval(nextSlide, 5000);
+}
+function stopSlideshow() {
+if (slideInterval) {
+clearInterval(slideInterval);
+}
+}
+document.addEventListener('click', function(e) {
+if (!e.target.closest('.project-slider')) return;
+if (e.target.closest('.prev')) {
+prevSlide();
+startSlideshow();
+} else if (e.target.closest('.next')) {
+nextSlide();
+startSlideshow();
+} else if (e.target.closest('.slider-dot')) {
+const dots = Array.from(document.querySelectorAll('.slider-dot'));
+const clickedDot = e.target.closest('.slider-dot');
+currentSlide = dots.indexOf(clickedDot);
+updateSlider();
+startSlideshow();
+}
+});
+const slider = document.querySelector('.project-slider');
+if (slider) {
+slider.addEventListener('mouseenter', stopSlideshow);
+slider.addEventListener('mouseleave', startSlideshow);
+startSlideshow();
+}
+});
+</script>
+<script id="projectModalHandler">
+document.addEventListener('DOMContentLoaded', function() {
+const modal = document.getElementById('projectModal');
+const closeBtn = document.getElementById('closeProjectModal');
+const projectContent = document.getElementById('projectContent');
+const viewButtons = document.querySelectorAll('.view-project-btn');
+// Close modal when clicking outside
+modal.addEventListener('click', (e) => {
+if (e.target === modal) {
+closeModal();
+}
+});
+// Close modal when pressing Escape key
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') {
+closeModal();
+}
+});
+const projects = {
+1: {
+title: "NexusChain Platform",
+description: "A revolutionary blockchain solution that transforms how businesses handle data and transactions. Our platform provides enterprise-grade security, scalability, and interoperability for next-generation digital infrastructure.",
+features: [
+"Smart Contract Automation",
+"Multi-chain Integration",
+"Real-time Transaction Processing",
+"Advanced Security Protocols"
+],
+technologies: [
+"Ethereum",
+"Hyperledger",
+"Solidity",
+"Web3.js"
+],
+results: [
+"50% reduction in transaction costs",
+"99.99% uptime achievement",
+"10x improvement in processing speed",
+"Successfully processed over $1B in transactions"
+],
+images: [
+"https://readdy.ai/api/search-image?query=detailed%2520blockchain%2520technology%2520visualization%252C%2520secure%2520digital%2520ledger%252C%2520cryptocurrency%2520network%252C%2520connected%2520blocks%2520with%2520data%252C%2520blue%2520and%2520purple%2520tech%2520elements%252C%2520dark%2520background%252C%2520high-tech%2520interface%252C%25203D%2520rendering%252C%2520cyberpunk%2520aesthetic&width=1200&height=600&seq=20&orientation=landscape",
+"https://readdy.ai/api/search-image?query=blockchain%2520user%2520interface%252C%2520cryptocurrency%2520dashboard%252C%2520digital%2520wallet%2520design%252C%2520transaction%2520analytics%252C%2520modern%2520fintech%2520platform%252C%2520blue%2520and%2520purple%2520gradients%252C%2520dark%2520theme%252C%2520minimalist%2520UI&width=1200&height=600&seq=21&orientation=landscape",
+"https://readdy.ai/api/search-image?query=smart%2520contract%2520system%252C%2520blockchain%2520network%2520nodes%252C%2520distributed%2520ledger%2520visualization%252C%2520secure%2520transaction%2520flow%252C%2520cryptographic%2520elements%252C%2520blue%2520and%2520purple%2520tech%2520aesthetic%252C%2520dark%2520background&width=1200&height=600&seq=22&orientation=landscape",
+"https://readdy.ai/api/search-image?query=blockchain%2520analytics%2520dashboard%252C%2520cryptocurrency%2520trading%2520platform%252C%2520real-time%2520market%2520data%252C%2520transaction%2520statistics%252C%2520performance%2520metrics%252C%2520blue%2520and%2520purple%2520interface%252C%2520dark%2520theme&width=1200&height=600&seq=23&orientation=landscape"
+]
+}
+// Add more projects as needed
+};
+function openModal(projectId) {
+const project = projects[projectId];
+if (!project) return;
+projectContent.innerHTML = `
+<div class="relative">
+<div class="project-slider overflow-hidden rounded-xl">
+<div class="slider-container flex transition-transform duration-500">
+<img src="${project.images[0]}" alt="${project.title} - Overview" class="w-full h-64 object-cover object-top flex-shrink-0">
+<img src="${project.images[1]}" alt="${project.title} - Interface" class="w-full h-64 object-cover object-top flex-shrink-0">
+<img src="${project.images[2]}" alt="${project.title} - Features" class="w-full h-64 object-cover object-top flex-shrink-0">
+<img src="${project.images[3]}" alt="${project.title} - Results" class="w-full h-64 object-cover object-top flex-shrink-0">
+</div>
+<button class="slider-nav prev absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-rich-black/80 rounded-full text-white hover:bg-primary/80 transition-colors duration-300">
+<i class="ri-arrow-left-s-line ri-lg"></i>
+</button>
+<button class="slider-nav next absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-rich-black/80 rounded-full text-white hover:bg-primary/80 transition-colors duration-300">
+<i class="ri-arrow-right-s-line ri-lg"></i>
+</button>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+<button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"></button>
+<button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"></button>
+<button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"></button>
+<button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"></button>
+</div>
+</div>
+</div>
+<h2 class="orbitron text-3xl font-bold text-white mt-8">${project.title}</h2>
+<p class="text-gray-300 text-lg mt-4">${project.description}</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+<div>
+<h3 class="text-xl font-bold text-white mb-4">Key Features</h3>
+<ul class="space-y-2">
+${project.features.map(feature => `
+<li class="flex items-center text-gray-300">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+${feature}
+</li>
+`).join('')}
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold text-white mb-4">Technologies Used</h3>
+<div class="flex flex-wrap gap-2">
+${project.technologies.map(tech => `
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">${tech}</span>
+`).join('')}
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h3 class="text-xl font-bold text-white mb-4">Project Results</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+${project.results.map(result => `
+<div class="bg-rich-black rounded-lg p-4">
+<p class="text-gray-300"><i class="ri-arrow-right-circle-line text-primary mr-2"></i>${result}</p>
+</div>
+`).join('')}
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="neon-button !rounded-button bg-primary px-6 py-3 text-rich-black font-bold hover:bg-primary/90 transition-all duration-300 whitespace-nowrap">
+Request Similar Solution
+</button>
+</div>
+`;
+modal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+modal.classList.add('hidden');
+document.body.style.overflow = '';
+}
+viewButtons.forEach(button => {
+button.addEventListener('click', () => {
+const projectId = button.getAttribute('data-project-id');
+openModal(projectId);
+});
+});
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+if (e.target === modal) {
+closeModal();
+}
+});
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') {
+closeModal();
+}
+});
+});
+</script>
+<script id="searchHandler">
+document.addEventListener('DOMContentLoaded', function() {
+const searchInput = document.querySelector('.search-input');
+searchInput.addEventListener('input', function() {
+// In a real app, this would filter projects based on search term
+console.log('Search term:', this.value);
+});
+searchInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+e.preventDefault();
+// In a real app, this would trigger the search
+console.log('Search submitted:', this.value);
+}
+});
+});
+</script>
+</body>
+</html>

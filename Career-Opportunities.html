@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers - TechInnovom</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config={
+  theme:{
+    extend:{
+      colors:{primary:'#00B4DB',secondary:'#B721FF'},
+      borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}
+    },
+    screens: {
+      'xs': '480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+background-color: #0a0a12;
+color: #e2e8f0;
+overflow-x: hidden;
+}
+.font-space {
+font-family: 'Space Grotesk', sans-serif;
+}
+.gradient-text {
+background: linear-gradient(90deg, #00B4DB, #B721FF);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+.gradient-border {
+position: relative;
+border-radius: 8px;
+background: linear-gradient(to right, #0a0a12, #0a0a12);
+}
+.gradient-border::before {
+content: "";
+position: absolute;
+inset: 0;
+border-radius: 8px;
+padding: 1px;
+background: linear-gradient(45deg, #00B4DB, #B721FF);
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+pointer-events: none;
+}
+.glass-card {
+background: rgba(22, 22, 30, 0.7);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.careers-header-bg {
+background-image: url('https://public.readdy.ai/ai/img_res/88ed5ede0be3a876e7407e0257ed2d67.jpg');
+background-size: cover;
+background-position: center;
+}
+.benefit-card {
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.benefit-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 0 30px rgba(0, 180, 219, 0.2);
+}
+.job-card {
+transition: all 0.3s ease;
+}
+.job-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 0 20px rgba(0, 180, 219, 0.15);
+}
+.testimonial-card {
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.testimonial-card:hover {
+transform: scale(1.03);
+}
+.timeline-item {
+position: relative;
+}
+.timeline-item::before {
+content: "";
+position: absolute;
+left: 15px;
+top: 0;
+bottom: 0;
+width: 2px;
+background: linear-gradient(to bottom, #00B4DB, #B721FF);
+}
+.timeline-dot {
+position: relative;
+z-index: 2;
+background: linear-gradient(45deg, #00B4DB, #B721FF);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 1px solid rgba(255, 255, 255, 0.2);
+background: rgba(255, 255, 255, 0.05);
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #00B4DB;
+border-color: #00B4DB;
+}
+.custom-checkbox:checked::after {
+content: "";
+position: absolute;
+top: 2px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-radio {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 1px solid rgba(255, 255, 255, 0.2);
+background: rgba(255, 255, 255, 0.05);
+border-radius: 50%;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-radio:checked {
+border-color: #00B4DB;
+}
+.custom-radio:checked::after {
+content: "";
+position: absolute;
+top: 4px;
+left: 4px;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: #00B4DB;
+}
+.particle {
+position: absolute;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(0, 180, 219, 0.8) 0%, rgba(0, 180, 219, 0) 70%);
+pointer-events: none;
+transform: translate(-50%, -50%);
+animation: float 6s infinite ease-in-out;
+}
+@keyframes float {
+0%, 100% { transform: translate(-50%, -50%) translateY(0) scale(1); }
+50% { transform: translate(-50%, -50%) translateY(-20px) scale(1.1); }
+}
+.neon-line {
+height: 1px;
+background: linear-gradient(90deg, rgba(0,180,219,0), rgba(0,180,219,1) 50%, rgba(0,180,219,0));
+animation: glow 2s infinite ease-in-out;
+}
+@keyframes glow {
+0%, 100% { opacity: 0.3; }
+50% { opacity: 1; }
+}
+input, textarea, select {
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.1);
+color: #e2e8f0;
+transition: all 0.3s ease;
+}
+input:focus, textarea:focus, select:focus {
+outline: none;
+border-color: #00B4DB;
+box-shadow: 0 0 0 2px rgba(0, 180, 219, 0.2);
+}
+.custom-select {
+appearance: none;
+-webkit-appearance: none;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a0aec0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+background-repeat: no-repeat;
+background-position: right 0.5rem center;
+background-size: 1.5em 1.5em;
+}
+</style>
+</head>
+<body class="bg-[#0a0a12]">
+<!-- Header/Navigation -->
+<header class="fixed top-0 left-0 w-full glass-card z-50 border-b border-[rgba(255,255,255,0.05)]">
+<div class="container mx-auto px-6 py-4 flex items-center justify-between">
+<a href="#" class="text-3xl font-['Pacifico'] flex items-center">
+<span class="gradient-text">TechInnovom</span>
+</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+<a href="index.html" class="text-gray-300 hover:text-primary transition-all duration-300 relative group">
+Home
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-all duration-300 relative group">
+Services
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-all duration-300 relative group">
+Portfolio
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#" class="text-primary transition-all duration-300 relative group">
+Careers
+<span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary"></span>
+</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-all duration-300 relative group">
+Contact
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+</nav>
+<!-- Mobile Navigation Toggle -->
+<button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-menu-line ri-2x"></i>
+</button>
+</div>
+<!-- Mobile Navigation Menu (Hidden by Default) -->
+<div id="mobileMenu" class="hidden md:hidden glass-card px-6 py-4 absolute top-full left-0 right-0 z-50 border-t border-white/5">
+<div class="flex flex-col space-y-4 py-2">
+<a href="index.html" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Home</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Services</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Portfolio</a>
+<a href="#" class="text-primary transition-colors duration-300 py-2">Careers</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Contact</a>
+</div>
+</div>
+</header>
+<!-- Careers Header Section -->
+<section class="careers-header-bg pt-28 sm:pt-32 pb-16 sm:pb-20 md:pb-24 relative overflow-hidden">
+<div class="absolute inset-0 bg-[#0a0a12] bg-opacity-60"></div>
+<div class="particle w-32 h-32 top-1/4 left-1/4 opacity-30"></div>
+<div class="particle w-20 h-20 top-3/4 left-1/3 opacity-20"></div>
+<div class="container mx-auto px-4 sm:px-6 relative z-10">
+<div class="text-center mb-8 sm:mb-12">
+<div class="inline-block px-3 sm:px-4 py-1 text-xs font-semibold tracking-wider glass-card rounded-full mb-4">JOIN OUR TEAM</div>
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-space mb-4 sm:mb-6">
+Build Your <span class="gradient-text">Career</span> With Us
+</h1>
+<div class="neon-line w-32 sm:w-40 mx-auto mb-4 sm:mb-6"></div>
+<p class="text-base sm:text-lg text-gray-300 max-w-xl sm:max-w-2xl mx-auto px-2">
+Join our team of innovators and tech enthusiasts to create cutting-edge solutions that transform industries and shape the future of technology.
+</p>
+</div>
+<!-- Key Stats -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-12 max-w-4xl mx-auto">
+<div class="glass-card p-4 sm:p-6 rounded-lg text-center">
+<h3 class="text-2xl sm:text-3xl font-bold gradient-text mb-1 sm:mb-2">45+</h3>
+<p class="text-gray-400 text-sm sm:text-base">Tech Experts</p>
+</div>
+<div class="glass-card p-4 sm:p-6 rounded-lg text-center">
+<h3 class="text-2xl sm:text-3xl font-bold gradient-text mb-1 sm:mb-2">92%</h3>
+<p class="text-gray-400 text-sm sm:text-base">Employee Retention</p>
+</div>
+<div class="glass-card p-4 sm:p-6 rounded-lg text-center">
+<h3 class="text-2xl sm:text-3xl font-bold gradient-text mb-1 sm:mb-2">15+</h3>
+<p class="text-gray-400 text-sm sm:text-base">Years in Business</p>
+</div>
+<div class="glass-card p-4 sm:p-6 rounded-lg text-center">
+<h3 class="text-2xl sm:text-3xl font-bold gradient-text mb-1 sm:mb-2">4.8/5</h3>
+<p class="text-gray-400 text-sm sm:text-base">Employee Satisfaction</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Join Us Section -->
+<section class="py-16 sm:py-20 bg-[#0d0d16] relative overflow-hidden">
+<div class="particle w-40 h-40 top-1/3 right-1/4 opacity-20"></div>
+<div class="container mx-auto px-4 sm:px-6">
+<div class="text-center mb-12 sm:mb-16">
+<div class="inline-block px-4 py-1 text-xs font-semibold tracking-wider glass-card rounded-full mb-4">WHY CHOOSE US</div>
+<h2 class="text-3xl sm:text-4xl font-bold font-space mb-4">Life at <span class="gradient-text">TechInnovom</span></h2>
+<div class="neon-line w-32 mx-auto mb-6"></div>
+<p class="text-gray-400 max-w-2xl mx-auto">Discover why our team members love working here and how we foster a culture of innovation, growth, and work-life balance.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+<!-- Benefit Card 1 -->
+<div class="benefit-card glass-card p-6 sm:p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 border border-primary/30">
+<i class="ri-balance-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold font-space mb-3">Work-Life Balance</h3>
+<p class="text-gray-400">Flexible working hours, remote options, and generous PTO to ensure you maintain a healthy balance between work and personal life.</p>
+</div>
+<!-- Benefit Card 2 -->
+<div class="benefit-card glass-card p-6 sm:p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 border border-primary/30">
+<i class="ri-graduation-cap-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold font-space mb-3">Professional Growth</h3>
+<p class="text-gray-400">Continuous learning opportunities, certification programs, and career advancement paths to help you reach your full potential.</p>
+</div>
+<!-- Benefit Card 3 -->
+<div class="benefit-card glass-card p-6 sm:p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 border border-primary/30">
+<i class="ri-lightbulb-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold font-space mb-3">Innovation Culture</h3>
+<p class="text-gray-400">A collaborative environment where creative thinking is encouraged and your ideas can make a real impact on our products and services.</p>
+</div>
+<!-- Benefit Card 4 -->
+<div class="benefit-card glass-card p-6 sm:p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 border border-primary/30">
+<i class="ri-global-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold font-space mb-3">Global Impact</h3>
+<p class="text-gray-400">Work on projects that solve real-world challenges and make a meaningful difference for clients across various industries worldwide.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-8">
+<!-- Additional Benefits -->
+<div class="glass-card p-6 sm:p-8 rounded-lg">
+<h3 class="text-xl font-bold font-space mb-4">Comprehensive Benefits</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Competitive salary and performance bonuses</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Comprehensive health, dental, and vision insurance</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">401(k) retirement plan with company matching</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Paid parental leave and family support programs</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Employee wellness programs and gym membership</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Company Culture -->
+<div class="glass-card p-6 sm:p-8 rounded-lg">
+<h3 class="text-xl font-bold font-space mb-4">Our Company Culture</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Inclusive and diverse work environment</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Regular team-building events and social activities</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Mentorship programs and knowledge sharing sessions</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Innovation time for personal projects and exploration</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Community involvement and volunteer opportunities</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Current Openings Section -->
+<section class="py-16 sm:py-20 bg-[#0a0a12] relative overflow-hidden">
+<div class="particle w-32 h-32 bottom-1/4 right-1/4 opacity-20"></div>
+<div class="container mx-auto px-4 sm:px-6">
+<div class="text-center mb-12 sm:mb-16">
+<div class="inline-block px-4 py-1 text-xs font-semibold tracking-wider glass-card rounded-full mb-4">OPEN POSITIONS</div>
+<h2 class="text-3xl sm:text-4xl font-bold font-space mb-4">Current <span class="gradient-text">Openings</span></h2>
+<div class="neon-line w-32 mx-auto mb-6"></div>
+<p class="text-gray-400 max-w-2xl mx-auto">Explore our available positions and find the perfect opportunity to match your skills and career goals.</p>
+</div>
+<!-- Job Filters -->
+<div class="glass-card p-6 sm:p-8 rounded-lg mb-8 border border-white/5">
+<div class="flex flex-col sm:flex-row gap-6 items-end">
+<div class="flex-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<div>
+<label for="department" class="block text-sm font-medium text-gray-300 mb-2">Department</label>
+<div class="relative">
+<select id="department" class="w-full px-4 py-3 rounded-lg custom-select focus:border-primary pr-8 text-sm bg-white/5 border border-white/10">
+<option value="">All Departments</option>
+<option value="engineering">Engineering</option>
+<option value="design">Design</option>
+<option value="product">Product Management</option>
+<option value="marketing">Marketing</option>
+<option value="sales">Sales</option>
+<option value="hr">Human Resources</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<div>
+<label for="location" class="block text-sm font-medium text-gray-300 mb-2">Location</label>
+<div class="relative">
+<select id="location" class="w-full px-4 py-3 rounded-lg custom-select focus:border-primary pr-8 text-sm bg-white/5 border border-white/10">
+<option value="">All Locations</option>
+<option value="sf">San Francisco, CA</option>
+<option value="ny">New York, NY</option>
+<option value="austin">Austin, TX</option>
+<option value="remote">Remote</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<div>
+<label for="job-search" class="block text-sm font-medium text-gray-300 mb-2">Search</label>
+<div class="relative">
+<input type="text" id="job-search" placeholder="Search job titles or keywords..." class="w-full px-4 py-3 rounded-lg focus:border-primary text-sm pl-10 bg-white/5 border border-white/10">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<i class="ri-search-line text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0">
+<button id="advancedFilterBtn" class="flex items-center text-primary hover:text-secondary transition-colors duration-300 text-sm">
+<i class="ri-filter-3-line mr-2"></i>
+<span>Advanced Filters</span>
+<i class="ri-arrow-down-s-line ml-1 transition-transform duration-300" id="filterArrow"></i>
+</button>
+</div>
+</div>
+<!-- Advanced Filters (Hidden by Default) -->
+<div id="advancedFilters" class="glass-card p-6 sm:p-8 rounded-lg mb-8 border border-white/5 hidden">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div>
+<h4 class="text-sm font-medium text-white mb-3">Employment Type</h4>
+<div class="space-y-2">
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="full-time">
+<span class="ml-2 text-sm text-gray-300">Full-time</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="part-time">
+<span class="ml-2 text-sm text-gray-300">Part-time</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="contract">
+<span class="ml-2 text-sm text-gray-300">Contract</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="internship">
+<span class="ml-2 text-sm text-gray-300">Internship</span>
+</label>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-medium text-white mb-3">Experience Level</h4>
+<div class="space-y-2">
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="entry">
+<span class="ml-2 text-sm text-gray-300">Entry Level (0-2 years)</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="mid">
+<span class="ml-2 text-sm text-gray-300">Mid Level (3-5 years)</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="senior">
+<span class="ml-2 text-sm text-gray-300">Senior Level (5+ years)</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="lead">
+<span class="ml-2 text-sm text-gray-300">Leadership (Manager+)</span>
+</label>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-medium text-white mb-3">Work Environment</h4>
+<div class="space-y-2">
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="remote">
+<span class="ml-2 text-sm text-gray-300">Remote</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="hybrid">
+<span class="ml-2 text-sm text-gray-300">Hybrid</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="onsite">
+<span class="ml-2 text-sm text-gray-300">On-site</span>
+</label>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap justify-center sm:justify-end mt-6 gap-3">
+<button id="resetFiltersBtn" class="!rounded-button px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 whitespace-nowrap border border-white/10">
+Reset Filters
+</button>
+<button id="applyFiltersBtn" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 text-sm font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Apply Filters</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</div>
+<!-- Job Listings -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Job Card 1 -->
+<div class="job-card glass-card rounded-lg border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(0,180,219,0.15)] group">
+<div class="p-6 sm:p-8">
+<div class="flex flex-wrap items-start justify-between mb-4">
+<span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">Engineering</span>
+<div class="flex items-center text-gray-400 text-sm">
+<i class="ri-time-line mr-1"></i>
+<span>Posted 2 days ago</span>
+</div>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 group-hover:text-primary transition-colors duration-300">Senior Full Stack Developer</h3>
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-400 mb-4">
+<div class="flex items-center mr-2 mb-1">
+<i class="ri-map-pin-line mr-1"></i>
+<span>San Francisco, CA (Hybrid)</span>
+</div>
+<div class="flex items-center mr-2 mb-1">
+<i class="ri-time-line mr-1"></i>
+<span>Full-time</span>
+</div>
+<div class="flex items-center mb-1">
+<i class="ri-user-star-line mr-1"></i>
+<span>5+ years experience</span>
+</div>
+</div>
+<p class="text-gray-300 mb-6 line-clamp-2">Lead the development of our core platform using React, Node.js, and cloud technologies. Collaborate with cross-functional teams to deliver high-quality, scalable solutions.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">React</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Node.js</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">AWS</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">TypeScript</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">MongoDB</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row border-t border-white/5">
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium view-details-btn">
+<span>View Details</span>
+</button>
+<div class="hidden sm:block w-px bg-white/5"></div>
+<div class="block sm:hidden h-px bg-white/5"></div>
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium">
+<span>Apply Now</span>
+</button>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="job-card glass-card rounded-lg border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(0,180,219,0.15)] group">
+<div class="p-6 sm:p-8">
+<div class="flex flex-wrap items-start justify-between mb-4">
+<span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-medium">Design</span>
+<div class="flex items-center text-gray-400 text-sm">
+<i class="ri-time-line mr-1"></i>
+<span>Posted 1 week ago</span>
+</div>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 group-hover:text-primary transition-colors duration-300">UX/UI Designer</h3>
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-400 mb-4">
+<div class="flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Remote</span>
+</div>
+<div class="flex items-center">
+<i class="ri-time-line mr-1"></i>
+<span>Full-time</span>
+</div>
+<div class="flex items-center">
+<i class="ri-user-star-line mr-1"></i>
+<span>3+ years experience</span>
+</div>
+</div>
+<p class="text-gray-300 mb-6 line-clamp-2">Create intuitive and visually appealing user interfaces for our digital products. Work closely with product managers and developers to ensure a seamless user experience.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Figma</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Adobe XD</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Prototyping</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">User Research</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row border-t border-white/5">
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium view-details-btn">
+<span>View Details</span>
+</button>
+<div class="hidden sm:block w-px bg-white/5"></div>
+<div class="block sm:hidden h-px bg-white/5"></div>
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium">
+<span>Apply Now</span>
+</button>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="job-card glass-card rounded-lg border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(0,180,219,0.15)] group">
+<div class="p-6 sm:p-8">
+<div class="flex flex-wrap items-start justify-between mb-4">
+<span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">Engineering</span>
+<div class="flex items-center text-gray-400 text-sm">
+<i class="ri-time-line mr-1"></i>
+<span>Posted 3 days ago</span>
+</div>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 group-hover:text-primary transition-colors duration-300">Machine Learning Engineer</h3>
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-400 mb-4">
+<div class="flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+<span>New York, NY (On-site)</span>
+</div>
+<div class="flex items-center">
+<i class="ri-time-line mr-1"></i>
+<span>Full-time</span>
+</div>
+<div class="flex items-center">
+<i class="ri-user-star-line mr-1"></i>
+<span>4+ years experience</span>
+</div>
+</div>
+<p class="text-gray-300 mb-6 line-clamp-2">Develop and implement machine learning models to enhance our products with AI capabilities. Work with large datasets and deploy solutions that drive business value.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Python</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">TensorFlow</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">PyTorch</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">NLP</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Computer Vision</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row border-t border-white/5">
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium view-details-btn">
+<span>View Details</span>
+</button>
+<div class="hidden sm:block w-px bg-white/5"></div>
+<div class="block sm:hidden h-px bg-white/5"></div>
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium">
+<span>Apply Now</span>
+</button>
+</div>
+</div>
+<!-- Job Card 4 -->
+<div class="job-card glass-card rounded-lg border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(0,180,219,0.15)] group">
+<div class="p-6 sm:p-8">
+<div class="flex flex-wrap items-start justify-between mb-4">
+<span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-medium">Product</span>
+<div class="flex items-center text-gray-400 text-sm">
+<i class="ri-time-line mr-1"></i>
+<span>Posted 5 days ago</span>
+</div>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 group-hover:text-primary transition-colors duration-300">Product Manager</h3>
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-400 mb-4">
+<div class="flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Austin, TX (Hybrid)</span>
+</div>
+<div class="flex items-center">
+<i class="ri-time-line mr-1"></i>
+<span>Full-time</span>
+</div>
+<div class="flex items-center">
+<i class="ri-user-star-line mr-1"></i>
+<span>5+ years experience</span>
+</div>
+</div>
+<p class="text-gray-300 mb-6 line-clamp-2">Lead the product development lifecycle from conception to launch. Define product strategy, gather requirements, and work with engineering and design teams to deliver exceptional products.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Product Strategy</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Agile</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">User Stories</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Roadmapping</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row border-t border-white/5">
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium view-details-btn">
+<span>View Details</span>
+</button>
+<div class="hidden sm:block w-px bg-white/5"></div>
+<div class="block sm:hidden h-px bg-white/5"></div>
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium">
+<span>Apply Now</span>
+</button>
+</div>
+</div>
+<!-- Job Card 5 -->
+<div class="job-card glass-card rounded-lg border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(0,180,219,0.15)] group">
+<div class="p-6 sm:p-8">
+<div class="flex flex-wrap items-start justify-between mb-4">
+<span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">Engineering</span>
+<div class="flex items-center text-gray-400 text-sm">
+<i class="ri-time-line mr-1"></i>
+<span>Posted 1 day ago</span>
+</div>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 group-hover:text-primary transition-colors duration-300">DevOps Engineer</h3>
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-400 mb-4">
+<div class="flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Remote</span>
+</div>
+<div class="flex items-center">
+<i class="ri-time-line mr-1"></i>
+<span>Full-time</span>
+</div>
+<div class="flex items-center">
+<i class="ri-user-star-line mr-1"></i>
+<span>3+ years experience</span>
+</div>
+</div>
+<p class="text-gray-300 mb-6 line-clamp-2">Implement and maintain CI/CD pipelines, infrastructure as code, and cloud resources. Ensure system reliability, scalability, and security for our applications.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Kubernetes</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Docker</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Terraform</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">AWS</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">CI/CD</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row border-t border-white/5">
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium view-details-btn">
+<span>View Details</span>
+</button>
+<div class="hidden sm:block w-px bg-white/5"></div>
+<div class="block sm:hidden h-px bg-white/5"></div>
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium">
+<span>Apply Now</span>
+</button>
+</div>
+</div>
+<!-- Job Card 6 -->
+<div class="job-card glass-card rounded-lg border border-white/5 overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(0,180,219,0.15)] group">
+<div class="p-6 sm:p-8">
+<div class="flex flex-wrap items-start justify-between mb-4">
+<span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-medium">Marketing</span>
+<div class="flex items-center text-gray-400 text-sm">
+<i class="ri-time-line mr-1"></i>
+<span>Posted 2 weeks ago</span>
+</div>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 group-hover:text-primary transition-colors duration-300">Digital Marketing Specialist</h3>
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-400 mb-4">
+<div class="flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+<span>San Francisco, CA (Hybrid)</span>
+</div>
+<div class="flex items-center">
+<i class="ri-time-line mr-1"></i>
+<span>Full-time</span>
+</div>
+<div class="flex items-center">
+<i class="ri-user-star-line mr-1"></i>
+<span>2+ years experience</span>
+</div>
+</div>
+<p class="text-gray-300 mb-6 line-clamp-2">Plan and execute digital marketing campaigns across various channels. Analyze performance metrics and optimize strategies to drive brand awareness and lead generation.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">SEO</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">SEM</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Social Media</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Analytics</span>
+<span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">Content Marketing</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row border-t border-white/5">
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium view-details-btn">
+<span>View Details</span>
+</button>
+<div class="hidden sm:block w-px bg-white/5"></div>
+<div class="block sm:hidden h-px bg-white/5"></div>
+<button class="flex-1 py-3 text-center text-white bg-transparent hover:bg-primary/10 transition-colors duration-300 text-sm font-medium">
+<span>Apply Now</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-10">
+<div class="flex flex-wrap items-center justify-center gap-2 sm:space-x-2">
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card rounded-full text-gray-400 hover:text-primary hover:border-primary border border-white/10 transition-colors duration-300">
+<i class="ri-arrow-left-s-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card rounded-full text-white bg-gradient-to-r from-primary to-secondary border border-white/10 transition-colors duration-300">1</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card rounded-full text-gray-400 hover:text-primary hover:border-primary border border-white/10 transition-colors duration-300">2</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card rounded-full text-gray-400 hover:text-primary hover:border-primary border border-white/10 transition-colors duration-300">3</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card rounded-full text-gray-400 hover:text-primary hover:border-primary border border-white/10 transition-colors duration-300">
+<i class="ri-arrow-right-s-line"></i>
+</a>
+</div>
+</div>
+<!-- No Results Found (Hidden by Default) -->
+<div id="noResultsFound" class="hidden text-center py-16 glass-card rounded-lg mt-8 border border-white/5">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-search-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold font-space mb-2">No Results Found</h3>
+<p class="text-gray-400 mb-6 max-w-md mx-auto">We couldn't find any positions matching your search criteria. Try adjusting your filters or check back later for new opportunities.</p>
+<button id="resetAllFiltersBtn" class="!rounded-button glass-card border border-primary px-6 py-2 text-sm font-medium text-primary hover:bg-primary hover:text-white transition-all duration-300 whitespace-nowrap">
+Reset Filters
+</button>
+</div>
+<!-- Job Alerts -->
+<div class="glass-card p-6 sm:p-8 rounded-lg mt-12 border border-white/5 bg-gradient-to-r from-[rgba(0,180,219,0.05)] to-[rgba(183,33,255,0.05)]">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h3 class="text-xl font-bold font-space mb-2">Don't see what you're looking for?</h3>
+<p class="text-gray-300">Set up job alerts and be the first to know when new positions open up.</p>
+</div>
+<button id="createJobAlertBtn" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 text-sm font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group flex-shrink-0">
+<span class="relative z-10">Create Job Alert</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<script>
+// Add this to your existing script section
+document.addEventListener('DOMContentLoaded', function() {
+// Advanced Filters Toggle
+const advancedFilterBtn = document.getElementById('advancedFilterBtn');
+const advancedFilters = document.getElementById('advancedFilters');
+const filterArrow = document.getElementById('filterArrow');
+advancedFilterBtn.addEventListener('click', function() {
+advancedFilters.classList.toggle('hidden');
+if (!advancedFilters.classList.contains('hidden')) {
+filterArrow.style.transform = 'rotate(180deg)';
+} else {
+filterArrow.style.transform = 'rotate(0)';
+}
+});
+// Reset All Filters Button
+const resetAllFiltersBtn = document.getElementById('resetAllFiltersBtn');
+if (resetAllFiltersBtn) {
+resetAllFiltersBtn.addEventListener('click', function() {
+document.getElementById('department').value = '';
+document.getElementById('location').value = '';
+document.getElementById('job-search').value = '';
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+checkbox.checked = false;
+});
+filterJobs();
+advancedFilters.classList.add('hidden');
+filterArrow.style.transform = 'rotate(0)';
+});
+}
+// Apply Filters Button
+const applyFiltersBtn = document.getElementById('applyFiltersBtn');
+if (applyFiltersBtn) {
+applyFiltersBtn.addEventListener('click', function() {
+filterJobs();
+advancedFilters.classList.add('hidden');
+filterArrow.style.transform = 'rotate(0)';
+});
+}
+// Job Alert Modal
+const createJobAlertBtn = document.getElementById('createJobAlertBtn');
+const jobAlertModal = document.getElementById('jobAlertModal');
+const closeJobAlertModal = document.getElementById('closeJobAlertModal');
+const jobAlertForm = document.getElementById('jobAlertForm');
+const jobAlertSuccessModal = document.getElementById('jobAlertSuccessModal');
+const closeJobAlertSuccessModal = document.getElementById('closeJobAlertSuccessModal');
+const jobAlertSuccessDoneBtn = document.getElementById('jobAlertSuccessDoneBtn');
+if (createJobAlertBtn) {
+createJobAlertBtn.addEventListener('click', function() {
+jobAlertModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+}
+if (closeJobAlertModal) {
+closeJobAlertModal.addEventListener('click', function() {
+jobAlertModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+}
+if (jobAlertForm) {
+jobAlertForm.addEventListener('submit', function(e) {
+e.preventDefault();
+jobAlertModal.classList.add('hidden');
+jobAlertSuccessModal.classList.remove('hidden');
+});
+}
+if (closeJobAlertSuccessModal) {
+closeJobAlertSuccessModal.addEventListener('click', function() {
+jobAlertSuccessModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+jobAlertForm.reset();
+});
+}
+if (jobAlertSuccessDoneBtn) {
+jobAlertSuccessDoneBtn.addEventListener('click', function() {
+jobAlertSuccessModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+jobAlertForm.reset();
+});
+}
+});
+</script>
+<!-- Employee Testimonials -->
+<section class="py-16 sm:py-20 bg-[#0d0d16] relative overflow-hidden">
+<div class="particle w-40 h-40 top-1/3 right-1/4 opacity-20"></div>
+<div class="container mx-auto px-4 sm:px-6">
+<div class="text-center mb-12 sm:mb-16">
+<div class="inline-block px-4 py-1 text-xs font-semibold tracking-wider glass-card rounded-full mb-4">TEAM STORIES</div>
+<h2 class="text-3xl sm:text-4xl font-bold font-space mb-4">Employee <span class="gradient-text">Testimonials</span></h2>
+<div class="neon-line w-32 mx-auto mb-6"></div>
+<p class="text-gray-400 max-w-2xl mx-auto">Hear directly from our team members about their experiences working at TechInnovom.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<!-- Testimonial 1 -->
+<div class="testimonial-card glass-card p-6 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></div>
+<div class="flex flex-col xs:flex-row items-center mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-3 xs:mb-0 xs:mr-4 border-2 border-primary">
+<img src="https://public.readdy.ai/ai/img_res/f845d087529b376f0f3c18a0457ebeff.jpg" alt="David Chen" class="w-full h-full object-cover object-top">
+</div>
+<div class="text-center xs:text-left">
+<h4 class="text-lg font-medium text-white">David Chen</h4>
+<p class="text-gray-400">Senior Developer</p>
+<p class="text-primary text-sm">4 years at TechInnovom</p>
+</div>
+</div>
+<p class="text-gray-300 mb-4">"The culture of innovation at TechInnovom is unlike anything I've experienced before. I'm constantly challenged to grow my skills while working on cutting-edge projects that make a real impact. The work-life balance and supportive team environment make this the best place I've ever worked."</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card glass-card p-6 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></div>
+<div class="flex flex-col xs:flex-row items-center mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-3 xs:mb-0 xs:mr-4 border-2 border-primary">
+<img src="https://public.readdy.ai/ai/img_res/52e240cba6ccf0775289b960f5644a9c.jpg" alt="Amara Johnson" class="w-full h-full object-cover object-top">
+</div>
+<div class="text-center xs:text-left">
+<h4 class="text-lg font-medium text-white">Amara Johnson</h4>
+<p class="text-gray-400">UX Designer</p>
+<p class="text-primary text-sm">2 years at TechInnovom</p>
+</div>
+</div>
+<p class="text-gray-300 mb-4">"Joining TechInnovom was the best career decision I've made. The professional growth opportunities are incredible, and I've been able to expand my design skills across various projects. The collaborative atmosphere and mentorship from senior team members have accelerated my career development."</p>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card glass-card p-6 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></div>
+<div class="flex flex-col xs:flex-row items-center mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-3 xs:mb-0 xs:mr-4 border-2 border-primary">
+<img src="https://public.readdy.ai/ai/img_res/3eb7cbbff2d2b425098daf058e9e46a9.jpg" alt="Miguel Rodriguez" class="w-full h-full object-cover object-top">
+</div>
+<div class="text-center xs:text-left">
+<h4 class="text-lg font-medium text-white">Miguel Rodriguez</h4>
+<p class="text-gray-400">Product Manager</p>
+<p class="text-primary text-sm">5 years at TechInnovom</p>
+</div>
+</div>
+<p class="text-gray-300 mb-4">"What sets TechInnovom apart is how they truly value their employees. The leadership team listens to our ideas and empowers us to make decisions. I've had the opportunity to lead multiple successful product launches and grow my career while maintaining a healthy work-life balance."</p>
+</div>
+</div>
+<div class="text-center mt-10">
+<button class="!rounded-button glass-card border border-primary px-8 py-3 font-medium text-primary hover:bg-primary hover:text-white transition-all duration-300 whitespace-nowrap">
+View More Stories
+</button>
+</div>
+</div>
+</section>
+<!-- Growth & Development -->
+<section class="py-16 sm:py-20 bg-[#0a0a12] relative overflow-hidden">
+<div class="particle w-32 h-32 top-1/4 left-1/4 opacity-20"></div>
+<div class="container mx-auto px-4 sm:px-6">
+<div class="text-center mb-12 sm:mb-16">
+<div class="inline-block px-4 py-1 text-xs font-semibold tracking-wider glass-card rounded-full mb-4">CAREER ADVANCEMENT</div>
+<h2 class="text-3xl sm:text-4xl font-bold font-space mb-4">Growth & <span class="gradient-text">Development</span></h2>
+<div class="neon-line w-32 mx-auto mb-6"></div>
+<p class="text-gray-400 max-w-2xl mx-auto">We're committed to helping our employees develop their skills and advance their careers.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<!-- Career Path Timeline -->
+<div class="glass-card p-6 sm:p-8 rounded-lg">
+<h3 class="text-xl font-bold font-space mb-6">Career Progression Path</h3>
+<div class="space-y-8">
+<!-- Timeline Item 1 -->
+<div class="timeline-item pl-10">
+<div class="timeline-dot w-8 h-8 rounded-full absolute left-0 top-0 flex items-center justify-center">
+<div class="w-3 h-3 bg-white rounded-full"></div>
+</div>
+<h4 class="text-lg font-medium text-white mb-2">Entry Level</h4>
+<p class="text-gray-400 mb-3">Begin your journey with hands-on experience in real projects. Receive mentorship and training to build a solid foundation in your field.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Junior Developer</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Associate Designer</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Marketing Specialist</span>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="timeline-item pl-10">
+<div class="timeline-dot w-8 h-8 rounded-full absolute left-0 top-0 flex items-center justify-center">
+<div class="w-3 h-3 bg-white rounded-full"></div>
+</div>
+<h4 class="text-lg font-medium text-white mb-2">Mid-Level</h4>
+<p class="text-gray-400 mb-3">Take on more responsibility and lead components of projects. Develop specialized expertise and begin mentoring junior team members.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Software Developer</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">UX Designer</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Digital Marketing Manager</span>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="timeline-item pl-10">
+<div class="timeline-dot w-8 h-8 rounded-full absolute left-0 top-0 flex items-center justify-center">
+<div class="w-3 h-3 bg-white rounded-full"></div>
+</div>
+<h4 class="text-lg font-medium text-white mb-2">Senior Level</h4>
+<p class="text-gray-400 mb-3">Lead projects and teams while making strategic decisions. Become a subject matter expert and help shape the direction of your department.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Senior Developer</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Lead Designer</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Marketing Director</span>
+</div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="timeline-item pl-10">
+<div class="timeline-dot w-8 h-8 rounded-full absolute left-0 top-0 flex items-center justify-center">
+<div class="w-3 h-3 bg-white rounded-full"></div>
+</div>
+<h4 class="text-lg font-medium text-white mb-2">Leadership</h4>
+<p class="text-gray-400 mb-3">Drive organizational strategy and innovation. Oversee multiple teams and develop the next generation of leaders at TechInnovom.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Engineering Manager</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Design Director</span>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">VP of Marketing</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Professional Development -->
+<div class="space-y-6">
+<!-- Training Programs -->
+<div class="glass-card p-6 sm:p-8 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-4 border border-primary/30">
+<i class="ri-graduation-cap-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-bold font-space mb-4">Training & Certification</h3>
+<p class="text-gray-400 mb-4">We invest in your professional development with access to a wide range of learning resources.</p>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Annual learning budget for courses and certifications</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Access to premium online learning platforms</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Internal workshops and knowledge sharing sessions</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Conference attendance and speaking opportunities</p>
+</li>
+</ul>
+</div>
+<!-- Mentorship Program -->
+<div class="glass-card p-6 sm:p-8 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-4 border border-primary/30">
+<i class="ri-team-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-bold font-space mb-4">Mentorship Program</h3>
+<p class="text-gray-400 mb-4">Our structured mentorship program pairs you with experienced professionals to accelerate your growth.</p>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">One-on-one guidance from industry experts</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Regular feedback and career planning sessions</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Cross-departmental exposure and networking</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Opportunity to become a mentor as you advance</p>
+</li>
+</ul>
+</div>
+<!-- Innovation Time -->
+<div class="glass-card p-6 sm:p-8 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-4 border border-primary/30">
+<i class="ri-lightbulb-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-bold font-space mb-4">Innovation Time</h3>
+<p class="text-gray-400 mb-4">Dedicated time to explore new ideas, technologies, and personal projects that spark your passion.</p>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">10% of work time dedicated to innovation projects</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Quarterly hackathons and innovation challenges</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Potential to incorporate your ideas into our products</p>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-2 mt-0.5">
+<i class="ri-check-line text-sm"></i>
+</div>
+<p class="text-gray-300">Recognition and rewards for innovative solutions</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Application Process -->
+<section class="py-16 sm:py-20 bg-[#0d0d16] relative overflow-hidden">
+<div class="particle w-40 h-40 top-1/3 right-1/4 opacity-20"></div>
+<div class="container mx-auto px-4 sm:px-6">
+<div class="text-center mb-12 sm:mb-16">
+<div class="inline-block px-4 py-1 text-xs font-semibold tracking-wider glass-card rounded-full mb-4">HOW TO APPLY</div>
+<h2 class="text-3xl sm:text-4xl font-bold font-space mb-4">Application <span class="gradient-text">Process</span></h2>
+<div class="neon-line w-32 mx-auto mb-6"></div>
+<p class="text-gray-400 max-w-2xl mx-auto">Our streamlined hiring process is designed to identify the best talent while providing a positive candidate experience.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+<!-- Step 1 -->
+<div class="glass-card p-6 sm:p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6 border border-primary/30">
+<span class="text-xl font-bold text-primary">1</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-3">Application Review</h3>
+<p class="text-gray-400 mb-3">Submit your resume and application for the position that matches your skills and interests.</p>
+<p class="text-gray-500 text-sm"><i class="ri-time-line mr-1"></i> 1-2 weeks</p>
+</div>
+<!-- Step 2 -->
+<div class="glass-card p-6 sm:p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6 border border-primary/30">
+<span class="text-xl font-bold text-primary">2</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-3">Initial Interview</h3>
+<p class="text-gray-400 mb-3">Connect with our recruiting team to discuss your background, experience, and fit for the role.</p>
+<p class="text-gray-500 text-sm"><i class="ri-time-line mr-1"></i> 30-45 minutes</p>
+</div>
+<!-- Step 3 -->
+<div class="glass-card p-6 sm:p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6 border border-primary/30">
+<span class="text-xl font-bold text-primary">3</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-3">Technical Assessment</h3>
+<p class="text-gray-400 mb-3">Complete a skills-based assessment or project relevant to the position you're applying for.</p>
+<p class="text-gray-500 text-sm"><i class="ri-time-line mr-1"></i> 1-3 hours</p>
+</div>
+<!-- Step 4 -->
+<div class="glass-card p-6 sm:p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6 border border-primary/30">
+<span class="text-xl font-bold text-primary">4</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-3">Team Interviews</h3>
+<p class="text-gray-400 mb-3">Meet with potential team members and leadership to discuss technical skills and cultural fit.</p>
+<p class="text-gray-500 text-sm"><i class="ri-time-line mr-1"></i> 2-3 hours</p>
+</div>
+</div>
+<div class="glass-card p-6 sm:p-8 rounded-lg mt-8">
+<h3 class="text-xl font-bold font-space mb-4">Application Tips</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Tailor your resume to highlight relevant skills and experience</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Research our company and products before your interview</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Prepare specific examples of your past work and achievements</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Be prepared to discuss your problem-solving approach</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Ask thoughtful questions about the role and team</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center rounded-full bg-primary/20 text-primary mr-3 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-300">Follow up with a thank-you note after your interviews</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-16 sm:py-20 bg-[#0a0a12] relative overflow-hidden">
+<div class="particle w-32 h-32 bottom-1/4 right-1/4 opacity-20"></div>
+<div class="container mx-auto px-4 sm:px-6">
+<div class="text-center mb-12 sm:mb-16">
+<div class="inline-block px-4 py-1 text-xs font-semibold tracking-wider glass-card rounded-full mb-4">QUESTIONS & ANSWERS</div>
+<h2 class="text-3xl sm:text-4xl font-bold font-space mb-4">Frequently Asked <span class="gradient-text">Questions</span></h2>
+<div class="neon-line w-32 mx-auto mb-6"></div>
+<p class="text-gray-400 max-w-2xl mx-auto">Find answers to common questions about careers at TechInnovom.</p>
+</div>
+<div class="max-w-3xl mx-auto">
+<!-- FAQ Item 1 -->
+<div class="glass-card p-6 rounded-lg mb-4">
+<button class="flex justify-between items-center w-full text-left focus:outline-none" id="faq-btn-1">
+<h3 class="text-lg font-bold font-space text-white">What is the remote work policy at TechInnovom?</h3>
+<i class="ri-arrow-down-s-line text-primary transition-transform duration-300" id="faq-icon-1"></i>
+</button>
+<div class="mt-4 hidden" id="faq-content-1">
+<p class="text-gray-300">We offer flexible work arrangements including fully remote, hybrid, and in-office options depending on the role and team. Many positions are available as remote opportunities, while some roles may require occasional in-person collaboration at one of our office locations. Each job posting specifies the work arrangement available for that position.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="glass-card p-6 rounded-lg mb-4">
+<button class="flex justify-between items-center w-full text-left focus:outline-none" id="faq-btn-2">
+<h3 class="text-lg font-bold font-space text-white">What is the interview process like?</h3>
+<i class="ri-arrow-down-s-line text-primary transition-transform duration-300" id="faq-icon-2"></i>
+</button>
+<div class="mt-4 hidden" id="faq-content-2">
+<p class="text-gray-300">Our interview process typically includes an initial screening call with a recruiter, followed by a skills assessment relevant to the role. Candidates then participate in interviews with potential team members and managers. The entire process usually takes 2-3 weeks, and we strive to provide timely feedback at each stage. We value transparency and will keep you informed throughout the process.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="glass-card p-6 rounded-lg mb-4">
+<button class="flex justify-between items-center w-full text-left focus:outline-none" id="faq-btn-3">
+<h3 class="text-lg font-bold font-space text-white">What opportunities are there for career advancement?</h3>
+<i class="ri-arrow-down-s-line text-primary transition-transform duration-300" id="faq-icon-3"></i>
+</button>
+<div class="mt-4 hidden" id="faq-content-3">
+<p class="text-gray-300">We're committed to helping employees grow their careers at TechInnovom. We offer clear advancement paths within departments, opportunities for lateral moves to explore different areas of the business, leadership development programs, and regular performance reviews with career planning discussions. Many of our leaders have been promoted from within, demonstrating our commitment to internal growth and development.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="glass-card p-6 rounded-lg mb-4">
+<button class="flex justify-between items-center w-full text-left focus:outline-none" id="faq-btn-4">
+<h3 class="text-lg font-bold font-space text-white">What benefits does TechInnovom offer?</h3>
+<i class="ri-arrow-down-s-line text-primary transition-transform duration-300" id="faq-icon-4"></i>
+</button>
+<div class="mt-4 hidden" id="faq-content-4">
+<p class="text-gray-300">We offer a comprehensive benefits package including competitive salaries, performance bonuses, health/dental/vision insurance, 401(k) matching, generous PTO, paid parental leave, professional development budget, wellness programs, and flexible work arrangements. We regularly review our benefits package to ensure we're providing what matters most to our team members.</p>
+</div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="glass-card p-6 rounded-lg mb-4">
+<button class="flex justify-between items-center w-full text-left focus:outline-none" id="faq-btn-5">
+<h3 class="text-lg font-bold font-space text-white">What is the company culture like?</h3>
+<i class="ri-arrow-down-s-line text-primary transition-transform duration-300" id="faq-icon-5"></i>
+</button>
+<div class="mt-4 hidden" id="faq-content-5">
+<p class="text-gray-300">Our culture is built on innovation, collaboration, and respect. We value diverse perspectives and create an inclusive environment where everyone can contribute their best work. We balance high performance expectations with a supportive atmosphere that prioritizes work-life balance. Regular team events, both virtual and in-person, help build strong connections across the organization.</p>
+</div>
+</div>
+<!-- FAQ Item 6 -->
+<div class="glass-card p-6 rounded-lg">
+<button class="flex justify-between items-center w-full text-left focus:outline-none" id="faq-btn-6">
+<h3 class="text-lg font-bold font-space text-white">I don't see a position that matches my skills. Can I still apply?</h3>
+<i class="ri-arrow-down-s-line text-primary transition-transform duration-300" id="faq-icon-6"></i>
+</button>
+<div class="mt-4 hidden" id="faq-content-6">
+<p class="text-gray-300">Yes! We welcome general applications from talented individuals. Submit your resume through our "General Application" option, specifying your areas of expertise and interest. We'll keep your information on file and contact you if a suitable position becomes available. We're always looking for exceptional talent to join our team.</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<p class="text-gray-400 mb-6">Still have questions about working at TechInnovom?</p>
+<button id="contactRecruitingBtn" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Contact Our Recruiting Team</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Newsletter/Job Alerts Section -->
+<section class="py-16 sm:py-20 bg-[#0d0d16] relative overflow-hidden">
+<div class="container mx-auto px-4 sm:px-6">
+<div class="glass-card p-4 sm:p-6 md:p-10 rounded-lg border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+<div class="relative z-10">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="w-full md:w-1/2">
+<h2 class="text-3xl sm:text-4xl font-bold font-space mb-4">Stay Updated on <span class="gradient-text">New Opportunities</span></h2>
+<div class="neon-line w-32 mb-6"></div>
+<p class="text-gray-300 mb-6">Subscribe to our careers newsletter to receive notifications about new job openings, company updates, and industry insights.</p>
+<form class="space-y-4">
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-0">
+<input type="email" placeholder="Your email address" class="w-full px-4 py-3 sm:rounded-l rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 sm:border-r-0">
+<div class="flex flex-wrap gap-2">
+<label class="flex items-center whitespace-nowrap">
+<input type="radio" name="alert-frequency" value="all" class="custom-radio mr-2" checked>
+<span class="text-sm text-gray-300">All Jobs</span>
+</label>
+<label class="flex items-center whitespace-nowrap">
+<input type="radio" name="alert-frequency" value="matching" class="custom-radio mr-2">
+<span class="text-sm text-gray-300">Matching My Profile</span>
+</label>
+</div>
+<button type="submit" class="bg-gradient-to-r from-primary to-secondary px-6 py-3 sm:rounded-r rounded !rounded-button text-white hover:bg-opacity-90 transition-opacity duration-300 whitespace-nowrap">Subscribe</button>
+</div>
+<div class="flex items-start">
+<input type="checkbox" id="privacy-consent" class="custom-checkbox mt-1 flex-shrink-0">
+<label for="privacy-consent" class="ml-2 text-sm text-gray-400">I agree to receive job alerts and career information from TechInnovom</label>
+</div>
+</form>
+</div>
+<div class="w-full md:w-1/2 flex justify-center">
+<div class="glass-card p-6 rounded-lg border border-white/10 w-full max-w-md">
+<h3 class="text-xl font-bold font-space mb-4">Connect With Us</h3>
+<p class="text-gray-400 mb-6">Follow us on social media for the latest company news, tech insights, and career opportunities.</p>
+<div class="grid grid-cols-1 xs:grid-cols-2 gap-4">
+<a href="#" class="flex items-center p-3 glass-card rounded-lg border border-white/5 hover:border-primary/30 transition-colors duration-300 group">
+<div class="w-10 h-10 flex items-center justify-center mr-3">
+<i class="ri-linkedin-fill ri-lg text-primary"></i>
+</div>
+<span class="text-gray-300 group-hover:text-primary transition-colors duration-300">LinkedIn</span>
+</a>
+<a href="#" class="flex items-center p-3 glass-card rounded-lg border border-white/5 hover:border-primary/30 transition-colors duration-300 group">
+<div class="w-10 h-10 flex items-center justify-center mr-3">
+<i class="ri-twitter-x-fill ri-lg text-primary"></i>
+</div>
+<span class="text-gray-300 group-hover:text-primary transition-colors duration-300">Twitter</span>
+</a>
+<a href="#" class="flex items-center p-3 glass-card rounded-lg border border-white/5 hover:border-primary/30 transition-colors duration-300 group">
+<div class="w-10 h-10 flex items-center justify-center mr-3">
+<i class="ri-instagram-fill ri-lg text-primary"></i>
+</div>
+<span class="text-gray-300 group-hover:text-primary transition-colors duration-300">Instagram</span>
+</a>
+<a href="#" class="flex items-center p-3 glass-card rounded-lg border border-white/5 hover:border-primary/30 transition-colors duration-300 group">
+<div class="w-10 h-10 flex items-center justify-center mr-3">
+<i class="ri-github-fill ri-lg text-primary"></i>
+</div>
+<span class="text-gray-300 group-hover:text-primary transition-colors duration-300">GitHub</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#080810] text-white py-16 border-t border-white/5">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white flex items-center mb-6">
+<span class="gradient-text">TechInnovom</span>
+</a>
+<p class="text-gray-400 mb-6">Transforming businesses through innovative technology solutions. We help companies navigate the digital landscape with cutting-edge expertise.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card text-gray-400 rounded-full hover:text-primary hover:border-primary transition-colors duration-300 border border-white/5">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card text-gray-400 rounded-full hover:text-primary hover:border-primary transition-colors duration-300 border border-white/5">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card text-gray-400 rounded-full hover:text-primary hover:border-primary transition-colors duration-300 border border-white/5">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card text-gray-400 rounded-full hover:text-primary hover:border-primary transition-colors duration-300 border border-white/5">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6 text-white">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="index.html" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Portfolio</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Testimonials</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Contact</a></li>
+<li><a href="#" class="text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Careers</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6 text-white">Services</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Custom Software Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Cloud Computing Solutions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>AI & Machine Learning</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Mobile App Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Cybersecurity Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Data Analytics & BI</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6 text-white">Contact Us</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center glass-card text-primary rounded-full mr-3 border border-white/5">
+<i class="ri-map-pin-line"></i>
+</div>
+<div>
+<p class="text-gray-300">1250 Technology Drive, Suite 300<br>San Francisco, CA 94103</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center glass-card text-primary rounded-full mr-3 border border-white/5">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<p class="text-gray-300">careers@techinnovom.com<br>info@techinnovom.com</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center glass-card text-primary rounded-full mr-3 border border-white/5">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<p class="text-gray-300">+1 (415) 555-0123<br>+1 (800) 555-0124</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0 text-center md:text-left">© 2025 TechInnovom. All rights reserved.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-6">
+<a href="#" class="text-gray-500 text-sm hover:text-primary transition-colors duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 text-sm hover:text-primary transition-colors duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 text-sm hover:text-primary transition-colors duration-300">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<a href="#" class="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white shadow-lg hover:from-secondary hover:to-primary transition-colors duration-300 z-50">
+<i class="ri-arrow-up-line ri-lg"></i>
+</a>
+<!-- Job Application Modal (Hidden by Default) -->
+<div id="jobApplicationModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
+<div class="glass-card p-4 sm:p-8 rounded-lg border border-white/10 max-w-2xl w-full mx-4 relative max-h-[90vh] overflow-y-auto">
+<button id="closeApplicationModal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<h3 class="text-2xl font-bold font-space mb-6 text-white">Apply for <span id="jobTitlePlaceholder" class="gradient-text">Position</span></h3>
+<form id="applicationForm" class="space-y-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label for="firstName" class="block text-sm font-medium text-gray-300 mb-2">First Name</label>
+<input type="text" id="firstName" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required>
+</div>
+<div>
+<label for="lastName" class="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
+<input type="text" id="lastName" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+<input type="email" id="email" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required>
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required>
+</div>
+</div>
+<div>
+<label for="location" class="block text-sm font-medium text-gray-300 mb-2">Current Location</label>
+<input type="text" id="location" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-2">Resume/CV</label>
+<div class="flex items-center justify-center w-full">
+<label class="flex flex-col w-full h-32 border-2 border-dashed border-gray-600 hover:border-primary rounded-lg cursor-pointer transition-colors duration-300">
+<div class="flex flex-col items-center justify-center pt-7">
+<i class="ri-upload-cloud-line ri-2x text-gray-400"></i>
+<p class="pt-1 text-sm text-gray-400">Drag & drop your resume or click to browse</p>
+<p class="text-xs text-gray-500">PDF, DOC, DOCX (Max 5MB)</p>
+</div>
+<input type="file" class="hidden" accept=".pdf,.doc,.docx" required>
+</label>
+</div>
+</div>
+<div>
+<label for="coverLetter" class="block text-sm font-medium text-gray-300 mb-2">Cover Letter (Optional)</label>
+<textarea id="coverLetter" rows="4" class="w-full px-4 py-2 rounded focus:border-primary text-sm"></textarea>
+</div>
+<div>
+<label for="linkedIn" class="block text-sm font-medium text-gray-300 mb-2">LinkedIn Profile (Optional)</label>
+<input type="url" id="linkedIn" class="w-full px-4 py-2 rounded focus:border-primary text-sm" placeholder="https://linkedin.com/in/yourprofile">
+</div>
+<div>
+<label for="portfolio" class="block text-sm font-medium text-gray-300 mb-2">Portfolio/Website (Optional)</label>
+<input type="url" id="portfolio" class="w-full px-4 py-2 rounded focus:border-primary text-sm" placeholder="https://yourportfolio.com">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-2">How did you hear about us?</label>
+<div class="relative">
+<select class="w-full px-4 py-2 rounded custom-select focus:border-primary pr-8 text-sm">
+<option value="">Please select</option>
+<option value="linkedin">LinkedIn</option>
+<option value="indeed">Indeed</option>
+<option value="glassdoor">Glassdoor</option>
+<option value="referral">Employee Referral</option>
+<option value="website">Company Website</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<div class="flex items-start">
+<input type="checkbox" id="termsConsent" class="custom-checkbox mt-1 flex-shrink-0" required>
+<label for="termsConsent" class="ml-2 text-sm text-gray-400">
+I certify that all information provided is true and complete to the best of my knowledge. I understand that false information may disqualify me from consideration.
+</label>
+</div>
+<div class="mt-6">
+<button type="submit" class="w-full !rounded-button bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Submit Application</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Success Modal (Hidden by Default) -->
+<div id="successModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
+<div class="glass-card p-4 sm:p-8 rounded-lg border border-white/10 max-w-md w-full mx-4 relative">
+<button id="closeSuccessModal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="text-center">
+<div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-check-line ri-2x text-white"></i>
+</div>
+<h3 class="text-2xl font-bold font-space mb-4 text-white">Application Submitted!</h3>
+<p class="text-gray-300 mb-6">Thank you for your interest in joining our team. We've received your application and will review it shortly. You'll receive a confirmation email with next steps.</p>
+<button id="successDoneBtn" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Done</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Contact Recruiting Team Modal (Hidden by Default) -->
+<div id="contactRecruitingModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
+<div class="glass-card p-4 sm:p-8 rounded-lg border border-white/10 max-w-xl w-full mx-4 relative max-h-[90vh] overflow-y-auto">
+<button id="closeRecruitingModal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<h3 class="text-2xl font-bold font-space mb-6 text-white">Contact Our <span class="gradient-text">Recruiting Team</span></h3>
+<form id="recruitingContactForm" class="space-y-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label for="contactFirstName" class="block text-sm font-medium text-gray-300 mb-2">First Name</label>
+<input type="text" id="contactFirstName" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required>
+</div>
+<div>
+<label for="contactLastName" class="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
+<input type="text" id="contactLastName" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label for="contactEmail" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+<input type="email" id="contactEmail" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required>
+</div>
+<div>
+<label for="contactPhone" class="block text-sm font-medium text-gray-300 mb-2">Phone (Optional)</label>
+<input type="tel" id="contactPhone" class="w-full px-4 py-2 rounded focus:border-primary text-sm">
+</div>
+</div>
+<div>
+<label for="inquiryType" class="block text-sm font-medium text-gray-300 mb-2">Type of Inquiry</label>
+<div class="relative">
+<select id="inquiryType" class="w-full px-4 py-2 rounded custom-select focus:border-primary pr-8 text-sm" required>
+<option value="">Please select</option>
+<option value="general">General Career Information</option>
+<option value="application">Application Status</option>
+<option value="benefits">Benefits & Compensation</option>
+<option value="internship">Internship Opportunities</option>
+<option value="referral">Employee Referral Program</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<div>
+<label for="contactMessage" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+<textarea id="contactMessage" rows="4" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required></textarea>
+</div>
+<div class="flex items-start">
+<input type="checkbox" id="contactConsent" class="custom-checkbox mt-1 flex-shrink-0" required>
+<label for="contactConsent" class="ml-2 text-sm text-gray-400">
+I consent to TechInnovom collecting and storing my data to respond to my inquiry. I understand my information will be processed in accordance with the Privacy Policy.
+</label>
+</div>
+<div class="mt-6">
+<button type="submit" class="w-full !rounded-button bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Send Message</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Contact Success Modal (Hidden by Default) -->
+<div id="contactSuccessModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
+<div class="glass-card p-4 sm:p-8 rounded-lg border border-white/10 max-w-md w-full mx-4 relative">
+<button id="closeContactSuccessModal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="text-center">
+<div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-mail-send-line ri-2x text-white"></i>
+</div>
+<h3 class="text-2xl font-bold font-space mb-4 text-white">Message Sent!</h3>
+<p class="text-gray-300 mb-6">Thank you for contacting our recruiting team. We'll get back to you within 1-2 business days. Check your email for a confirmation of your inquiry.</p>
+<button id="contactSuccessDoneBtn" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Done</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Job Alert Modal (Hidden by Default) -->
+<div id="jobAlertModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
+<div class="glass-card p-4 sm:p-8 rounded-lg border border-white/10 max-w-xl w-full mx-4 relative max-h-[90vh] overflow-y-auto">
+<button id="closeJobAlertModal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<h3 class="text-2xl font-bold font-space mb-6 text-white">Create Job <span class="gradient-text">Alert</span></h3>
+<form id="jobAlertForm" class="space-y-4">
+<div>
+<label for="alertEmail" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+<input type="email" id="alertEmail" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required placeholder="Enter your email address">
+</div>
+<div>
+<label for="alertName" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+<input type="text" id="alertName" class="w-full px-4 py-2 rounded focus:border-primary text-sm" required placeholder="Enter your full name">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-2">Job Categories</label>
+<div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 gap-3">
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="engineering">
+<span class="ml-2 text-sm text-gray-300">Engineering</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="design">
+<span class="ml-2 text-sm text-gray-300">Design</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="product">
+<span class="ml-2 text-sm text-gray-300">Product</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="marketing">
+<span class="ml-2 text-sm text-gray-300">Marketing</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="sales">
+<span class="ml-2 text-sm text-gray-300">Sales</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="hr">
+<span class="ml-2 text-sm text-gray-300">Human Resources</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-2">Job Locations</label>
+<div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 gap-3">
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="sf">
+<span class="ml-2 text-sm text-gray-300">San Francisco, CA</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="ny">
+<span class="ml-2 text-sm text-gray-300">New York, NY</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="austin">
+<span class="ml-2 text-sm text-gray-300">Austin, TX</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="custom-checkbox" value="remote">
+<span class="ml-2 text-sm text-gray-300">Remote</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300 mb-2">Alert Frequency</label>
+<div class="relative">
+<select id="alertFrequency" class="w-full px-4 py-2 rounded custom-select focus:border-primary pr-8 text-sm" required>
+<option value="">Select frequency</option>
+<option value="daily">Daily</option>
+<option value="weekly">Weekly</option>
+<option value="biweekly">Bi-weekly</option>
+<option value="monthly">Monthly</option>
+</select>
+</div>
+</div>
+<div class="flex items-start">
+<input type="checkbox" id="alertConsent" class="custom-checkbox mt-1 flex-shrink-0" required>
+<label for="alertConsent" class="ml-2 text-sm text-gray-400">
+I consent to receiving job alerts from TechInnovom based on my preferences. I understand I can unsubscribe at any time.
+</label>
+</div>
+<div class="mt-6">
+<button type="submit" class="w-full !rounded-button bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Create Alert</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Job Alert Success Modal (Hidden by Default) -->
+<div id="jobAlertSuccessModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
+<div class="glass-card p-4 sm:p-8 rounded-lg border border-white/10 max-w-md w-full mx-4 relative">
+<button id="closeJobAlertSuccessModal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="text-center">
+<div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-notification-3-line ri-2x text-white"></i>
+</div>
+<h3 class="text-2xl font-bold font-space mb-4 text-white">Job Alert Created!</h3>
+<p class="text-gray-300 mb-6">You're all set! We'll send you notifications about new job openings that match your preferences. Check your email for a confirmation.</p>
+<button id="jobAlertSuccessDoneBtn" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Done</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Job Details Modal (Hidden by Default) -->
+<div id="jobDetailsModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
+<div class="glass-card p-4 sm:p-8 rounded-lg border border-white/10 max-w-3xl w-full mx-4 relative max-h-[90vh] overflow-y-auto">
+<button id="closeDetailsModal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="mb-6">
+<span id="jobCategoryBadge" class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs mb-2 inline-block">Engineering</span>
+<h3 id="jobDetailTitle" class="text-2xl font-bold font-space mb-2 text-white">Senior Full Stack Developer</h3>
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-400 mb-4">
+<div class="flex items-center mr-2 mb-1">
+<i class="ri-map-pin-line mr-1"></i>
+<span id="jobLocation">San Francisco, CA (Hybrid)</span>
+</div>
+<div class="flex items-center mr-2 mb-1">
+<i class="ri-time-line mr-1"></i>
+<span id="jobType">Full-time</span>
+</div>
+<div class="flex items-center mr-2 mb-1">
+<i class="ri-user-star-line mr-1"></i>
+<span id="jobExperience">5+ years experience</span>
+</div>
+<div class="flex items-center mb-1">
+<i class="ri-money-dollar-circle-line mr-1"></i>
+<span id="jobSalary">$120,000 - $160,000</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="text-lg font-bold font-space mb-3 text-white">Job Description</h4>
+<div id="jobDescription" class="text-gray-300 space-y-3">
+<p>We are seeking an experienced Full Stack Developer to join our engineering team. In this role, you will be responsible for developing and maintaining our core platform using modern web technologies. You will work closely with product managers, designers, and other developers to deliver high-quality, scalable solutions.</p>
+<p>As a Senior Full Stack Developer, you will have the opportunity to lead technical initiatives, mentor junior developers, and contribute to architectural decisions that shape our product's future.</p>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold font-space mb-3 text-white">Key Responsibilities</h4>
+<ul id="jobResponsibilities" class="text-gray-300 space-y-2 list-disc pl-5">
+<li>Design, develop, and maintain efficient, reusable, and reliable code for our web applications</li>
+<li>Collaborate with cross-functional teams to define, design, and ship new features</li>
+<li>Ensure the technical feasibility of UI/UX designs and optimize applications for maximum speed and scalability</li>
+<li>Implement security and data protection measures</li>
+<li>Participate in code reviews and mentor junior developers</li>
+<li>Stay up-to-date with emerging trends and technologies in web development</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold font-space mb-3 text-white">Requirements</h4>
+<ul id="jobRequirements" class="text-gray-300 space-y-2 list-disc pl-5">
+<li>5+ years of experience in full stack development</li>
+<li>Proficiency in JavaScript/TypeScript, React, Node.js, and modern frontend frameworks</li>
+<li>Experience with RESTful APIs and microservices architecture</li>
+<li>Familiarity with cloud services (AWS, Azure, or GCP)</li>
+<li>Strong understanding of database technologies (SQL and NoSQL)</li>
+<li>Experience with version control systems (Git) and CI/CD pipelines</li>
+<li>Excellent problem-solving skills and attention to detail</li>
+<li>Strong communication and collaboration abilities</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold font-space mb-3 text-white">Benefits</h4>
+<ul id="jobBenefits" class="text-gray-300 space-y-2 list-disc pl-5">
+<li>Competitive salary and performance bonuses</li>
+<li>Comprehensive health, dental, and vision insurance</li>
+<li>401(k) matching program</li>
+<li>Flexible work arrangements (hybrid or remote options)</li>
+<li>Professional development budget</li>
+<li>Paid time off and paid parental leave</li>
+<li>Regular team events and activities</li>
+<li>Modern equipment and tools</li>
+</ul>
+</div>
+<div class="pt-4 flex justify-center">
+<button id="applyFromDetails" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Apply for this Position</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+const isOpen = !mobileMenu.classList.contains('hidden');
+mobileMenuButton.innerHTML = isOpen ?
+'<i class="ri-close-line ri-2x"></i>' :
+'<i class="ri-menu-line ri-2x"></i>';
+});
+// Job Filtering Functionality
+const departmentSelect = document.getElementById('department');
+const locationSelect = document.getElementById('location');
+const jobSearch = document.getElementById('job-search');
+const jobCards = document.querySelectorAll('.job-card');
+const noResultsFound = document.getElementById('noResultsFound');
+const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+function filterJobs() {
+const departmentValue = departmentSelect.value.toLowerCase();
+const locationValue = locationSelect.value.toLowerCase();
+const searchValue = jobSearch.value.toLowerCase();
+const checkedFilters = Array.from(checkboxes)
+.filter(checkbox => checkbox.checked)
+.map(checkbox => checkbox.nextElementSibling.textContent.trim().toLowerCase());
+let visibleCount = 0;
+jobCards.forEach(card => {
+const title = card.querySelector('h3').textContent.toLowerCase();
+const category = card.querySelector('span').textContent.toLowerCase();
+const location = card.querySelector('.flex.items-center:nth-of-type(1) span').textContent.toLowerCase();
+const type = card.querySelector('.flex.items-center:nth-of-type(2) span').textContent.toLowerCase();
+const experience = card.querySelector('.flex.items-center:nth-of-type(3) span').textContent.toLowerCase();
+const description = card.querySelector('p').textContent.toLowerCase();
+const matchesDepartment = departmentValue === '' || category.includes(departmentValue);
+const matchesLocation = locationValue === '' || location.includes(locationValue);
+const matchesSearch = searchValue === '' ||
+title.includes(searchValue) ||
+description.includes(searchValue);
+let matchesCheckboxes = true;
+if (checkedFilters.length > 0) {
+matchesCheckboxes = checkedFilters.some(filter => {
+if (filter === 'full-time' && type.includes('full-time')) return true;
+if (filter === 'part-time' && type.includes('part-time')) return true;
+if (filter === 'contract' && type.includes('contract')) return true;
+if (filter === 'remote' && location.toLowerCase().includes('remote')) return true;
+if (filter === 'entry level' && experience.includes('2+')) return true;
+if (filter === 'senior level' && (experience.includes('5+') || experience.includes('4+'))) return true;
+return false;
+});
+}
+const isVisible = matchesDepartment && matchesLocation && matchesSearch && matchesCheckboxes;
+if (isVisible) {
+card.style.display = '';
+visibleCount++;
+} else {
+card.style.display = 'none';
+}
+});
+if (visibleCount === 0) {
+noResultsFound.classList.remove('hidden');
+} else {
+noResultsFound.classList.add('hidden');
+}
+}
+departmentSelect.addEventListener('change', filterJobs);
+locationSelect.addEventListener('change', filterJobs);
+jobSearch.addEventListener('input', filterJobs);
+checkboxes.forEach(checkbox => {
+checkbox.addEventListener('change', filterJobs);
+});
+resetFiltersBtn.addEventListener('click', function() {
+departmentSelect.value = '';
+locationSelect.value = '';
+jobSearch.value = '';
+checkboxes.forEach(checkbox => {
+checkbox.checked = false;
+});
+filterJobs();
+});
+// FAQ Accordion
+const faqButtons = document.querySelectorAll('[id^="faq-btn-"]');
+faqButtons.forEach(button => {
+button.addEventListener('click', function() {
+const contentId = this.id.replace('btn', 'content');
+const iconId = this.id.replace('btn', 'icon');
+const content = document.getElementById(contentId);
+const icon = document.getElementById(iconId);
+content.classList.toggle('hidden');
+if (!content.classList.contains('hidden')) {
+icon.style.transform = 'rotate(180deg)';
+} else {
+icon.style.transform = 'rotate(0)';
+}
+});
+});
+// Job Details Modal
+const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+const jobDetailsModal = document.getElementById('jobDetailsModal');
+const closeDetailsModal = document.getElementById('closeDetailsModal');
+const jobDetailTitle = document.getElementById('jobDetailTitle');
+const jobCategoryBadge = document.getElementById('jobCategoryBadge');
+const jobLocation = document.getElementById('jobLocation');
+const jobType = document.getElementById('jobType');
+const jobExperience = document.getElementById('jobExperience');
+const jobSalary = document.getElementById('jobSalary');
+const jobDescription = document.getElementById('jobDescription');
+const jobResponsibilities = document.getElementById('jobResponsibilities');
+const jobRequirements = document.getElementById('jobRequirements');
+const jobBenefits = document.getElementById('jobBenefits');
+const applyFromDetails = document.getElementById('applyFromDetails');
+viewDetailsButtons.forEach(button => {
+button.addEventListener('click', function() {
+const jobCard = this.closest('.job-card');
+const jobTitle = jobCard.querySelector('h3').textContent;
+const category = jobCard.querySelector('span').textContent;
+const locationText = jobCard.querySelector('.flex.items-center:nth-of-type(1) span').textContent;
+const typeText = jobCard.querySelector('.flex.items-center:nth-of-type(2) span').textContent;
+const experienceText = jobCard.querySelector('.flex.items-center:nth-of-type(3) span').textContent;
+// Set modal content
+jobDetailTitle.textContent = jobTitle;
+jobCategoryBadge.textContent = category;
+jobLocation.textContent = locationText;
+jobType.textContent = typeText;
+jobExperience.textContent = experienceText;
+// Set appropriate badge color based on category
+if (category.includes('Engineering')) {
+jobCategoryBadge.className = 'px-3 py-1 bg-primary/20 text-primary rounded-full text-xs mb-2 inline-block';
+} else if (category.includes('Design')) {
+jobCategoryBadge.className = 'px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs mb-2 inline-block';
+} else if (category.includes('Product')) {
+jobCategoryBadge.className = 'px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs mb-2 inline-block';
+} else if (category.includes('Marketing')) {
+jobCategoryBadge.className = 'px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs mb-2 inline-block';
+}
+// Set salary range based on experience
+if (experienceText.includes('5+')) {
+jobSalary.textContent = '$120,000 - $160,000';
+} else if (experienceText.includes('4+')) {
+jobSalary.textContent = '$110,000 - $145,000';
+} else if (experienceText.includes('3+')) {
+jobSalary.textContent = '$95,000 - $130,000';
+} else {
+jobSalary.textContent = '$80,000 - $110,000';
+}
+// Show the modal
+jobDetailsModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+});
+closeDetailsModal.addEventListener('click', function() {
+jobDetailsModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+applyFromDetails.addEventListener('click', function() {
+const jobTitle = jobDetailTitle.textContent;
+jobTitlePlaceholder.textContent = jobTitle;
+jobDetailsModal.classList.add('hidden');
+jobApplicationModal.classList.remove('hidden');
+});
+// Job Application Modal
+const applyButtons = document.querySelectorAll('.job-card button:not(.view-details-btn)');
+const jobApplicationModal = document.getElementById('jobApplicationModal');
+const closeApplicationModal = document.getElementById('closeApplicationModal');
+const jobTitlePlaceholder = document.getElementById('jobTitlePlaceholder');
+const applicationForm = document.getElementById('applicationForm');
+const successModal = document.getElementById('successModal');
+const closeSuccessModal = document.getElementById('closeSuccessModal');
+const successDoneBtn = document.getElementById('successDoneBtn');
+applyButtons.forEach(button => {
+button.addEventListener('click', function() {
+const jobTitle = this.closest('.job-card').querySelector('h3').textContent;
+jobTitlePlaceholder.textContent = jobTitle;
+jobApplicationModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+});
+closeApplicationModal.addEventListener('click', function() {
+jobApplicationModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+applicationForm.addEventListener('submit', function(e) {
+e.preventDefault();
+jobApplicationModal.classList.add('hidden');
+successModal.classList.remove('hidden');
+});
+closeSuccessModal.addEventListener('click', function() {
+successModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+applicationForm.reset();
+});
+successDoneBtn.addEventListener('click', function() {
+successModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+applicationForm.reset();
+});
+// Contact Recruiting Team Modal
+const contactRecruitingBtn = document.getElementById('contactRecruitingBtn');
+const contactRecruitingModal = document.getElementById('contactRecruitingModal');
+const closeRecruitingModal = document.getElementById('closeRecruitingModal');
+const recruitingContactForm = document.getElementById('recruitingContactForm');
+const contactSuccessModal = document.getElementById('contactSuccessModal');
+const closeContactSuccessModal = document.getElementById('closeContactSuccessModal');
+const contactSuccessDoneBtn = document.getElementById('contactSuccessDoneBtn');
+contactRecruitingBtn.addEventListener('click', function() {
+contactRecruitingModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+closeRecruitingModal.addEventListener('click', function() {
+contactRecruitingModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+recruitingContactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+contactRecruitingModal.classList.add('hidden');
+contactSuccessModal.classList.remove('hidden');
+});
+closeContactSuccessModal.addEventListener('click', function() {
+contactSuccessModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+recruitingContactForm.reset();
+});
+contactSuccessDoneBtn.addEventListener('click', function() {
+contactSuccessModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+recruitingContactForm.reset();
+});
+// Close modals when clicking outside
+window.addEventListener('click', function(e) {
+if (e.target === jobApplicationModal) {
+jobApplicationModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (e.target === successModal) {
+successModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+applicationForm.reset();
+}
+if (e.target === jobDetailsModal) {
+jobDetailsModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (e.target === contactRecruitingModal) {
+contactRecruitingModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (e.target === contactSuccessModal) {
+contactSuccessModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+recruitingContactForm.reset();
+}
+if (e.target === jobAlertModal) {
+jobAlertModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (e.target === jobAlertSuccessModal) {
+jobAlertSuccessModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+jobAlertForm.reset();
+}
+});
+// Close modals with Escape key
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') {
+if (!jobApplicationModal.classList.contains('hidden')) {
+jobApplicationModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (!successModal.classList.contains('hidden')) {
+successModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+applicationForm.reset();
+}
+if (!jobDetailsModal.classList.contains('hidden')) {
+jobDetailsModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (!contactRecruitingModal.classList.contains('hidden')) {
+contactRecruitingModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (!contactSuccessModal.classList.contains('hidden')) {
+contactSuccessModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+recruitingContactForm.reset();
+}
+if (!jobAlertModal.classList.contains('hidden')) {
+jobAlertModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (!jobAlertSuccessModal.classList.contains('hidden')) {
+jobAlertSuccessModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+jobAlertForm.reset();
+}
+}
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+}
+}
+});
+});
+});
+</script>
+</body>
+</html>

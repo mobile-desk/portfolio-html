@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Projects - TechInnovom</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#00B4DB',secondary:'#B721FF'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+background-color: #0a0a12;
+color: #e2e8f0;
+overflow-x: hidden;
+width: 100%;
+min-width: 320px;
+}
+.font-space {
+font-family: 'Space Grotesk', sans-serif;
+}
+.gradient-text {
+background: linear-gradient(90deg, #00B4DB, #B721FF);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+.gradient-border {
+position: relative;
+border-radius: 8px;
+background: linear-gradient(to right, #0a0a12, #0a0a12);
+}
+.gradient-border::before {
+content: "";
+position: absolute;
+inset: 0;
+border-radius: 8px;
+padding: 1px;
+background: linear-gradient(45deg, #00B4DB, #B721FF);
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+pointer-events: none;
+}
+.glass-card {
+background: rgba(22, 22, 30, 0.7);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.projects-header-bg {
+background-image: url('https://public.readdy.ai/ai/img_res/88ed5ede0be3a876e7407e0257ed2d67.jpg');
+background-size: cover;
+background-position: center;
+}
+.portfolio-item {
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+overflow: hidden;
+}
+.portfolio-item:hover {
+transform: scale(1.03);
+box-shadow: 0 0 30px rgba(0, 180, 219, 0.2);
+}
+@media (max-width: 640px) {
+  .portfolio-item:hover {
+    transform: scale(1.02);
+  }
+  .projects-header-bg {
+    background-position: 70% center;
+  }
+}
+.portfolio-overlay {
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+background: rgba(10, 10, 18, 0.8);
+opacity: 0;
+}
+.portfolio-item:hover .portfolio-overlay {
+opacity: 1;
+}
+.tag-item {
+transition: all 0.3s ease;
+}
+.tag-item.active {
+background: linear-gradient(90deg, #00B4DB, #B721FF);
+color: white;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 1px solid rgba(255, 255, 255, 0.2);
+background: rgba(255, 255, 255, 0.05);
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #00B4DB;
+border-color: #00B4DB;
+}
+.custom-checkbox:checked::after {
+content: "";
+position: absolute;
+top: 2px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.search-input {
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.search-input:focus {
+border-color: #00B4DB;
+box-shadow: 0 0 0 2px rgba(0, 180, 219, 0.2);
+}
+.particle {
+position: absolute;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(0, 180, 219, 0.8) 0%, rgba(0, 180, 219, 0) 70%);
+pointer-events: none;
+transform: translate(-50%, -50%);
+animation: float 6s infinite ease-in-out;
+}
+@keyframes float {
+0%, 100% { transform: translate(-50%, -50%) translateY(0) scale(1); }
+50% { transform: translate(-50%, -50%) translateY(-20px) scale(1.1); }
+}
+.neon-line {
+height: 1px;
+background: linear-gradient(90deg, rgba(0,180,219,0), rgba(0,180,219,1) 50%, rgba(0,180,219,0));
+animation: glow 2s infinite ease-in-out;
+}
+@keyframes glow {
+0%, 100% { opacity: 0.3; }
+50% { opacity: 1; }
+}
+.custom-select {
+appearance: none;
+-webkit-appearance: none;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a0aec0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+background-repeat: no-repeat;
+background-position: right 0.5rem center;
+background-size: 1.5em 1.5em;
+}
+</style>
+</head>
+<body class="bg-[#0a0a12]">
+<!-- Header/Navigation -->
+<header class="fixed top-0 left-0 w-full glass-card z-50 border-b border-[rgba(255,255,255,0.05)]">
+<div class="container mx-auto px-6 py-4 flex items-center justify-between">
+<a href="#" class="text-3xl font-['Pacifico'] flex items-center">
+<span class="gradient-text">TechInnovom</span>
+</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="text-gray-300 hover:text-primary transition-all duration-300 relative group">
+Home
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-all duration-300 relative group">
+Services
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-all duration-300 relative group">
+Testimonials
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#" class="text-primary transition-all duration-300 relative group">
+Portfolio
+<span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary"></span>
+</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-all duration-300 relative group">
+Contact
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+</nav>
+<!-- Mobile Navigation Toggle -->
+<button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-menu-line ri-2x"></i>
+</button>
+</div>
+<!-- Mobile Navigation Menu (Hidden by Default) -->
+<div id="mobileMenu" class="hidden md:hidden glass-card px-6 py-4 absolute top-full left-0 right-0 z-50 border-t border-white/5">
+<div class="flex flex-col space-y-4 py-2">
+<a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Home</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Services</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Testimonials</a>
+<a href="#" class="text-primary transition-colors duration-300 py-2">Portfolio</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Contact</a>
+</div>
+</div>
+</header>
+<!-- Projects Header Section -->
+<section class="projects-header-bg pt-28 sm:pt-32 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden">
+<div class="absolute inset-0 bg-[#0a0a12] bg-opacity-60"></div>
+<div class="particle w-32 h-32 top-1/4 left-1/4 opacity-30"></div>
+<div class="particle w-20 h-20 top-3/4 left-1/3 opacity-20"></div>
+<div class="container mx-auto px-4 sm:px-6 relative z-10">
+<div class="text-center mb-8 sm:mb-12">
+<div class="inline-block px-3 sm:px-4 py-1 text-xs font-semibold tracking-wider glass-card rounded-full mb-4">OUR PORTFOLIO</div>
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-space mb-4 sm:mb-6">
+Our <span class="gradient-text">Projects</span>
+</h1>
+<div class="neon-line w-32 sm:w-40 mx-auto mb-4 sm:mb-6"></div>
+<p class="text-base sm:text-lg text-gray-300 max-w-xl sm:max-w-2xl mx-auto px-2">
+Explore our comprehensive portfolio of innovative technology solutions delivered across various industries and technologies.
+</p>
+</div>
+</div>
+</section>
+<!-- Filter and Search Section -->
+<section class="py-10 bg-[#0d0d16]">
+<div class="container mx-auto px-4 sm:px-6">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 sm:gap-6 mb-10">
+<!-- Search Bar -->
+<div class="w-full lg:w-1/3">
+<div class="relative">
+<input type="text" placeholder="Search projects..." class="w-full pl-10 pr-4 py-2 sm:py-3 rounded search-input text-sm focus:outline-none">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<i class="ri-search-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-col sm:flex-row w-full lg:w-auto gap-3 sm:gap-4">
+<div class="relative w-full sm:w-auto">
+<select class="custom-select bg-transparent border border-white/10 rounded text-gray-300 px-4 py-2 sm:py-3 pr-10 focus:outline-none focus:border-primary text-sm w-full">
+<option value="">All Industries</option>
+<option value="finance">Finance</option>
+<option value="healthcare">Healthcare</option>
+<option value="retail">Retail</option>
+<option value="technology">Technology</option>
+<option value="education">Education</option>
+</select>
+</div>
+<div class="relative w-full sm:w-auto">
+<select class="custom-select bg-transparent border border-white/10 rounded text-gray-300 px-4 py-2 sm:py-3 pr-10 focus:outline-none focus:border-primary text-sm w-full">
+<option value="">Sort By</option>
+<option value="newest">Newest First</option>
+<option value="oldest">Oldest First</option>
+<option value="name-asc">Name (A-Z)</option>
+<option value="name-desc">Name (Z-A)</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Technology Tags -->
+<div class="flex justify-center mb-12 overflow-x-auto pb-4">
+<div class="inline-flex glass-card p-1 rounded-full flex-wrap sm:flex-nowrap justify-center max-w-full">
+<button class="tag-item px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-white !rounded-button whitespace-nowrap m-1 sm:m-0 text-xs sm:text-sm">All Projects</button>
+<button class="tag-item px-3 sm:px-4 py-2 rounded-full text-gray-300 hover:text-primary !rounded-button whitespace-nowrap m-1 sm:m-0 text-xs sm:text-sm">Web Development</button>
+<button class="tag-item px-3 sm:px-4 py-2 rounded-full text-gray-300 hover:text-primary !rounded-button whitespace-nowrap m-1 sm:m-0 text-xs sm:text-sm">Mobile Apps</button>
+<button class="tag-item px-3 sm:px-4 py-2 rounded-full text-gray-300 hover:text-primary !rounded-button whitespace-nowrap m-1 sm:m-0 text-xs sm:text-sm">AI & ML</button>
+<button class="tag-item px-3 sm:px-4 py-2 rounded-full text-gray-300 hover:text-primary !rounded-button whitespace-nowrap m-1 sm:m-0 text-xs sm:text-sm">Cloud Solutions</button>
+<button class="tag-item px-3 sm:px-4 py-2 rounded-full text-gray-300 hover:text-primary !rounded-button whitespace-nowrap m-1 sm:m-0 text-xs sm:text-sm">Cybersecurity</button>
+</div>
+</div>
+<!-- Results Count -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+<p class="text-gray-400 text-sm sm:text-base">Showing <span class="text-white font-medium">24</span> of <span class="text-white font-medium">48</span> projects</p>
+<button class="flex items-center text-gray-400 hover:text-primary transition-colors duration-300 text-sm sm:text-base">
+<i class="ri-refresh-line mr-2"></i> Reset Filters
+</button>
+</div>
+<!-- Projects Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+<!-- Project 1 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-40 sm:h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/98ce7d871fabb38b65e5f030363a965a.jpg" alt="FinTech Dashboard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-4 sm:p-6">
+<div class="flex flex-wrap gap-2 mb-2 sm:mb-3">
+<span class="px-2 py-0.5 sm:py-1 bg-primary/20 text-primary rounded-full text-xs">Web App</span>
+<span class="px-2 py-0.5 sm:py-1 bg-secondary/20 text-secondary rounded-full text-xs">Finance</span>
+</div>
+<h3 class="text-lg sm:text-xl font-bold font-space mb-1 sm:mb-2 text-white">FinTech Dashboard</h3>
+<p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Advanced financial analytics platform with real-time data visualization and AI-powered insights for investment tracking.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary text-sm font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="FinTech Dashboard">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-xs sm:text-sm">April 2025</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/16c7902d35e42a5a925da9a56a653d99.jpg" alt="MediTrack App" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">Mobile App</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Healthcare</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">MediTrack App</h3>
+<p class="text-gray-400 mb-4">Healthcare monitoring mobile application for patients and providers with telemedicine integration and health analytics.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="MediTrack App">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">March 2025</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/237a5e5abc49dee419a7da3fa161bbb8.jpg" alt="RetailAI System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">AI & ML</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Retail</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">RetailAI System</h3>
+<p class="text-gray-400 mb-4">AI-powered retail analytics for customer behavior tracking and inventory optimization with predictive sales forecasting.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="RetailAI System">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">February 2025</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/300ead2152164cfa55aee10dfd5889c7.jpg" alt="CloudOps Platform" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">Cloud</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">DevOps</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">CloudOps Platform</h3>
+<p class="text-gray-400 mb-4">Enterprise cloud infrastructure management and optimization solution with automated scaling and security monitoring.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="CloudOps Platform">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">January 2025</span>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/47db31561066ed6c794f9b33b0950cb1.jpg" alt="SmartHome Hub" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">IoT</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Consumer</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">SmartHome Hub</h3>
+<p class="text-gray-400 mb-4">IoT platform connecting and controlling smart home devices with energy optimization and security monitoring features.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="SmartHome Hub">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">December 2024</span>
+</div>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f369f04c70262df9cee0e0253716b284.jpg" alt="SecureGuard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">Security</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Enterprise</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">SecureGuard</h3>
+<p class="text-gray-400 mb-4">Comprehensive cybersecurity monitoring and threat detection system with AI-powered vulnerability assessment.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="SecureGuard">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">November 2024</span>
+</div>
+</div>
+</div>
+<!-- Project 7 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f369f04c70262df9cee0e0253716b285.jpg" alt="EduTech Platform" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">Web App</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Education</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">EduTech Platform</h3>
+<p class="text-gray-400 mb-4">Adaptive learning platform with personalized education paths and real-time progress tracking for students and educators.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="EduTech Platform">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">October 2024</span>
+</div>
+</div>
+</div>
+<!-- Project 8 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f369f04c70262df9cee0e0253716b286.jpg" alt="LogiTrack System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">Web App</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Logistics</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">LogiTrack System</h3>
+<p class="text-gray-400 mb-4">Supply chain management platform with real-time tracking, route optimization, and predictive delivery estimates.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="LogiTrack System">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">September 2024</span>
+</div>
+</div>
+</div>
+<!-- Project 9 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f369f04c70262df9cee0e0253716b287.jpg" alt="VR Gaming Platform" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">VR/AR</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Gaming</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">VR Gaming Platform</h3>
+<p class="text-gray-400 mb-4">Immersive virtual reality gaming environment with multiplayer capabilities and advanced physics engine integration.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="VR Gaming Platform">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">August 2024</span>
+</div>
+</div>
+</div>
+<!-- Project 10 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f369f04c70262df9cee0e0253716b288.jpg" alt="CryptoTrade Platform" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">Blockchain</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Finance</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">CryptoTrade Platform</h3>
+<p class="text-gray-400 mb-4">Secure cryptocurrency trading platform with real-time market analysis and automated trading strategy implementation.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="CryptoTrade Platform">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">July 2024</span>
+</div>
+</div>
+</div>
+<!-- Project 11 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f369f04c70262df9cee0e0253716b289.jpg" alt="SmartCity Dashboard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">IoT</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Government</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">SmartCity Dashboard</h3>
+<p class="text-gray-400 mb-4">Urban management system with integrated IoT sensors for traffic, utilities, and public services optimization and monitoring.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="SmartCity Dashboard">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">June 2024</span>
+</div>
+</div>
+</div>
+<!-- Project 12 -->
+<div class="portfolio-item glass-card rounded-lg relative overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f369f04c70262df9cee0e0253716b290.jpg" alt="AgriTech Platform" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs">IoT</span>
+<span class="px-2 py-1 bg-secondary/20 text-secondary rounded-full text-xs">Agriculture</span>
+</div>
+<h3 class="text-xl font-bold font-space mb-2 text-white">AgriTech Platform</h3>
+<p class="text-gray-400 mb-4">Precision agriculture system with drone imagery, soil sensors, and AI-driven crop health analysis and yield prediction.</p>
+<div class="flex justify-between items-center">
+<button class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300 group view-details-btn" data-project="AgriTech Platform">
+View Details
+<i class="ri-arrow-right-line ri-sm ml-1 transition-transform duration-300 group-hover:translate-x-2"></i>
+</button>
+<span class="text-gray-500 text-sm">May 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-12 sm:mt-16">
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a href="#" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center glass-card rounded-full text-gray-400 hover:text-primary hover:border-primary border border-white/10 transition-colors duration-300">
+<i class="ri-arrow-left-s-line"></i>
+</a>
+<a href="#" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center glass-card rounded-full text-white bg-gradient-to-r from-primary to-secondary border border-white/10 transition-colors duration-300">1</a>
+<a href="#" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center glass-card rounded-full text-gray-400 hover:text-primary hover:border-primary border border-white/10 transition-colors duration-300">2</a>
+<a href="#" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center glass-card rounded-full text-gray-400 hover:text-primary hover:border-primary border border-white/10 transition-colors duration-300">3</a>
+<a href="#" class="hidden sm:flex w-8 h-8 sm:w-10 sm:h-10 items-center justify-center glass-card rounded-full text-gray-400 hover:text-primary hover:border-primary border border-white/10 transition-colors duration-300">4</a>
+<a href="#" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center glass-card rounded-full text-gray-400 hover:text-primary hover:border-primary border border-white/10 transition-colors duration-300">
+<i class="ri-arrow-right-s-line"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-12 sm:py-16 md:py-20 bg-[#0a0a12] relative overflow-hidden">
+<div class="particle w-32 h-32 top-1/4 right-1/3 opacity-20"></div>
+<div class="particle w-24 h-24 bottom-1/3 left-1/4 opacity-15"></div>
+<div class="container mx-auto px-4 sm:px-6">
+<div class="glass-card p-6 sm:p-8 md:p-12 rounded-lg border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+<div class="relative z-10">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-space mb-4 sm:mb-6">Ready to Start Your <span class="gradient-text">Next Project</span> With Us?</h2>
+<p class="text-gray-300 text-sm sm:text-base mb-6 sm:mb-8">Let's discuss how our technology expertise can help transform your business ideas into reality. Our team is ready to create innovative solutions tailored to your specific needs.</p>
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+<button id="contactUsBtn" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Contact Us Today</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+<button id="scheduleConsultationBtn" class="!rounded-button glass-card border border-white/10 text-white px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-medium hover:border-primary transition-all duration-300 whitespace-nowrap">
+Schedule a Consultation
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#080810] text-white py-10 sm:py-12 md:py-16 border-t border-white/5">
+<div class="container mx-auto px-4 sm:px-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white flex items-center mb-6">
+<span class="gradient-text">TechInnovom</span>
+</a>
+<p class="text-gray-400 mb-6">Transforming businesses through innovative technology solutions. We help companies navigate the digital landscape with cutting-edge expertise.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card text-gray-400 rounded-full hover:text-primary hover:border-primary transition-colors duration-300 border border-white/5">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card text-gray-400 rounded-full hover:text-primary hover:border-primary transition-colors duration-300 border border-white/5">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card text-gray-400 rounded-full hover:text-primary hover:border-primary transition-colors duration-300 border border-white/5">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center glass-card text-gray-400 rounded-full hover:text-primary hover:border-primary transition-colors duration-300 border border-white/5">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6 text-white">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Portfolio</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Testimonials</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Careers</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6 text-white">Services</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Custom Software Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Cloud Computing Solutions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>AI & Machine Learning</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Mobile App Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Cybersecurity Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center group"><i class="ri-arrow-right-s-line mr-2 transition-transform duration-300 group-hover:translate-x-1"></i>Data Analytics & BI</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6 text-white">Newsletter</h3>
+<p class="text-gray-400 mb-4">Subscribe to our newsletter to receive updates on the latest technology trends and company news.</p>
+<form class="mb-4">
+<div class="flex flex-col sm:flex-row gap-2 sm:gap-0">
+<input type="email" placeholder="Your email address" class="w-full px-4 py-2 sm:rounded-l rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 sm:border-r-0">
+<button type="submit" class="bg-gradient-to-r from-primary to-secondary px-4 py-2 sm:rounded-r rounded !rounded-button text-white hover:bg-opacity-90 transition-opacity duration-300 whitespace-nowrap">Subscribe</button>
+</div>
+</form>
+<div class="flex items-center space-x-4">
+<div class="flex items-center justify-center">
+<i class="ri-visa-fill ri-xl text-gray-400"></i>
+</div>
+<div class="flex items-center justify-center">
+<i class="ri-mastercard-fill ri-xl text-gray-400"></i>
+</div>
+<div class="flex items-center justify-center">
+<i class="ri-paypal-fill ri-xl text-gray-400"></i>
+</div>
+<div class="flex items-center justify-center">
+<i class="ri-apple-fill ri-xl text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-10 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-xs sm:text-sm mb-4 md:mb-0 text-center md:text-left">© 2025 TechInnovom. All rights reserved.</p>
+<div class="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
+<a href="#" class="text-gray-500 text-xs sm:text-sm hover:text-primary transition-colors duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 text-xs sm:text-sm hover:text-primary transition-colors duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 text-xs sm:text-sm hover:text-primary transition-colors duration-300">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<a href="#" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white shadow-lg hover:from-secondary hover:to-primary transition-colors duration-300 z-50">
+<i class="ri-arrow-up-line ri-lg"></i>
+</a>
+<!-- Project Details Modal -->
+<div id="projectModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+<div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+<div class="fixed inset-0 transition-opacity" aria-hidden="true">
+<div class="absolute inset-0 bg-[#0a0a12] opacity-90"></div>
+</div>
+<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+<div class="inline-block glass-card rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl md:max-w-2xl lg:max-w-3xl w-full border border-white/10">
+<div class="relative">
+<button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white z-10 w-8 h-8 flex items-center justify-center glass-card rounded-full">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div id="modalContent" class="p-6">
+<!-- Content will be dynamically inserted here -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Request Project Form Modal -->
+<div id="requestFormModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+<div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+<div class="fixed inset-0 transition-opacity" aria-hidden="true">
+<div class="absolute inset-0 bg-[#0a0a12] opacity-90"></div>
+</div>
+<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+<div class="inline-block glass-card rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-white/10">
+<div class="relative">
+<button id="closeRequestForm" class="absolute top-4 right-4 text-gray-400 hover:text-white z-10 w-8 h-8 flex items-center justify-center glass-card rounded-full">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="p-6">
+<h3 class="text-2xl font-bold font-space mb-6 text-white">Request Similar Project</h3>
+<p class="text-gray-300 mb-6">Fill out the form below and our team will get back to you with a custom proposal for your project.</p>
+<form id="projectRequestForm" class="space-y-4">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+<input type="text" id="name" name="name" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+<input type="email" id="email" name="email" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required>
+</div>
+<div>
+<label for="company" class="block text-sm font-medium text-gray-300 mb-1">Company Name</label>
+<input type="text" id="company" name="company" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30">
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Phone Number</label>
+<input type="tel" id="phone" name="phone" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30">
+</div>
+<div>
+<label for="projectType" class="block text-sm font-medium text-gray-300 mb-1">Project Type</label>
+<select id="projectType" name="projectType" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30 pr-8 custom-select">
+<option value="">Select Project Type</option>
+<option value="web">Web Application</option>
+<option value="mobile">Mobile Application</option>
+<option value="ai">AI & Machine Learning</option>
+<option value="cloud">Cloud Solutions</option>
+<option value="iot">IoT Systems</option>
+<option value="security">Cybersecurity</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div>
+<label for="budget" class="block text-sm font-medium text-gray-300 mb-1">Estimated Budget</label>
+<select id="budget" name="budget" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30 pr-8 custom-select">
+<option value="">Select Budget Range</option>
+<option value="5k-10k">$5,000 - $10,000</option>
+<option value="10k-25k">$10,000 - $25,000</option>
+<option value="25k-50k">$25,000 - $50,000</option>
+<option value="50k-100k">$50,000 - $100,000</option>
+<option value="100k+">$100,000+</option>
+</select>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-300 mb-1">Project Details</label>
+<textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required></textarea>
+</div>
+<div class="flex items-start mt-4">
+<input type="checkbox" id="privacy" name="privacy" class="custom-checkbox mt-1" required>
+<label for="privacy" class="ml-2 block text-sm text-gray-300">
+I agree to the <a href="#" class="text-primary hover:text-secondary">Privacy Policy</a> and consent to being contacted regarding my request.
+</label>
+</div>
+<div class="mt-6">
+<button type="submit" class="w-full !rounded-button bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Submit Request</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Success Message Modal -->
+<div id="successModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+<div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+<div class="fixed inset-0 transition-opacity" aria-hidden="true">
+<div class="absolute inset-0 bg-[#0a0a12] opacity-90"></div>
+</div>
+<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+<div class="inline-block glass-card rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full border border-white/10">
+<div class="relative">
+<button id="closeSuccessModal" class="absolute top-4 right-4 text-gray-400 hover:text-white z-10 w-8 h-8 flex items-center justify-center glass-card rounded-full">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="p-6 text-center">
+<div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-check-line ri-2x text-white"></i>
+</div>
+<h3 class="text-2xl font-bold font-space mb-4 text-white">Request Submitted!</h3>
+<p class="text-gray-300 mb-6">Thank you for your interest. Our team will review your project details and get back to you within 24-48 hours.</p>
+<button id="successDoneBtn" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Done</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Us Modal -->
+<div id="contactUsModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+<div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+<div class="fixed inset-0 transition-opacity" aria-hidden="true">
+<div class="absolute inset-0 bg-[#0a0a12] opacity-90"></div>
+</div>
+<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+<div class="inline-block glass-card rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-white/10">
+<div class="relative">
+<button id="closeContactModal" class="absolute top-4 right-4 text-gray-400 hover:text-white z-10 w-8 h-8 flex items-center justify-center glass-card rounded-full">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="p-6">
+<h3 class="text-2xl font-bold font-space mb-6 text-white">Contact Us</h3>
+<p class="text-gray-300 mb-6">Fill out the form below and our team will get back to you as soon as possible.</p>
+<form id="contactForm" class="space-y-4">
+<div>
+<label for="contactName" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+<input type="text" id="contactName" name="contactName" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required>
+</div>
+<div>
+<label for="contactEmail" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+<input type="email" id="contactEmail" name="contactEmail" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required>
+</div>
+<div>
+<label for="contactPhone" class="block text-sm font-medium text-gray-300 mb-1">Phone Number</label>
+<input type="tel" id="contactPhone" name="contactPhone" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30">
+</div>
+<div>
+<label for="contactSubject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+<input type="text" id="contactSubject" name="contactSubject" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required>
+</div>
+<div>
+<label for="contactMessage" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+<textarea id="contactMessage" name="contactMessage" rows="4" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required></textarea>
+</div>
+<div class="flex items-start mt-4">
+<input type="checkbox" id="contactPrivacy" name="contactPrivacy" class="custom-checkbox mt-1" required>
+<label for="contactPrivacy" class="ml-2 block text-sm text-gray-300">
+I agree to the <a href="#" class="text-primary hover:text-secondary">Privacy Policy</a> and consent to being contacted regarding my inquiry.
+</label>
+</div>
+<div class="mt-6">
+<button type="submit" class="w-full !rounded-button bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Send Message</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Schedule Consultation Modal -->
+<div id="scheduleModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+<div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+<div class="fixed inset-0 transition-opacity" aria-hidden="true">
+<div class="absolute inset-0 bg-[#0a0a12] opacity-90"></div>
+</div>
+<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+<div class="inline-block glass-card rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-white/10">
+<div class="relative">
+<button id="closeScheduleModal" class="absolute top-4 right-4 text-gray-400 hover:text-white z-10 w-8 h-8 flex items-center justify-center glass-card rounded-full">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<div class="p-6">
+<h3 class="text-2xl font-bold font-space mb-6 text-white">Schedule a Consultation</h3>
+<p class="text-gray-300 mb-6">Select your preferred date and time for a consultation with our experts.</p>
+<form id="scheduleForm" class="space-y-4">
+<div>
+<label for="scheduleName" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+<input type="text" id="scheduleName" name="scheduleName" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required>
+</div>
+<div>
+<label for="scheduleEmail" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+<input type="email" id="scheduleEmail" name="scheduleEmail" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required>
+</div>
+<div>
+<label for="schedulePhone" class="block text-sm font-medium text-gray-300 mb-1">Phone Number</label>
+<input type="tel" id="schedulePhone" name="schedulePhone" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required>
+</div>
+<div>
+<label for="scheduleDate" class="block text-sm font-medium text-gray-300 mb-1">Preferred Date</label>
+<input type="date" id="scheduleDate" name="scheduleDate" min="2025-04-09" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30" required>
+</div>
+<div>
+<label for="scheduleTime" class="block text-sm font-medium text-gray-300 mb-1">Preferred Time</label>
+<select id="scheduleTime" name="scheduleTime" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30 pr-8 custom-select" required>
+<option value="">Select a time slot</option>
+<option value="09:00">09:00 AM - 10:00 AM</option>
+<option value="10:00">10:00 AM - 11:00 AM</option>
+<option value="11:00">11:00 AM - 12:00 PM</option>
+<option value="13:00">01:00 PM - 02:00 PM</option>
+<option value="14:00">02:00 PM - 03:00 PM</option>
+<option value="15:00">03:00 PM - 04:00 PM</option>
+<option value="16:00">04:00 PM - 05:00 PM</option>
+</select>
+</div>
+<div>
+<label for="scheduleService" class="block text-sm font-medium text-gray-300 mb-1">Service Interest</label>
+<select id="scheduleService" name="scheduleService" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30 pr-8 custom-select" required>
+<option value="">Select a service</option>
+<option value="web">Web Development</option>
+<option value="mobile">Mobile App Development</option>
+<option value="ai">AI & Machine Learning</option>
+<option value="cloud">Cloud Solutions</option>
+<option value="security">Cybersecurity</option>
+<option value="iot">IoT Development</option>
+<option value="other">Other Services</option>
+</select>
+</div>
+<div>
+<label for="scheduleNotes" class="block text-sm font-medium text-gray-300 mb-1">Additional Notes</label>
+<textarea id="scheduleNotes" name="scheduleNotes" rows="3" class="w-full px-4 py-2 rounded !rounded-button border-none focus:outline-none text-sm bg-white/5 focus:ring-2 focus:ring-primary/30"></textarea>
+</div>
+<div class="flex items-start mt-4">
+<input type="checkbox" id="schedulePrivacy" name="schedulePrivacy" class="custom-checkbox mt-1" required>
+<label for="schedulePrivacy" class="ml-2 block text-sm text-gray-300">
+I agree to the <a href="#" class="text-primary hover:text-secondary">Privacy Policy</a> and consent to being contacted regarding my consultation request.
+</label>
+</div>
+<div class="mt-6">
+<button type="submit" class="w-full !rounded-button bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 font-medium transition-all duration-300 whitespace-nowrap relative overflow-hidden group">
+<span class="relative z-10">Schedule Consultation</span>
+<span class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+const isOpen = !mobileMenu.classList.contains('hidden');
+mobileMenuButton.innerHTML = isOpen ?
+'<i class="ri-close-line ri-2x"></i>' :
+'<i class="ri-menu-line ri-2x"></i>';
+});
+// Tag filter buttons
+const tagButtons = document.querySelectorAll('.tag-item');
+tagButtons.forEach(button => {
+button.addEventListener('click', () => {
+// Remove active class from all buttons
+tagButtons.forEach(btn => {
+btn.classList.remove('active');
+btn.classList.add('text-gray-300');
+btn.classList.add('hover:text-primary');
+});
+// Add active class to clicked button
+button.classList.add('active');
+button.classList.remove('text-gray-300');
+button.classList.remove('hover:text-primary');
+});
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+}
+}
+});
+});
+// Contact Us and Schedule Consultation buttons
+const contactUsBtn = document.getElementById('contactUsBtn');
+const scheduleConsultationBtn = document.getElementById('scheduleConsultationBtn');
+const contactUsModal = document.getElementById('contactUsModal');
+const scheduleModal = document.getElementById('scheduleModal');
+const closeContactModal = document.getElementById('closeContactModal');
+const closeScheduleModal = document.getElementById('closeScheduleModal');
+const contactForm = document.getElementById('contactForm');
+const scheduleForm = document.getElementById('scheduleForm');
+// Set minimum date for schedule date picker to tomorrow
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+document.getElementById('scheduleDate').min = tomorrowFormatted;
+// Open Contact Us modal
+contactUsBtn.addEventListener('click', function() {
+contactUsModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+// Open Schedule Consultation modal
+scheduleConsultationBtn.addEventListener('click', function() {
+scheduleModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+// Close Contact Us modal
+closeContactModal.addEventListener('click', function() {
+contactUsModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+// Close Schedule Consultation modal
+closeScheduleModal.addEventListener('click', function() {
+scheduleModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+// Close Contact Us modal when clicking outside
+contactUsModal.addEventListener('click', function(e) {
+if (e.target === contactUsModal) {
+contactUsModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+// Close Schedule Consultation modal when clicking outside
+scheduleModal.addEventListener('click', function(e) {
+if (e.target === scheduleModal) {
+scheduleModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+// Handle Contact Form submission
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+contactUsModal.classList.add('hidden');
+successModal.classList.remove('hidden');
+contactForm.reset();
+});
+// Handle Schedule Form submission
+scheduleForm.addEventListener('submit', function(e) {
+e.preventDefault();
+scheduleModal.classList.add('hidden');
+successModal.classList.remove('hidden');
+scheduleForm.reset();
+});
+// Close modals with Escape key
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') {
+if (!contactUsModal.classList.contains('hidden')) {
+contactUsModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (!scheduleModal.classList.contains('hidden')) {
+scheduleModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+}
+});
+// Project Details Modal
+const modal = document.getElementById('projectModal');
+const modalContent = document.getElementById('modalContent');
+const closeModal = document.getElementById('closeModal');
+const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+// Project data
+const projectData = {
+"FinTech Dashboard": {
+title: "FinTech Dashboard",
+image: "https://public.readdy.ai/ai/img_res/80f4c402b489ff57db57a10d906cc189.jpg",
+category: "Web App / Finance",
+date: "April 2025",
+client: "Global Investment Partners",
+description: "An advanced financial analytics platform designed for investment professionals and financial advisors. The dashboard provides real-time market data, portfolio tracking, and AI-powered insights to optimize investment strategies.",
+features: [
+"Real-time market data visualization with customizable widgets",
+"Portfolio performance tracking with historical comparisons",
+"AI-powered investment recommendations and risk assessment",
+"Secure client communication and document sharing portal",
+"Automated reporting and tax document generation",
+"Mobile-responsive design for on-the-go access"
+],
+technologies: ["React.js", "Node.js", "MongoDB", "TensorFlow", "D3.js", "AWS"]
+},
+"MediTrack App": {
+title: "MediTrack App",
+image: "https://public.readdy.ai/ai/img_res/75ca456a48db739823d1ca63e1508797.jpg",
+category: "Mobile App / Healthcare",
+date: "March 2025",
+client: "HealthCare Innovations Inc.",
+description: "A comprehensive healthcare monitoring mobile application that connects patients with healthcare providers. The app enables remote patient monitoring, telemedicine consultations, and personalized health analytics to improve patient outcomes.",
+features: [
+"Real-time vital signs monitoring and alerts",
+"Secure video consultations with healthcare providers",
+"Medication tracking and reminders",
+"Health data analytics and trend visualization",
+"Integration with wearable devices and medical equipment",
+"HIPAA-compliant secure messaging system"
+],
+technologies: ["Flutter", "Firebase", "Swift", "Kotlin", "TensorFlow Lite", "Google Cloud"]
+},
+"RetailAI System": {
+title: "RetailAI System",
+image: "https://public.readdy.ai/ai/img_res/82361cddcf64dcd4c0a29122096386a6.jpg",
+category: "AI & ML / Retail",
+date: "February 2025",
+client: "NextGen Retail Solutions",
+description: "An AI-powered retail analytics system that uses computer vision and machine learning to track customer behavior, optimize inventory, and predict sales trends. The system helps retailers enhance customer experience and maximize operational efficiency.",
+features: [
+"Computer vision for customer flow analysis and heat mapping",
+"Predictive inventory management and automatic reordering",
+"Customer demographic and behavior analytics",
+"Sales forecasting with seasonal trend analysis",
+"Employee performance optimization",
+"Personalized marketing recommendation engine"
+],
+technologies: ["Python", "TensorFlow", "OpenCV", "AWS SageMaker", "React", "PostgreSQL"]
+},
+"CloudOps Platform": {
+title: "CloudOps Platform",
+image: "https://public.readdy.ai/ai/img_res/8d27ddcad50235cfa0e185ecd47b4210.jpg",
+category: "Cloud / DevOps",
+date: "January 2025",
+client: "Enterprise Solutions Ltd.",
+description: "A comprehensive cloud infrastructure management and optimization platform designed for enterprise IT departments. The platform provides automated scaling, security monitoring, and cost optimization for multi-cloud environments.",
+features: [
+"Multi-cloud resource management and visualization",
+"Automated scaling and load balancing",
+"Security compliance monitoring and threat detection",
+"Cost optimization and budget forecasting",
+"Infrastructure as Code (IaC) integration",
+"Comprehensive logging and performance analytics"
+],
+technologies: ["Kubernetes", "Terraform", "Docker", "Prometheus", "Grafana", "Go", "Python"]
+},
+"SmartHome Hub": {
+title: "SmartHome Hub",
+image: "https://public.readdy.ai/ai/img_res/1b10467ea7ea4d364cd0330ed402c9cf.jpg",
+category: "IoT / Consumer",
+date: "December 2024",
+client: "FutureHome Technologies",
+description: "An integrated IoT platform that connects and controls various smart home devices through a centralized hub. The system focuses on energy optimization, security, and creating automated routines for enhanced living comfort.",
+features: [
+"Centralized control for all smart home devices",
+"Voice and AI assistant integration",
+"Energy usage monitoring and optimization",
+"Advanced security system with facial recognition",
+"Customizable automation routines and scenes",
+"Remote access and control via mobile app"
+],
+technologies: ["Raspberry Pi", "Node.js", "MQTT", "React Native", "TensorFlow Lite", "AWS IoT"]
+},
+"SecureGuard": {
+title: "SecureGuard",
+image: "https://public.readdy.ai/ai/img_res/b56a7bce48d17b6497fd638ec891d309.jpg",
+category: "Security / Enterprise",
+date: "November 2024",
+client: "Global Defense Systems",
+description: "A comprehensive cybersecurity monitoring and threat detection system designed for enterprise networks. The platform uses AI to identify potential vulnerabilities, detect intrusions, and provide real-time threat intelligence.",
+features: [
+"Real-time network traffic monitoring and analysis",
+"AI-powered threat detection and classification",
+"Automated vulnerability assessment and patching",
+"Security incident response orchestration",
+"Compliance reporting and documentation",
+"User behavior analytics and anomaly detection"
+],
+technologies: ["Python", "Elasticsearch", "Kibana", "TensorFlow", "Suricata", "Ansible"]
+},
+"EduTech Platform": {
+title: "EduTech Platform",
+image: "https://public.readdy.ai/ai/img_res/cf3867617d7787da0768d8f3e7b67bc9.jpg",
+category: "Web App / Education",
+date: "October 2024",
+client: "Global Learning Initiative",
+description: "An adaptive learning platform that personalizes educational content based on student performance and learning style. The system provides comprehensive analytics for educators and interactive learning experiences for students.",
+features: [
+"Personalized learning paths based on student performance",
+"Interactive multimedia content and gamified learning",
+"Real-time progress tracking and analytics",
+"Virtual classroom with video conferencing",
+"AI-powered tutoring and question answering",
+"Comprehensive assessment and certification system"
+],
+technologies: ["React", "Node.js", "MongoDB", "WebRTC", "TensorFlow", "AWS"]
+},
+"LogiTrack System": {
+title: "LogiTrack System",
+image: "https://public.readdy.ai/ai/img_res/1d2f497ac5d70f7d54b94abaf487bdc3.jpg",
+category: "Web App / Logistics",
+date: "September 2024",
+client: "Global Logistics Solutions",
+description: "A comprehensive supply chain management platform with real-time tracking, route optimization, and predictive delivery estimates. The system helps logistics companies improve efficiency and reduce operational costs.",
+features: [
+"Real-time shipment tracking with GPS integration",
+"Route optimization and fuel efficiency analysis",
+"Warehouse management and inventory control",
+"Predictive delivery time estimation",
+"Driver performance monitoring and optimization",
+"Customer notification system and delivery confirmation"
+],
+technologies: ["React", "Node.js", "PostgreSQL", "Google Maps API", "TensorFlow", "Docker"]
+},
+"VR Gaming Platform": {
+title: "VR Gaming Platform",
+image: "https://public.readdy.ai/ai/img_res/724e64c35dfb1b3e5566f51f4d5268cc.jpg",
+category: "VR/AR / Gaming",
+date: "August 2024",
+client: "NextGen Entertainment",
+description: "An immersive virtual reality gaming platform with multiplayer capabilities and advanced physics engine integration. The platform provides developers with tools to create engaging VR experiences and players with high-quality immersive gameplay.",
+features: [
+"Immersive 3D environments with realistic physics",
+"Multiplayer functionality with voice communication",
+"Advanced haptic feedback integration",
+"Cross-platform compatibility (PC, console, mobile)",
+"Developer SDK for custom game creation",
+"In-game marketplace and social features"
+],
+technologies: ["Unity", "C#", "WebGL", "WebXR", "Node.js", "MongoDB"]
+},
+"CryptoTrade Platform": {
+title: "CryptoTrade Platform",
+image: "https://public.readdy.ai/ai/img_res/dd54a5f4e3240531b0eb1a880ed910f1.jpg",
+category: "Blockchain / Finance",
+date: "July 2024",
+client: "Digital Asset Ventures",
+description: "A secure cryptocurrency trading platform with real-time market analysis and automated trading strategy implementation. The platform provides users with advanced tools for managing digital assets and optimizing trading performance.",
+features: [
+"Real-time cryptocurrency market data and analysis",
+"Secure wallet management with multi-factor authentication",
+"Automated trading strategy implementation",
+"Portfolio performance tracking and tax reporting",
+"Advanced charting and technical analysis tools",
+"API integration with major exchanges"
+],
+technologies: ["React", "Node.js", "MongoDB", "WebSocket", "TensorFlow", "AWS"]
+},
+"SmartCity Dashboard": {
+title: "SmartCity Dashboard",
+image: "https://public.readdy.ai/ai/img_res/4ef63246260e845f1c0feafb313c5afa.jpg",
+category: "IoT / Government",
+date: "June 2024",
+client: "Metropolitan Development Authority",
+description: "An urban management system with integrated IoT sensors for monitoring and optimizing traffic, utilities, and public services. The platform helps city administrators make data-driven decisions to improve urban living conditions.",
+features: [
+"Real-time traffic monitoring and optimization",
+"Utility usage tracking and resource management",
+"Public transportation coordination and scheduling",
+"Environmental monitoring (air quality, noise levels)",
+"Emergency services coordination and dispatch",
+"Citizen engagement portal and service requests"
+],
+technologies: ["React", "Node.js", "PostgreSQL", "MQTT", "TensorFlow", "AWS IoT"]
+},
+"AgriTech Platform": {
+title: "AgriTech Platform",
+image: "https://public.readdy.ai/ai/img_res/608d8932c38870e6cda788f5f22a57ea.jpg",
+category: "IoT / Agriculture",
+date: "May 2024",
+client: "Sustainable Farming Initiative",
+description: "A precision agriculture system that uses drone imagery, soil sensors, and AI-driven analytics to optimize crop health and yield prediction. The platform helps farmers make data-driven decisions to improve productivity and sustainability.",
+features: [
+"Drone-based crop monitoring and health assessment",
+"Soil moisture and nutrient level tracking",
+"Weather data integration and forecast analysis",
+"Irrigation management and optimization",
+"Pest and disease detection with treatment recommendations",
+"Yield prediction and harvest planning"
+],
+technologies: ["Python", "TensorFlow", "React", "Node.js", "PostgreSQL", "AWS"]
+}
+};
+// Open modal with project details
+viewDetailsButtons.forEach(button => {
+button.addEventListener('click', function() {
+const projectName = this.getAttribute('data-project');
+const project = projectData[projectName];
+if (project) {
+// Create modal content
+modalContent.innerHTML = `
+<div class="relative h-48 sm:h-56 md:h-64 overflow-hidden rounded-t-lg mb-4 sm:mb-6">
+<img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a12] to-transparent opacity-60"></div>
+</div>
+<h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-space mb-3 sm:mb-4 text-white px-4 sm:px-6">${project.title}</h2>
+<div class="flex flex-wrap gap-2 mb-4 sm:mb-6 px-4 sm:px-6">
+<span class="px-2 sm:px-3 py-1 bg-primary/20 text-primary rounded-full text-xs sm:text-sm">${project.category}</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 px-4 sm:px-6">
+<div>
+<h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">Project Overview</h3>
+<p class="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">${project.description}</p>
+<div class="mb-2 sm:mb-4 text-sm sm:text-base">
+<span class="text-gray-400">Client:</span>
+<span class="text-white ml-2">${project.client}</span>
+</div>
+<div class="mb-2 sm:mb-4 text-sm sm:text-base">
+<span class="text-gray-400">Completion Date:</span>
+<span class="text-white ml-2">${project.date}</span>
+</div>
+</div>
+<div>
+<h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">Key Features</h3>
+<ul class="space-y-1 sm:space-y-2 text-sm sm:text-base">
+${project.features.map(feature => `
+<li class="flex items-start">
+<i class="ri-check-line text-primary mt-1 mr-2"></i>
+<span class="text-gray-300">${feature}</span>
+</li>
+`).join('')}
+</ul>
+</div>
+</div>
+<div class="mb-6 sm:mb-8 px-4 sm:px-6">
+<h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">Technologies Used</h3>
+<div class="flex flex-wrap gap-2">
+${project.technologies.map(tech => `
+<span class="px-2 sm:px-3 py-1 glass-card rounded-full text-gray-300 text-xs sm:text-sm border border-white/10">${tech}</span>
+`).join('')}
+</div>
+</div>
+<div class="flex justify-end px-4 sm:px-6 pb-4 sm:pb-6">
+<button id="requestProjectBtn" class="!rounded-button bg-gradient-to-r from-primary to-secondary text-white px-4 sm:px-6 py-2 text-sm sm:text-base font-medium transition-all duration-300 whitespace-nowrap">
+Request Similar Project
+</button>
+</div>
+`;
+// Show modal
+modal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+// Add event listener to the Request Similar Project button
+document.getElementById('requestProjectBtn').addEventListener('click', function() {
+// Hide project details modal
+modal.classList.add('hidden');
+// Show request form modal
+document.getElementById('requestFormModal').classList.remove('hidden');
+// Set project type in the form if available
+const projectTypeSelect = document.getElementById('projectType');
+if (projectTypeSelect) {
+// Try to match project category to select options
+const category = project.category.split(' / ')[0].toLowerCase();
+const options = Array.from(projectTypeSelect.options);
+for (let option of options) {
+if (option.value && category.includes(option.value.toLowerCase())) {
+projectTypeSelect.value = option.value;
+break;
+}
+}
+}
+// Pre-fill project details in the message
+const messageField = document.getElementById('message');
+if (messageField) {
+messageField.value = `I'm interested in a project similar to "${project.title}". Looking for similar functionality and technology stack.`;
+}
+});
+}
+});
+});
+// Close modal
+closeModal.addEventListener('click', function() {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+// Close modal when clicking outside
+modal.addEventListener('click', function(e) {
+if (e.target === modal) {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+// Request Form Modal Functionality
+const requestFormModal = document.getElementById('requestFormModal');
+const closeRequestForm = document.getElementById('closeRequestForm');
+const projectRequestForm = document.getElementById('projectRequestForm');
+const successModal = document.getElementById('successModal');
+const closeSuccessModal = document.getElementById('closeSuccessModal');
+const successDoneBtn = document.getElementById('successDoneBtn');
+// Close request form modal
+closeRequestForm.addEventListener('click', function() {
+requestFormModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+// Close request form when clicking outside
+requestFormModal.addEventListener('click', function(e) {
+if (e.target === requestFormModal) {
+requestFormModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+// Handle form submission
+projectRequestForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Hide request form modal
+requestFormModal.classList.add('hidden');
+// Show success modal
+successModal.classList.remove('hidden');
+});
+// Close success modal
+closeSuccessModal.addEventListener('click', function() {
+successModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+projectRequestForm.reset();
+});
+// Success done button
+successDoneBtn.addEventListener('click', function() {
+successModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+projectRequestForm.reset();
+});
+// Close success modal when clicking outside
+successModal.addEventListener('click', function(e) {
+if (e.target === successModal) {
+successModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+projectRequestForm.reset();
+}
+});
+// Close modals with Escape key
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') {
+if (!requestFormModal.classList.contains('hidden')) {
+requestFormModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+if (!successModal.classList.contains('hidden')) {
+successModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+projectRequestForm.reset();
+}
+}
+});
+});
+</script>
+</body>
+</html>
