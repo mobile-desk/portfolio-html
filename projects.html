@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechInnovom - Projects</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#00f0ff', secondary: '#ff00aa' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .glow {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.5), 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .glow-box {
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), 0 0 20px rgba(0, 240, 255, 0.1);
+        }
+
+        .glow-border {
+            box-shadow: 0 0 5px rgba(0, 240, 255, 0.5), 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00f0ff, #0099ff, #ff00aa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-border {
+            position: relative;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid transparent;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #00f0ff, #0099ff, #ff00aa) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 240, 255, 0.5);
+            pointer-events: none;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-slow {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-fast {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .rotating {
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .pulse {
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        .grid-lines {
+            background-image:
+                linear-gradient(to right, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #00f0ff, #0099ff);
+            border-radius: 3px;
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at 70% 50%, rgba(0, 240, 255, 0.1), transparent 70%),
+                radial-gradient(circle at 30% 70%, rgba(255, 0, 170, 0.1), transparent 70%);
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00f0ff, #0099ff);
+            transition: all 0.3s ease;
+        }
+
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: #00f0ff;
+            transform: scale(1.2);
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .slider-arrow:hover {
+            background-color: rgba(0, 240, 255, 0.3);
+        }
+
+        .slider-arrow.prev {
+            left: 15px;
+        }
+
+        .slider-arrow.next {
+            right: 15px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            background-color: rgba(0, 240, 255, 0.1);
+            color: #fff;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background-color: rgba(0, 240, 255, 0.2);
+        }
+
+        .tag.active {
+            background-color: rgba(0, 240, 255, 0.3);
+            color: #00f0ff;
+        }
+
+        .project-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .project-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="custom-scrollbar">
+    <!-- Particles Container -->
+    <div id="particles-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+    <!-- Grid Lines Background -->
+    <div class="fixed top-0 left-0 w-full h-full grid-lines opacity-20 z-0"></div>
+    <!-- Navbar -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-primary border-opacity-20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-black rounded-full gradient-border flex items-center justify-center">
+                    <span class="font-['Pacifico'] text-xl text-primary glow">TI</span>
+                </div>
+                <span class="font-orbitron text-xl font-bold gradient-text">TechInnovom</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-10 relative">
+                <div class="nav-indicator" id="navIndicator"></div>
+                <a href="#"
+                    class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Home</a>
+                <a href="#"
+                    class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">About</a>
+                <a href="#"
+                    class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Services</a>
+                <a href="#"
+                    class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-primary transition-colors duration-300">Projects</a>
+                <a href="#"
+                    class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button
+                    class="px-6 py-2 bg-transparent border border-primary text-primary font-orbitron text-sm uppercase tracking-wider hover:bg-primary hover:text-black transition-all duration-300 !rounded-button whitespace-nowrap">Get
+                    Started</button>
+                <button id="menuToggle"
+                    class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-primary border-opacity-50">
+                    <i class="ri-menu-line text-primary"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden h-0 overflow-hidden transition-all duration-500 bg-black bg-opacity-95">
+            <div class="container mx-auto px-6 py-8 flex flex-col space-y-6">
+                <a href="#"
+                    class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">Home</a>
+                <a href="#"
+                    class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">About</a>
+                <a href="#"
+                    class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">Services</a>
+                <a href="#"
+                    class="font-orbitron text-lg uppercase tracking-wider text-primary transition-colors duration-300 py-2 border-b border-gray-800">Projects</a>
+                <a href="#"
+                    class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <section class="relative pt-32 pb-16 overflow-hidden hero-bg">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="font-orbitron text-4xl md:text-5xl font-bold mb-6">Our <span
+                        class="gradient-text">Projects</span></h1>
+                <p class="text-gray-300 text-lg mb-0">Explore our innovative solutions that are transforming industries
+                    and pushing the boundaries of what's possible.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Filter Section -->
+    <section class="relative py-10 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="bg-black bg-opacity-60 backdrop-blur-lg p-6 rounded-lg gradient-border mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div>
+                        <h3 class="font-orbitron text-xl font-bold mb-4">Filter Projects</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="tag active" data-tag="all">All Projects</button>
+                            <button class="tag" data-tag="ai">AI & Machine Learning</button>
+                            <button class="tag" data-tag="web">Web Development</button>
+                            <button class="tag" data-tag="mobile">Mobile Apps</button>
+                            <button class="tag" data-tag="ar">AR/VR</button>
+                            <button class="tag" data-tag="iot">IoT</button>
+                            <button class="tag" data-tag="cybersecurity">Cybersecurity</button>
+                        </div>
+                    </div>
+                    <button id="clearFilters"
+                        class="px-4 py-2 bg-transparent border border-gray-600 text-gray-400 font-orbitron text-xs uppercase tracking-wider hover:border-primary hover:text-primary transition-all duration-300 !rounded-button whitespace-nowrap">
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8" id="projectsGrid">
+                <!-- Project 1 -->
+                <div class="project-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border"
+                    data-tags="ai,cybersecurity">
+                    <div class="slider-container h-64">
+                        <div class="slider">
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=futuristic%2520cybersecurity%2520dashboard%2520interface%2520with%2520data%2520visualization%252C%2520threat%2520detection%2520metrics%252C%2520network%2520monitoring%2520graphs%252C%2520blue%2520and%2520purple%2520color%2520scheme%252C%2520high-tech%2520UI%2520design%252C%2520digital%2520security%2520analytics%2520platform%252C%2520professional%2520enterprise%2520software&width=800&height=500&seq=proj1a&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=advanced%2520AI%2520threat%2520detection%2520system%2520interface%252C%2520machine%2520learning%2520algorithm%2520visualizations%252C%2520real-time%2520security%2520monitoring%252C%2520dark%2520background%2520with%2520blue%2520glowing%2520elements%252C%2520futuristic%2520cybersecurity%2520solution%252C%2520enterprise%2520grade%2520protection%2520software&width=800&height=500&seq=proj1b&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=neural%2520network%2520visualization%2520for%2520cybersecurity%252C%2520AI-powered%2520threat%2520analysis%2520dashboard%252C%2520futuristic%2520data%2520protection%2520interface%252C%2520dark%2520mode%2520UI%2520with%2520glowing%2520blue%2520and%2520cyan%2520elements%252C%2520enterprise%2520security%2520monitoring%2520system&width=800&height=500&seq=proj1c&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                        </div>
+                        <div class="slider-nav"></div>
+                        <div class="slider-arrow prev">
+                            <i class="ri-arrow-left-s-line text-white text-xl"></i>
+                        </div>
+                        <div class="slider-arrow next">
+                            <i class="ri-arrow-right-s-line text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl font-bold mb-3">NexusGuard AI</h3>
+                        <p class="text-gray-300 text-sm mb-4">An advanced cybersecurity platform leveraging machine
+                            learning algorithms to detect and neutralize threats in real-time, protecting enterprise
+                            networks with predictive analysis.</p>
+                        <div class="flex flex-wrap mb-2">
+                            <span class="tag">AI & Machine Learning</span>
+                            <span class="tag">Cybersecurity</span>
+                            <span class="tag">Enterprise</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border"
+                    data-tags="web,ai">
+                    <div class="slider-container h-64">
+                        <div class="slider">
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=modern%2520e-commerce%2520website%2520with%2520AI%2520product%2520recommendations%252C%2520sleek%2520user%2520interface%2520with%2520dark%2520mode%252C%2520personalized%2520shopping%2520experience%252C%2520futuristic%2520online%2520store%2520with%2520blue%2520and%2520purple%2520accents%252C%2520professional%2520web%2520design&width=800&height=500&seq=proj2a&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=AI-powered%2520product%2520recommendation%2520engine%2520interface%252C%2520personalized%2520e-commerce%2520dashboard%252C%2520user%2520behavior%2520analytics%2520visualization%252C%2520dark%2520theme%2520with%2520blue%2520glowing%2520elements%252C%2520modern%2520online%2520shopping%2520platform&width=800&height=500&seq=proj2b&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=e-commerce%2520mobile%2520responsive%2520design%2520on%2520multiple%2520devices%252C%2520adaptive%2520user%2520interface%252C%2520dark%2520mode%2520with%2520cyan%2520and%2520blue%2520accents%252C%2520modern%2520web%2520development%2520showcase%252C%2520professional%2520online%2520store%2520platform&width=800&height=500&seq=proj2c&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                        </div>
+                        <div class="slider-nav"></div>
+                        <div class="slider-arrow prev">
+                            <i class="ri-arrow-left-s-line text-white text-xl"></i>
+                        </div>
+                        <div class="slider-arrow next">
+                            <i class="ri-arrow-right-s-line text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl font-bold mb-3">QuantumShop</h3>
+                        <p class="text-gray-300 text-sm mb-4">A next-generation e-commerce platform with AI-powered
+                            product recommendations, personalized shopping experiences, and advanced analytics for
+                            retailers.</p>
+                        <div class="flex flex-wrap mb-2">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">AI & Machine Learning</span>
+                            <span class="tag">E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border"
+                    data-tags="ar,mobile">
+                    <div class="slider-container h-64">
+                        <div class="slider">
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=augmented%2520reality%2520interior%2520design%2520app%2520on%2520smartphone%252C%2520visualizing%2520furniture%2520in%2520real%2520space%252C%2520AR%2520home%2520decoration%2520application%252C%2520modern%2520mobile%2520UI%2520with%2520futuristic%2520elements%252C%2520dark%2520mode%2520interface%2520with%2520blue%2520highlights&width=800&height=500&seq=proj3a&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=AR%2520furniture%2520placement%2520visualization%2520in%2520living%2520room%252C%2520mobile%2520app%2520interface%2520showing%2520virtual%2520items%2520in%2520real%2520space%252C%2520interior%2520design%2520augmented%2520reality%2520application%252C%2520futuristic%2520home%2520decoration%2520tool&width=800&height=500&seq=proj3b&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=augmented%2520reality%2520app%2520measuring%2520room%2520dimensions%252C%2520AR%2520interior%2520design%2520tool%2520with%2520measurement%2520features%252C%2520mobile%2520application%2520interface%2520with%2520dark%2520theme%2520and%2520blue%2520accents%252C%2520futuristic%2520home%2520decoration%2520technology&width=800&height=500&seq=proj3c&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                        </div>
+                        <div class="slider-nav"></div>
+                        <div class="slider-arrow prev">
+                            <i class="ri-arrow-left-s-line text-white text-xl"></i>
+                        </div>
+                        <div class="slider-arrow next">
+                            <i class="ri-arrow-right-s-line text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl font-bold mb-3">VirtualSpace AR</h3>
+                        <p class="text-gray-300 text-sm mb-4">An augmented reality application that transforms interior
+                            design by allowing users to visualize furniture and decor in their actual space before
+                            purchasing.</p>
+                        <div class="flex flex-wrap mb-2">
+                            <span class="tag">AR/VR</span>
+                            <span class="tag">Mobile Apps</span>
+                            <span class="tag">Design</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border"
+                    data-tags="iot,ai">
+                    <div class="slider-container h-64">
+                        <div class="slider">
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=smart%2520city%2520IoT%2520management%2520dashboard%252C%2520urban%2520infrastructure%2520monitoring%2520system%252C%2520connected%2520devices%2520visualization%252C%2520futuristic%2520control%2520center%2520with%2520dark%2520interface%2520and%2520blue%2520data%2520visualization%252C%2520city-wide%2520sensor%2520network%2520analytics&width=800&height=500&seq=proj4a&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=IoT%2520traffic%2520management%2520system%2520visualization%252C%2520smart%2520city%2520traffic%2520flow%2520optimization%252C%2520connected%2520traffic%2520lights%2520and%2520sensors%2520network%252C%2520urban%2520mobility%2520dashboard%2520with%2520dark%2520theme%2520and%2520blue%2520data%2520displays&width=800&height=500&seq=proj4b&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=smart%2520energy%2520grid%2520management%2520interface%252C%2520IoT-powered%2520urban%2520utility%2520monitoring%252C%2520city-wide%2520power%2520consumption%2520analytics%252C%2520futuristic%2520control%2520center%2520with%2520dark%2520UI%2520and%2520blue%2520glowing%2520data%2520visualizations&width=800&height=500&seq=proj4c&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                        </div>
+                        <div class="slider-nav"></div>
+                        <div class="slider-arrow prev">
+                            <i class="ri-arrow-left-s-line text-white text-xl"></i>
+                        </div>
+                        <div class="slider-arrow next">
+                            <i class="ri-arrow-right-s-line text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl font-bold mb-3">SmartCity Nexus</h3>
+                        <p class="text-gray-300 text-sm mb-4">An integrated IoT platform for smart cities that connects
+                            and manages urban infrastructure, traffic systems, and utilities with AI-powered
+                            optimization.</p>
+                        <div class="flex flex-wrap mb-2">
+                            <span class="tag">IoT</span>
+                            <span class="tag">AI & Machine Learning</span>
+                            <span class="tag">Urban Tech</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border"
+                    data-tags="mobile,ai">
+                    <div class="slider-container h-64">
+                        <div class="slider">
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=AI-powered%2520health%2520tracking%2520mobile%2520app%2520interface%252C%2520fitness%2520and%2520wellness%2520monitoring%2520dashboard%252C%2520personalized%2520health%2520analytics%252C%2520dark%2520mode%2520UI%2520with%2520blue%2520and%2520cyan%2520data%2520visualizations%252C%2520modern%2520health%2520tech%2520application&width=800&height=500&seq=proj5a&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=personalized%2520workout%2520plan%2520in%2520fitness%2520app%252C%2520AI%2520health%2520coach%2520interface%252C%2520exercise%2520tracking%2520and%2520recommendations%252C%2520dark%2520theme%2520mobile%2520application%2520with%2520blue%2520accents%252C%2520modern%2520wellness%2520technology&width=800&height=500&seq=proj5b&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=nutrition%2520tracking%2520and%2520meal%2520planning%2520app%2520interface%252C%2520AI%2520diet%2520recommendations%252C%2520health%2520metrics%2520dashboard%252C%2520dark%2520mode%2520mobile%2520UI%2520with%2520cyan%2520and%2520blue%2520elements%252C%2520modern%2520wellness%2520application&width=800&height=500&seq=proj5c&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                        </div>
+                        <div class="slider-nav"></div>
+                        <div class="slider-arrow prev">
+                            <i class="ri-arrow-left-s-line text-white text-xl"></i>
+                        </div>
+                        <div class="slider-arrow next">
+                            <i class="ri-arrow-right-s-line text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl font-bold mb-3">QuantumHealth</h3>
+                        <p class="text-gray-300 text-sm mb-4">A comprehensive health and fitness mobile application
+                            using AI to provide personalized workout plans, nutrition guidance, and health analytics.
+                        </p>
+                        <div class="flex flex-wrap mb-2">
+                            <span class="tag">Mobile Apps</span>
+                            <span class="tag">AI & Machine Learning</span>
+                            <span class="tag">Health Tech</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border"
+                    data-tags="web,cybersecurity">
+                    <div class="slider-container h-64">
+                        <div class="slider">
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=secure%2520financial%2520transaction%2520platform%2520interface%252C%2520blockchain-based%2520payment%2520system%252C%2520cryptocurrency%2520exchange%2520dashboard%252C%2520dark%2520mode%2520UI%2520with%2520blue%2520data%2520visualization%252C%2520fintech%2520security%2520solution&width=800&height=500&seq=proj6a&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=blockchain%2520transaction%2520visualization%252C%2520secure%2520financial%2520ledger%2520interface%252C%2520cryptocurrency%2520wallet%2520dashboard%252C%2520dark%2520theme%2520with%2520blue%2520and%2520cyan%2520elements%252C%2520modern%2520fintech%2520application&width=800&height=500&seq=proj6b&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('https://readdy.ai/api/search-image?query=multi-factor%2520authentication%2520system%2520interface%252C%2520secure%2520financial%2520account%2520protection%252C%2520biometric%2520verification%2520dashboard%252C%2520dark%2520UI%2520with%2520blue%2520security%2520elements%252C%2520modern%2520banking%2520protection%2520platform&width=800&height=500&seq=proj6c&orientation=landscape');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                        </div>
+                        <div class="slider-nav"></div>
+                        <div class="slider-arrow prev">
+                            <i class="ri-arrow-left-s-line text-white text-xl"></i>
+                        </div>
+                        <div class="slider-arrow next">
+                            <i class="ri-arrow-right-s-line text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl font-bold mb-3">SecureChain Finance</h3>
+                        <p class="text-gray-300 text-sm mb-4">A blockchain-based financial platform offering secure
+                            transactions, digital asset management, and advanced encryption for financial institutions.
+                        </p>
+                        <div class="flex flex-wrap mb-2">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Cybersecurity</span>
+                            <span class="tag">Fintech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <div class="flex justify-center items-center space-x-2 mt-12 mb-8" id="pagination">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    id="prevPage" disabled>
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="flex items-center space-x-2" id="pageNumbers"></div>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    id="nextPage">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+            <!-- No Results Message -->
+            <div id="noResults" class="hidden py-20 text-center">
+                <div
+                    class="w-20 h-20 mx-auto mb-6 rounded-full bg-black flex items-center justify-center border border-primary border-opacity-30">
+                    <i class="ri-search-line text-primary text-3xl"></i>
+                </div>
+                <h3 class="font-orbitron text-xl font-bold mb-3">No Projects Found</h3>
+                <p class="text-gray-400 max-w-md mx-auto">We couldn't find any projects matching your selected filters.
+                    Please try different filter options or clear all filters.</p>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0"
+            style="background-image: url('https://readdy.ai/api/search-image?query=abstract%2520futuristic%2520technology%2520background%2520with%2520glowing%2520blue%2520circuit%2520patterns%252C%2520dark%2520space%2520with%2520digital%2520grid%2520lines%2520and%2520particles%252C%2520high-tech%2520environment%2520with%2520subtle%2520geometric%2520elements%252C%2520perfect%2520for%2520a%2520tech%2520company%2520website%2520CTA%2520section&width=1920&height=600&seq=cta1&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.2;">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-orbitron text-3xl md:text-5xl font-bold mb-6">Have a Project in <span
+                        class="gradient-text">Mind</span>?</h2>
+                <p class="text-gray-300 text-lg mb-8">Let's collaborate to bring your vision to life with our
+                    cutting-edge technology solutions.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button
+                        class="px-8 py-3 bg-primary text-black font-orbitron text-sm uppercase tracking-wider hover:bg-opacity-80 transition-all duration-300 !rounded-button whitespace-nowrap">Start
+                        a Project</button>
+                    <button
+                        class="px-8 py-3 bg-transparent border border-white text-white font-orbitron text-sm uppercase tracking-wider hover:border-primary hover:text-primary transition-all duration-300 !rounded-button whitespace-nowrap">Contact
+                        Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="relative pt-20 pb-10 overflow-hidden bg-black">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent">
+        </div>
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <a href="#" class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-black rounded-full gradient-border flex items-center justify-center">
+                            <span class="font-['Pacifico'] text-xl text-primary glow">TI</span>
+                        </div>
+                        <span class="font-orbitron text-xl font-bold gradient-text">TechInnovom</span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Led by Praise Obasi, we're pioneering the future through innovative
+                        Python solutions and data analytics that transform businesses and enhance lives.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary transition-colors duration-300">
+                            <i
+                                class="ri-twitter-x-line text-gray-400 hover:text-primary transition-colors duration-300"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary transition-colors duration-300">
+                            <i
+                                class="ri-linkedin-line text-gray-400 hover:text-primary transition-colors duration-300"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary transition-colors duration-300">
+                            <i
+                                class="ri-facebook-line text-gray-400 hover:text-primary transition-colors duration-300"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary transition-colors duration-300">
+                            <i
+                                class="ri-instagram-line text-gray-400 hover:text-primary transition-colors duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-orbitron text-lg font-bold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Python
+                                Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Data
+                                Analysis</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Tech
+                                Tutorials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Cloud
+                                Solutions</a></li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-primary transition-colors duration-300">Cybersecurity</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">AR/VR
+                                Solutions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-orbitron text-lg font-bold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">About
+                                Us</a></li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-primary transition-colors duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Case
+                                Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Blog</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-primary transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-orbitron text-lg font-bold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Innovation Drive, San Francisco, CA 94107</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-phone-line text-primary mr-3"></i>
+                            <span class="text-gray-400">+1 (415) 555-0123</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-mail-line text-primary mr-3"></i>
+                            <span class="text-gray-400">info@techinnovom.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechInnovom. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 text-sm hover:text-primary transition-colors duration-300">Privacy
+                        Policy</a>
+                    <a href="#" class="text-gray-500 text-sm hover:text-primary transition-colors duration-300">Terms of
+                        Service</a>
+                    <a href="#" class="text-gray-500 text-sm hover:text-primary transition-colors duration-300">Cookie
+                        Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script id="particlesScript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const particlesContainer = document.getElementById('particles-container');
+            const particleCount = 50;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                // Random size between 1px and 4px
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                // Random position
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                // Random animation delay
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                // Add floating animation
+                particle.style.animation = `float ${Math.random() * 10 + 10}s ease-in-out infinite`;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    <script id="navigationScript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            let isMenuOpen = false;
+            menuToggle.addEventListener('click', function () {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    mobileMenu.style.height = '300px';
+                    menuToggle.innerHTML = '<i class="ri-close-line text-primary"></i>';
+                } else {
+                    mobileMenu.style.height = '0';
+                    menuToggle.innerHTML = '<i class="ri-menu-line text-primary"></i>';
+                }
+            });
+            // Nav indicator for desktop menu
+            const navItems = document.querySelectorAll('.nav-item');
+            const navIndicator = document.getElementById('navIndicator');
+            function positionIndicator(item) {
+                const rect = item.getBoundingClientRect();
+                navIndicator.style.width = `${rect.width}px`;
+                navIndicator.style.transform = `translateX(${rect.left - item.parentElement.getBoundingClientRect().left}px)`;
+            }
+            if (navItems.length > 0 && navIndicator) {
+                // Find the active item (Projects)
+                const activeItem = document.querySelector('.nav-item.text-primary');
+                // Set initial position
+                if (activeItem) {
+                    positionIndicator(activeItem);
+                } else {
+                    positionIndicator(navItems[0]);
+                }
+                navItems.forEach(item => {
+                    item.addEventListener('mouseenter', () => {
+                        positionIndicator(item);
+                    });
+                });
+                // Return to active item when leaving the menu
+                navItems[0].parentElement.addEventListener('mouseleave', () => {
+                    if (activeItem) {
+                        positionIndicator(activeItem);
+                    } else {
+                        positionIndicator(navItems[0]);
+                    }
+                });
+            }
+        });
+    </script>
+    <script id="sliderScript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const sliderContainers = document.querySelectorAll('.slider-container');
+            sliderContainers.forEach(container => {
+                const slider = container.querySelector('.slider');
+                const slides = slider.querySelectorAll('div.flex-shrink-0');
+                const sliderNav = container.querySelector('.slider-nav');
+                const prevArrow = container.querySelector('.slider-arrow.prev');
+                const nextArrow = container.querySelector('.slider-arrow.next');
+                let currentIndex = 0;
+                // Create navigation dots
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('slider-dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(index));
+                    sliderNav.appendChild(dot);
+                });
+                // Navigation functions
+                function goToSlide(index) {
+                    currentIndex = index;
+                    updateSlider();
+                }
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateSlider();
+                }
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    updateSlider();
+                }
+                function updateSlider() {
+                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    // Update active dot
+                    const dots = sliderNav.querySelectorAll('.slider-dot');
+                    dots.forEach((dot, index) => {
+                        if (index === currentIndex) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
+                // Add event listeners
+                prevArrow.addEventListener('click', prevSlide);
+                nextArrow.addEventListener('click', nextSlide);
+            });
+        });
+    </script>
+    <script id="filterScript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const tagButtons = document.querySelectorAll('.tag[data-tag]');
+            const projectCards = document.querySelectorAll('.project-card');
+            const clearFiltersBtn = document.getElementById('clearFilters');
+            const noResultsMessage = document.getElementById('noResults');
+            const projectsGrid = document.getElementById('projectsGrid');
+            const pagination = document.getElementById('pagination');
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+            const pageNumbersContainer = document.getElementById('pageNumbers');
+            const ITEMS_PER_PAGE = 4;
+            let currentPage = 1;
+            let filteredProjects = Array.from(projectCards);
+            function createPageNumbers(totalPages) {
+                pageNumbersContainer.innerHTML = '';
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.className = `w-10 h-10 flex items-center justify-center rounded-full border transition-all duration-300 ${i === currentPage
+                            ? 'border-primary text-primary'
+                            : 'border-gray-700 text-gray-400 hover:border-primary hover:text-primary'
+                        }`;
+                    pageBtn.textContent = i;
+                    pageBtn.addEventListener('click', () => goToPage(i));
+                    pageNumbersContainer.appendChild(pageBtn);
+                }
+            }
+            function updatePaginationButtons(totalPages) {
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = currentPage === totalPages;
+            }
+            function goToPage(page) {
+                currentPage = page;
+                updateProjectsDisplay();
+            }
+            function updateProjectsDisplay() {
+                const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+                const endIndex = startIndex + ITEMS_PER_PAGE;
+                const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
+                projectCards.forEach(card => {
+                    card.style.display = 'none';
+                    card.classList.remove('show');
+                });
+                filteredProjects.slice(startIndex, endIndex).forEach((card, index) => {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.classList.add('show');
+                    }, index * 100);
+                });
+                createPageNumbers(totalPages);
+                updatePaginationButtons(totalPages);
+            }
+            prevPageBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    goToPage(currentPage - 1);
+                }
+            });
+            nextPageBtn.addEventListener('click', () => {
+                const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
+                if (currentPage < totalPages) {
+                    goToPage(currentPage + 1);
+                }
+            });
+            // Show all projects initially with animation
+            projectCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('show');
+                }, index * 100);
+            });
+            function filterProjects(tag) {
+                filteredProjects = Array.from(projectCards).filter(card => {
+                    const cardTags = card.dataset.tags ? card.dataset.tags.split(',') : [];
+                    return tag === 'all' || cardTags.includes(tag);
+                });
+                if (filteredProjects.length === 0) {
+                    noResultsMessage.classList.remove('hidden');
+                    projectsGrid.classList.add('hidden');
+                    pagination.classList.add('hidden');
+                } else {
+                    noResultsMessage.classList.add('hidden');
+                    projectsGrid.classList.remove('hidden');
+                    pagination.classList.remove('hidden');
+                    currentPage = 1;
+                    updateProjectsDisplay();
+                }
+            }
+            // Add click event to tag buttons
+            tagButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    tagButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    // Filter projects
+                    filterProjects(button.dataset.tag);
+                });
+            });
+            // Clear filters button
+            clearFiltersBtn.addEventListener('click', () => {
+                tagButtons.forEach(btn => btn.classList.remove('active'));
+                document.querySelector('.tag[data-tag="all"]').classList.add('active');
+                filterProjects('all');
+            });
+        });
+    </script>
+</body>
+
+</html>

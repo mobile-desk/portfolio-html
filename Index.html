@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechInnovom - Innovative Technology Solutions</title>
+    <title>TechInnovom - Innovating Tomorrow's Technology</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { primary: '#00F0FF', secondary: '#B026FF' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#00f0ff', secondary: '#ff00aa' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <style>
@@ -20,1471 +20,1029 @@
             content: "\f3c2";
         }
 
-        :root {
-            --dark-bg: #0A0F2D;
-            --rich-black: #050505;
-            --light-text: #E0E0E0;
-        }
-
         body {
-            background-color: var(--rich-black);
-            color: var(--light-text);
-            font-family: 'Rajdhani', sans-serif;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
         }
 
-        .orbitron {
+        .font-orbitron {
             font-family: 'Orbitron', sans-serif;
         }
 
-        .nav-link {
-            position: relative;
-            overflow: hidden;
+        .glow {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.5), 0 0 30px rgba(0, 240, 255, 0.3);
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            transition: width 0.3s ease;
+        .glow-box {
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), 0 0 20px rgba(0, 240, 255, 0.1);
         }
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .holographic-glow {
-            position: relative;
-        }
-
-        .holographic-glow::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #00F0FF, #B026FF, #FF00E5, #00F0FF);
-            background-size: 400% 400%;
-            z-index: -1;
-            filter: blur(5px);
-            opacity: 0.7;
-            border-radius: inherit;
-            animation: glowAnimation 3s ease infinite;
-        }
-
-        @keyframes glowAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .typewriter {
-            overflow: hidden;
-            border-right: 2px solid var(--primary);
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0
-            }
-
-            to {
-                width: 100%
-            }
-        }
-
-        @keyframes blink-caret {
-
-            from,
-            to {
-                border-color: transparent
-            }
-
-            50% {
-                border-color: var(--primary)
-            }
-        }
-
-        .project-card {
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-            transform-style: preserve-3d;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
-            box-shadow: 0 15px 30px rgba(0, 240, 255, 0.2);
-        }
-
-        .testimonial-card {
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-hex {
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-hex:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(176, 38, 255, 0.3);
-        }
-
-        .neon-button {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .neon-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.7s ease;
-        }
-
-        .neon-button:hover::before {
-            left: 100%;
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-        }
-
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        textarea:-webkit-autofill,
-        textarea:-webkit-autofill:hover,
-        textarea:-webkit-autofill:focus {
-            -webkit-text-fill-color: var(--light-text);
-            -webkit-box-shadow: 0 0 0px 1000px var(--dark-bg) inset;
-            transition: background-color 5000s ease-in-out 0s;
-        }
-
-        .scroll-indicator {
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-10px);
-            }
-
-            60% {
-                transform: translateY(-5px);
-            }
+        .glow-border {
+            box-shadow: 0 0 5px rgba(0, 240, 255, 0.5), 0 0 10px rgba(0, 240, 255, 0.3);
         }
 
         .gradient-text {
-            background: linear-gradient(90deg, #00F0FF, #B026FF);
+            background: linear-gradient(90deg, #00f0ff, #0099ff, #ff00aa);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
+        .gradient-border {
+            position: relative;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid transparent;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #00f0ff, #0099ff, #ff00aa) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
         .particle {
             position: absolute;
-            width: 3px;
-            height: 3px;
-            background-color: rgba(0, 240, 255, 0.5);
             border-radius: 50%;
+            background: rgba(0, 240, 255, 0.5);
             pointer-events: none;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-slow {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-fast {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .rotating {
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .pulse {
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        .grid-lines {
+            background-image:
+                linear-gradient(to right, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #00f0ff, #0099ff);
+            border-radius: 3px;
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at 70% 50%, rgba(0, 240, 255, 0.1), transparent 70%),
+                radial-gradient(circle at 30% 70%, rgba(255, 0, 170, 0.1), transparent 70%);
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00f0ff, #0099ff);
+            transition: all 0.3s ease;
+        }
+
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #333;
+            transition: .4s;
+            border-radius: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background: linear-gradient(90deg, #00f0ff, #0099ff);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(30px);
+        }
+
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .sphere {
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), rgba(0, 240, 255, 0.2) 30%, rgba(0, 0, 0, 0) 70%);
         }
     </style>
 </head>
 
-<body>
-    <!-- Header Section -->
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="header">
-        <div class="container mx-auto px-6 py-4">
-            <nav class="flex items-center justify-between">
-                <a href="#" class="text-3xl font-['Orbitron'] font-bold gradient-text">TechInnovom</a>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home"
-                        class="nav-link text-gray-200 hover:text-primary transition-colors duration-300">Home</a>
-                    <a href="#works"
-                        class="nav-link text-gray-200 hover:text-primary transition-colors duration-300">Works</a>
-                    <a href="#services"
-                        class="nav-link text-gray-200 hover:text-primary transition-colors duration-300">Services</a>
-                    <a href="#testimonials"
-                        class="nav-link text-gray-200 hover:text-primary transition-colors duration-300">Testimonials</a>
-                    <a href="#contact"
-                        class="nav-link text-gray-200 hover:text-primary transition-colors duration-300">Contact</a>
+<body class="custom-scrollbar">
+    <!-- Particles Container -->
+    <div id="particles-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+    <!-- Grid Lines Background -->
+    <div class="fixed top-0 left-0 w-full h-full grid-lines opacity-20 z-0"></div>
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-primary border-opacity-20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-black rounded-full gradient-border flex items-center justify-center">
+                    <span class="font-['Pacifico'] text-xl text-primary glow">TI</span>
                 </div>
+                <span class="font-orbitron text-xl font-bold gradient-text">TechInnovom</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-10 relative">
+                <div class="nav-indicator" id="navIndicator"></div>
+                <a href="#" class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Home</a>
+                <a href="#aboutsec" class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">About</a>
+                <a href="#servsec" class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Services</a>
+                <a href="projects.html" class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="contact.html" class="nav-item relative font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
                 <button
-                    class="neon-button !rounded-button bg-transparent border border-primary px-6 py-2 text-primary hover:bg-primary/10 transition-all duration-300 hidden md:block">
-                    Get Started
+                    class="px-6 py-2 bg-transparent border border-primary text-primary font-orbitron text-sm uppercase tracking-wider hover:bg-primary hover:text-black transition-all duration-300 !rounded-button whitespace-nowrap">Get
+                    Started</button>
+                <button id="menuToggle"
+                    class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-primary border-opacity-50">
+                    <i class="ri-menu-line text-primary"></i>
                 </button>
-                <div class="md:hidden flex items-center">
-                    <button id="menuBtn"
-                        class="w-10 h-10 flex items-center justify-center text-gray-200 focus:outline-none">
-                        <i class="ri-menu-line ri-lg"></i>
-                    </button>
-                </div>
-            </nav>
+            </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobileMenu"
-            class="fixed inset-0 bg-rich-black/95 z-50 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300">
-            <button id="closeMenuBtn"
-                class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-gray-200">
-                <i class="ri-close-line ri-lg"></i>
-            </button>
-            <a href="#home" class="text-2xl text-gray-200 hover:text-primary transition-colors duration-300">Home</a>
-            <a href="#works" class="text-2xl text-gray-200 hover:text-primary transition-colors duration-300">Works</a>
-            <a href="#services"
-                class="text-2xl text-gray-200 hover:text-primary transition-colors duration-300">Services</a>
-            <a href="#testimonials"
-                class="text-2xl text-gray-200 hover:text-primary transition-colors duration-300">Testimonials</a>
-            <a href="#contact"
-                class="text-2xl text-gray-200 hover:text-primary transition-colors duration-300">Contact</a>
-            <button
-                class="neon-button !rounded-button bg-transparent border border-primary px-8 py-3 mt-4 text-primary hover:bg-primary/10 transition-all duration-300">
-                Get Started
-            </button>
+        <div id="mobileMenu" class="lg:hidden h-0 overflow-hidden transition-all duration-500 bg-black bg-opacity-95">
+            <div class="container mx-auto px-6 py-8 flex flex-col space-y-6">
+                <a href="#"
+                    class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">Home</a>
+                <a href="#aboutsec" class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">About</a>
+                <a href="#servsec" class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">Services</a>
+                <a href="projects.html" class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">Projects</a>
+                <a href="contact.html" class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2">Contact</a>
+            </div>
         </div>
-    </header>
+    </nav>
+
+
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style="background-image: url('https://readdy.ai/api/search-image?query=futuristic%20tech%20abstract%20background%20with%20deep%20blue%20and%20purple%20gradient%2C%20digital%20particles%2C%20holographic%20elements%2C%20cyberpunk%20aesthetic%2C%203D%20floating%20tech%20elements%2C%20high-tech%20minimalist%20design%2C%20dark%20mode%2C%20subtle%20grid%20patterns%2C%20glowing%20elements&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-gradient-to-r from-rich-black/90 to-rich-black/70"></div>
-        <div class="container mx-auto px-6 z-10">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="w-full md:w-1/2 mb-12 md:mb-0">
-                    <h1 class="orbitron text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        <span class="block">Redefining</span>
-                        <span class="gradient-text">The Future</span>
-                        <span class="block">Through Technology</span>
+    <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden hero-bg pt-20" >
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div style="background-image: url('hero.jpg');" class="absolute top-0 right-0 w-full h-full bg-cover bg-center opacity-40"></div>
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black via-black to-transparent"></div>
+        </div>
+        <div class="container mx-auto px-6 py-20 relative z-10 flex flex-col lg:flex-row items-center">
+            <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                <div class="max-w-xl">
+                    <h1 class="font-orbitron text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        <span class="block">Innovating</span>
+                        <span class="gradient-text">Tomorrow's</span>
+                        <span class="block">Technology</span>
                     </h1>
-                    <p class="text-xl md:text-2xl mb-8 typewriter max-w-xl">
-                        Pioneering innovative solutions for tomorrow's challenges.
-                    </p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">We create cutting-edge solutions that
+                        transform industries and redefine what's possible. Our team of visionaries and engineers build
+                        the future, one innovation at a time.</p>
+                    <div class="flex flex-wrap gap-4">
                         <button
-                            class="holographic-glow neon-button !rounded-button bg-primary px-8 py-3 text-rich-black font-bold hover:bg-primary/90 transition-all duration-300 whitespace-nowrap">
-                            Explore Our Work
-                        </button>
-                        <button
-                            class="neon-button !rounded-button bg-transparent border border-primary px-8 py-3 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
-                            Contact Us
-                        </button>
+                            class="px-8 py-3 bg-primary text-black font-orbitron text-sm uppercase tracking-wider hover:bg-opacity-80 transition-all duration-300 !rounded-button whitespace-nowrap">Explore
+                            Solutions</button>
+                        
                     </div>
                 </div>
-                <div class="w-full md:w-1/2 flex justify-center">
-                    <div class="relative w-full max-w-md">
-                        <div class="holographic-glow rounded-2xl overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=futuristic%203D%20holographic%20interface%2C%20floating%20digital%20elements%2C%20tech%20visualization%2C%20transparent%20UI%2C%20cyberpunk%20style%2C%20glowing%20blue%20and%20purple%20elements%2C%20dark%20background%2C%20high-tech%20display%2C%20digital%20particles%2C%20minimalist%20design&width=600&height=600&seq=2&orientation=squarish"
-                                alt="Tech Innovation" class="w-full h-auto rounded-2xl">
+            </div>
+            <div class="w-full lg:w-1/2 flex justify-center relative">
+                <!-- 3D Sphere -->
+                <div class="sphere w-64 h-64 md:w-80 md:h-80 floating relative">
+                    <div class="absolute inset-0 rotating" style="transform-style: preserve-3d;">
+                        <div class="absolute inset-0 border border-primary border-opacity-20 rounded-full"></div>
+                        <div class="absolute inset-2 border border-primary border-opacity-30 rounded-full"></div>
+                        <div class="absolute inset-4 border border-primary border-opacity-40 rounded-full"></div>
+                        <div class="absolute inset-6 border border-primary border-opacity-50 rounded-full"></div>
+                    </div>
+                    <!-- Orbiting Elements -->
+                    <div class="absolute w-full h-full rotating" style="animation-duration: 15s;">
+                        <div
+                            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4 w-8 h-8 bg-primary bg-opacity-80 rounded-full">
+                        </div>
+                    </div>
+                    <div class="absolute w-full h-full rotating"
+                        style="animation-duration: 25s; animation-direction: reverse;">
+                        <div
+                            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-4 w-6 h-6 bg-secondary bg-opacity-80 rounded-full">
+                        </div>
+                    </div>
+                    <div class="absolute w-full h-full rotating" style="animation-duration: 20s;">
+                        <div
+                            class="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-4 w-10 h-10 hexagon bg-gradient-to-r from-primary to-secondary">
+                        </div>
+                    </div>
+                    <div class="absolute w-full h-full rotating"
+                        style="animation-duration: 30s; animation-direction: reverse;">
+                        <div
+                            class="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-4 w-7 h-7 bg-white bg-opacity-80 rounded-full">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
-                <div class="w-8 h-12 flex items-center justify-center border-2 border-gray-300 rounded-full">
-                    <div class="w-2 h-2 bg-primary rounded-full"></div>
-                </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+            <span class="font-orbitron text-xs uppercase tracking-widest text-gray-400 mb-2">Scroll Down</span>
+            <div class="w-6 h-10 border border-gray-500 rounded-full flex justify-center pt-2">
+                <div class="w-1.5 h-1.5 bg-primary rounded-full animate-bounce"></div>
             </div>
         </div>
     </section>
 
-    
-    <!-- Works/Portfolio Section -->
-    <section id="works" class="py-20 bg-dark-bg relative overflow-hidden">
+
+    <!-- Stats Section -->
+    <section class="relative py-20 overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="orbitron text-4xl font-bold mb-4">Our <span class="gradient-text">Portfolio</span></h2>
-                <p class="text-xl max-w-2xl mx-auto">Explore our innovative projects that push the boundaries of what's
-                    possible in technology.</p>
-            </div>
-            <div class="flex justify-center mb-12">
-                <div class="inline-flex bg-rich-black/50 p-1 rounded-full">
-                    <button class="px-6 py-2 rounded-full bg-primary text-rich-black font-medium whitespace-nowrap">All
-                        Projects</button>
-                    <button
-                        class="px-6 py-2 rounded-full text-gray-300 hover:text-white transition-colors duration-300 whitespace-nowrap">Web3</button>
-                    <button
-                        class="px-6 py-2 rounded-full text-gray-300 hover:text-white transition-colors duration-300 whitespace-nowrap">AI
-                        Solutions</button>
-                    <button
-                        class="px-6 py-2 rounded-full text-gray-300 hover:text-white transition-colors duration-300 whitespace-nowrap">AR/VR</button>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-black bg-opacity-60 backdrop-blur-lg p-8 rounded-lg gradient-border">
+                    <div class="text-4xl font-bold font-orbitron gradient-text mb-2 counter" data-target="150">0</div>
+                    <div class="text-gray-400 uppercase tracking-wider text-sm">Global Clients</div>
                 </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-rich-black rounded-xl overflow-hidden">
-                    <div class="relative overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=futuristic%20blockchain%20visualization%2C%20digital%20ledger%20technology%2C%20cryptocurrency%20network%2C%20secure%20data%20blocks%2C%20blue%20and%20purple%20neon%20glow%2C%20dark%20background%2C%20high-tech%20interface%2C%203D%20rendering%2C%20minimalist%20design%2C%20cyberpunk%20aesthetic&width=600&height=400&seq=3&orientation=landscape"
-                            alt="Blockchain Project"
-                            class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="orbitron text-xl font-bold mb-2">NexusChain Platform</h3>
-                                <p class="text-gray-300 mb-4">Decentralized blockchain solution for secure data
-                                    management and transparent transactions.</p>
-                                <button
-                                    class="neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <span
-                                class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm mr-2">Blockchain</span>
-                            <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Fintech</span>
-                        </div>
-                        <h3 class="orbitron text-xl font-bold mb-2">NexusChain Platform</h3>
-                        <p class="text-gray-300">Revolutionizing financial transactions with secure blockchain
-                            technology.</p>
-                    </div>
+                <div class="bg-black bg-opacity-60 backdrop-blur-lg p-8 rounded-lg gradient-border">
+                    <div class="text-4xl font-bold font-orbitron gradient-text mb-2 counter" data-target="85">0</div>
+                    <div class="text-gray-400 uppercase tracking-wider text-sm">Tech Solutions</div>
                 </div>
-                <!-- Project 2 -->
-                <div class="project-card bg-rich-black rounded-xl overflow-hidden">
-                    <div class="relative overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=futuristic%20AI%20neural%20network%20visualization%2C%20machine%20learning%20algorithm%2C%20data%20processing%2C%20artificial%20intelligence%20brain%2C%20glowing%20connections%2C%20blue%20and%20purple%20digital%20nodes%2C%20dark%20background%2C%20high-tech%20interface%2C%203D%20rendering%2C%20minimalist%20design&width=600&height=400&seq=4&orientation=landscape"
-                            alt="AI Project"
-                            class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="orbitron text-xl font-bold mb-2">CogniSense AI</h3>
-                                <p class="text-gray-300 mb-4">Advanced AI system for predictive analytics and
-                                    intelligent decision-making processes.</p>
-                                <button
-                                    class="neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm mr-2">Artificial
-                                Intelligence</span>
-                            <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Machine
-                                Learning</span>
-                        </div>
-                        <h3 class="orbitron text-xl font-bold mb-2">CogniSense AI</h3>
-                        <p class="text-gray-300">Intelligent systems that learn and adapt to optimize business
-                            processes.</p>
-                    </div>
+                <div class="bg-black bg-opacity-60 backdrop-blur-lg p-8 rounded-lg gradient-border">
+                    <div class="text-4xl font-bold font-orbitron gradient-text mb-2 counter" data-target="12">0</div>
+                    <div class="text-gray-400 uppercase tracking-wider text-sm">Years Experience</div>
                 </div>
-                <!-- Project 3 -->
-                <div class="project-card bg-rich-black rounded-xl overflow-hidden">
-                    <div class="relative overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=futuristic%20virtual%20reality%20interface%2C%20augmented%20reality%20headset%20view%2C%20immersive%20digital%20environment%2C%203D%20holographic%20display%2C%20interactive%20VR%20space%2C%20blue%20and%20purple%20neon%20elements%2C%20dark%20background%2C%20high-tech%20visualization%2C%20cyberpunk%20aesthetic&width=600&height=400&seq=5&orientation=landscape"
-                            alt="VR Project"
-                            class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="orbitron text-xl font-bold mb-2">ImmersaVerse</h3>
-                                <p class="text-gray-300 mb-4">Immersive virtual reality platform for training,
-                                    education, and interactive experiences.</p>
-                                <button
-                                    class="neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm mr-2">Virtual
-                                Reality</span>
-                            <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Augmented
-                                Reality</span>
-                        </div>
-                        <h3 class="orbitron text-xl font-bold mb-2">ImmersaVerse</h3>
-                        <p class="text-gray-300">Creating immersive digital experiences that transform how we interact
-                            with technology.</p>
-                    </div>
+                <div class="bg-black bg-opacity-60 backdrop-blur-lg p-8 rounded-lg gradient-border">
+                    <div class="text-4xl font-bold font-orbitron gradient-text mb-2 counter" data-target="99">0</div>
+                    <div class="text-gray-400 uppercase tracking-wider text-sm">Success Rate</div>
                 </div>
-                <!-- Project 4 -->
-                <div class="project-card bg-rich-black rounded-xl overflow-hidden">
-                    <div class="relative overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=futuristic%20IoT%20smart%20city%20visualization%2C%20connected%20devices%20network%2C%20internet%20of%20things%20infrastructure%2C%20digital%20urban%20environment%2C%20sensor%20data%20flow%2C%20blue%20and%20purple%20glowing%20elements%2C%20dark%20background%2C%20high-tech%20interface%2C%203D%20rendering%2C%20minimalist%20design&width=600&height=400&seq=6&orientation=landscape"
-                            alt="IoT Project"
-                            class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="orbitron text-xl font-bold mb-2">SmartNexus IoT</h3>
-                                <p class="text-gray-300 mb-4">Comprehensive IoT ecosystem for smart cities and connected
-                                    infrastructure management.</p>
-                                <button
-                                    class="neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm mr-2">IoT</span>
-                            <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Smart
-                                City</span>
-                        </div>
-                        <h3 class="orbitron text-xl font-bold mb-2">SmartNexus IoT</h3>
-                        <p class="text-gray-300">Connecting devices and infrastructure for smarter, more efficient urban
-                            environments.</p>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="project-card bg-rich-black rounded-xl overflow-hidden">
-                    <div class="relative overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=futuristic%20cybersecurity%20visualization%2C%20digital%20security%20shield%2C%20data%20protection%20system%2C%20network%20firewall%2C%20encryption%20technology%2C%20blue%20and%20purple%20digital%20fortress%2C%20dark%20background%2C%20high-tech%20interface%2C%203D%20rendering%2C%20minimalist%20design&width=600&height=400&seq=7&orientation=landscape"
-                            alt="Cybersecurity Project"
-                            class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="orbitron text-xl font-bold mb-2">QuantumShield</h3>
-                                <p class="text-gray-300 mb-4">Next-generation cybersecurity platform utilizing quantum
-                                    encryption technologies.</p>
-                                <button
-                                    class="neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <span
-                                class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm mr-2">Cybersecurity</span>
-                            <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Quantum
-                                Computing</span>
-                        </div>
-                        <h3 class="orbitron text-xl font-bold mb-2">QuantumShield</h3>
-                        <p class="text-gray-300">Protecting digital assets with advanced encryption and threat detection
-                            systems.</p>
-                    </div>
-                </div>
-                <!-- Project 6 -->
-                <div class="project-card bg-rich-black rounded-xl overflow-hidden">
-                    <div class="relative overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=futuristic%20cloud%20computing%20visualization%2C%20data%20center%20infrastructure%2C%20serverless%20architecture%2C%20digital%20cloud%20storage%2C%20network%20connectivity%2C%20blue%20and%20purple%20tech%20elements%2C%20dark%20background%2C%20high-tech%20interface%2C%203D%20rendering%2C%20minimalist%20design&width=600&height=400&seq=8&orientation=landscape"
-                            alt="Cloud Computing Project"
-                            class="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-rich-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                            <div class="p-6">
-                                <h3 class="orbitron text-xl font-bold mb-2">NimbusTech Cloud</h3>
-                                <p class="text-gray-300 mb-4">Scalable cloud infrastructure with advanced data
-                                    processing and storage capabilities.</p>
-                                <button
-                                    class="neon-button !rounded-button bg-transparent border border-primary px-4 py-2 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm mr-2">Cloud
-                                Computing</span>
-                            <span
-                                class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Serverless</span>
-                        </div>
-                        <h3 class="orbitron text-xl font-bold mb-2">NimbusTech Cloud</h3>
-                        <p class="text-gray-300">Delivering flexible, scalable cloud solutions for modern business
-                            needs.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="https://readdy.ai/home/e8e0def8-e920-4631-a367-a7bd6748f10c/2c8623c3-f85f-412b-acd7-060c0bcf9f2e"
-                    data-readdy="true">
-                    <button
-                        class="neon-button !rounded-button bg-transparent border border-primary px-8 py-3 text-primary hover:bg-primary/10 transition-all duration-300 whitespace-nowrap">
-                        View All Projects
-                    </button>
-                </a>
             </div>
         </div>
     </section>
-
 
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-rich-black relative overflow-hidden">
+    <section class="relative py-20 overflow-hidden" id="servsec">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="orbitron text-4xl font-bold mb-4">Our <span class="gradient-text">Services</span></h2>
-                <p class="text-xl max-w-2xl mx-auto">Cutting-edge solutions tailored to transform your business and
-                    drive innovation.</p>
+                <h2 class="font-orbitron text-3xl md:text-4xl font-bold mb-4">Our <span
+                        class="gradient-text">Services</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">We deliver cutting-edge technological solutions tailored to
+                    meet the evolving needs of businesses in the digital age.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
+                <!-- Service Card 1 -->
                 <div
-                    class="bg-dark-bg rounded-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20">
-                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
-                        <i class="ri-code-line ri-2x text-primary"></i>
+                    class="service-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border p-8 relative group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent"></div>
+                    <div
+                        class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ri-code-s-slash-line text-primary text-3xl"></i>
                     </div>
-                    <h3 class="orbitron text-xl font-bold mb-4">Custom Software Development</h3>
-                    <p class="text-gray-300 mb-6">Tailored software solutions designed to meet your unique business
-                        requirements and challenges.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Enterprise Applications</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Mobile App Development</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Web Application Development</span>
-                        </li>
-                    </ul>
-                    <a href="#"
-                        class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300">
-                        Learn More
-                        <i class="ri-arrow-right-line ml-2"></i>
-                    </a>
+                    <h3 class="font-orbitron text-xl font-bold mb-4">Python Development</h3>
+                    <p class="text-gray-400 mb-6">Expert Python development services for web applications, automation,
+                        and enterprise solutions.</p>
+                    
+                        
+                    <!-- Floating Elements -->
+                    <div class="absolute top-6 right-6 w-4 h-4 bg-primary bg-opacity-20 rounded-full floating-fast">
+                    </div>
+                    <div
+                        class="absolute bottom-10 right-10 w-6 h-6 border border-primary border-opacity-30 rounded-sm rotating">
+                    </div>
                 </div>
-                <!-- Service 2 -->
+                <!-- Service Card 2 -->
                 <div
-                    class="bg-dark-bg rounded-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20">
-                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
-                        <i class="ri-ai-generate ri-2x text-primary"></i>
+                    class="service-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border p-8 relative group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent"></div>
+                    <div
+                        class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ri-cloud-line text-primary text-3xl"></i>
                     </div>
-                    <h3 class="orbitron text-xl font-bold mb-4">AI & Machine Learning</h3>
-                    <p class="text-gray-300 mb-6">Harness the power of artificial intelligence to automate processes and
-                        gain valuable insights from your data.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Predictive Analytics</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Natural Language Processing</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Computer Vision Solutions</span>
-                        </li>
-                    </ul>
-                    <a href="#"
-                        class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300">
-                        Learn More
-                        <i class="ri-arrow-right-line ml-2"></i>
-                    </a>
+                    <h3 class="font-orbitron text-xl font-bold mb-4">Cloud Solutions</h3>
+                    <p class="text-gray-400 mb-6">Scalable infrastructure and services that power your business with
+                        reliability and security.</p>
+                    
+                        
+                    <!-- Floating Elements -->
+                    <div class="absolute top-12 right-8 w-5 h-5 bg-secondary bg-opacity-20 rounded-full floating"></div>
+                    <div class="absolute bottom-8 right-12 w-7 h-7 border border-secondary border-opacity-30 rounded-sm rotating"
+                        style="animation-direction: reverse;"></div>
                 </div>
-                <!-- Service 3 -->
+                <!-- Service Card 3 -->
                 <div
-                    class="bg-dark-bg rounded-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20">
-                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
-                        <i class="ri-database-2-line ri-2x text-primary"></i>
+                    class="service-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border p-8 relative group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent"></div>
+                    <div
+                        class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ri-shield-keyhole-line text-primary text-3xl"></i>
                     </div>
-                    <h3 class="orbitron text-xl font-bold mb-4">Blockchain Development</h3>
-                    <p class="text-gray-300 mb-6">Secure, transparent, and decentralized solutions for various
-                        industries and use cases.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Smart Contract Development</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>DeFi Applications</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>NFT Platforms</span>
-                        </li>
-                    </ul>
-                    <a href="#"
-                        class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300">
-                        Learn More
-                        <i class="ri-arrow-right-line ml-2"></i>
-                    </a>
+                    <h3 class="font-orbitron text-xl font-bold mb-4">Cybersecurity</h3>
+                    <p class="text-gray-400 mb-6">Advanced protection systems safeguarding your digital assets from
+                        evolving threats.</p>
+                   
+                        
+                    <!-- Floating Elements -->
+                    <div class="absolute top-10 right-10 w-3 h-3 bg-primary bg-opacity-20 rounded-full floating-slow">
+                    </div>
+                    <div
+                        class="absolute bottom-12 right-8 w-5 h-5 border border-primary border-opacity-30 rounded-sm rotating">
+                    </div>
                 </div>
-                <!-- Service 4 -->
+                <!-- Service Card 4 -->
                 <div
-                    class="bg-dark-bg rounded-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20">
-                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
-                        <i class="ri-augmented-reality-line ri-2x text-primary"></i>
+                    class="service-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border p-8 relative group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent"></div>
+                    <div
+                        class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ri-database-2-line text-primary text-3xl"></i>
                     </div>
-                    <h3 class="orbitron text-xl font-bold mb-4">AR/VR Development</h3>
-                    <p class="text-gray-300 mb-6">Immersive experiences that transform how users interact with digital
-                        content and environments.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Virtual Reality Applications</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Augmented Reality Solutions</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Mixed Reality Experiences</span>
-                        </li>
-                    </ul>
-                    <a href="#"
-                        class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300">
-                        Learn More
-                        <i class="ri-arrow-right-line ml-2"></i>
-                    </a>
+                    <h3 class="font-orbitron text-xl font-bold mb-4">Data Analysis</h3>
+                    <p class="text-gray-400 mb-6">Comprehensive data analysis services using Python and advanced
+                        statistical methods to uncover valuable insights.</p>
+                    
+                        
+                    <!-- Floating Elements -->
+                    <div class="absolute top-8 right-12 w-4 h-4 bg-secondary bg-opacity-20 rounded-full floating-fast">
+                    </div>
+                    <div class="absolute bottom-10 right-6 w-6 h-6 border border-secondary border-opacity-30 rounded-sm rotating"
+                        style="animation-direction: reverse;"></div>
                 </div>
-                <!-- Service 5 -->
+                <!-- Service Card 5 -->
                 <div
-                    class="bg-dark-bg rounded-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20">
-                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
-                        <i class="ri-cloud-line ri-2x text-primary"></i>
+                    class="service-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border p-8 relative group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent"></div>
+                    <div
+                        class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ri-vr-line text-primary text-3xl"></i>
                     </div>
-                    <h3 class="orbitron text-xl font-bold mb-4">Cloud Solutions</h3>
-                    <p class="text-gray-300 mb-6">Scalable, secure, and efficient cloud infrastructure and migration
-                        services.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Cloud Migration</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Serverless Architecture</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>DevOps Implementation</span>
-                        </li>
-                    </ul>
-                    <a href="#"
-                        class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300">
-                        Learn More
-                        <i class="ri-arrow-right-line ml-2"></i>
-                    </a>
+                    <h3 class="font-orbitron text-xl font-bold mb-4">AR/VR Solutions</h3>
+                    <p class="text-gray-400 mb-6">Immersive experiences that bridge the gap between digital and physical
+                        worlds.</p>
+                    
+                        
+                    <!-- Floating Elements -->
+                    <div class="absolute top-12 right-10 w-5 h-5 bg-primary bg-opacity-20 rounded-full floating"></div>
+                    <div
+                        class="absolute bottom-8 right-8 w-7 h-7 border border-primary border-opacity-30 rounded-sm rotating">
+                    </div>
                 </div>
-                <!-- Service 6 -->
+                <!-- Service Card 6 -->
                 <div
-                    class="bg-dark-bg rounded-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20">
-                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
-                        <i class="ri-shield-keyhole-line ri-2x text-primary"></i>
+                    class="service-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border p-8 relative group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent"></div>
+                    <div
+                        class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ri-book-open-line text-primary text-3xl"></i>
                     </div>
-                    <h3 class="orbitron text-xl font-bold mb-4">Cybersecurity Services</h3>
-                    <p class="text-gray-300 mb-6">Comprehensive security solutions to protect your digital assets and
-                        infrastructure.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Security Assessments</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Penetration Testing</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                            <span>Security Operations Center</span>
-                        </li>
-                    </ul>
-                    <a href="#"
-                        class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300">
-                        Learn More
-                        <i class="ri-arrow-right-line ml-2"></i>
-                    </a>
+                    <h3 class="font-orbitron text-xl font-bold mb-4">Tech Tutorials</h3>
+                    <p class="text-gray-400 mb-6">Expert-led tutorials and training programs in Python programming, data
+                        analysis, and modern development tools.</p>
+                   
+                        
+                    <!-- Floating Elements -->
+                    <div class="absolute top-10 right-8 w-3 h-3 bg-secondary bg-opacity-20 rounded-full floating-slow">
+                    </div>
+                    <div class="absolute bottom-12 right-10 w-5 h-5 border border-secondary border-opacity-30 rounded-sm rotating"
+                        style="animation-direction: reverse;"></div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Testimonial Section -->
-    <section id="testimonials" class="py-20 bg-dark-bg relative overflow-hidden">
+
+
+    <!-- About Section -->
+    <section class="relative py-20 overflow-hidden" id="aboutsec">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="orbitron text-4xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span></h2>
-                <p class="text-xl max-w-2xl mx-auto">Hear what our clients have to say about their experience working
-                    with us.</p>
-            </div>
-            <div class="relative">
-                <div class="testimonial-slider flex overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
-                    id="testimonialSlider">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4 snap-start">
-                        <div class="bg-rich-black rounded-xl p-8 h-full border border-gray-800">
-                            <div class="flex items-center mb-6">
-                                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=professional%20business%20woman%20portrait%2C%20asian%20ethnicity%2C%20confident%20expression%2C%20corporate%20attire%2C%20minimalist%20background%2C%20high%20quality%20professional%20headshot&width=100&height=100&seq=9&orientation=squarish"
-                                        alt="Sarah Chen" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-bold">Sarah Chen</h4>
-                                    <p class="text-gray-400 text-sm">CTO, Quantum Innovations</p>
-                                </div>
-                            </div>
-                            <div class="flex mb-4">
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary"></i>
-                            </div>
-                            <p class="text-gray-300 mb-4">"TechInnovom transformed our business with their AI solutions.
-                                Their team's expertise and innovative approach helped us implement a system that
-                                increased our operational efficiency by 40%. The attention to detail and commitment to
-                                excellence is unmatched."</p>
-                            <p class="text-primary font-medium">May 15, 2025</p>
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="relative w-full h-96 md:h-[500px] overflow-hidden rounded-lg">
+                        <div style="background-image: url('https://readdy.ai/api/search-image?query=futuristic%20tech%20team%20working%20in%20modern%20office%20with%20holographic%20displays%2C%20diverse%20group%20of%20professionals%20collaborating%20on%20advanced%20technology%2C%20blue%20and%20purple%20lighting%2C%20sleek%20glass%20and%20metal%20interior%2C%20high-tech%20workspace%20with%20floating%20digital%20interfaces%2C%20professional%20environment&width=800&height=1000&seq=about1&orientation=portrait');"
+                            class="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-700">
                         </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                     </div>
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4 snap-start">
-                        <div class="bg-rich-black rounded-xl p-8 h-full border border-gray-800">
-                            <div class="flex items-center mb-6">
-                                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=professional%20business%20man%20portrait%2C%20african%20american%20ethnicity%2C%20confident%20expression%2C%20corporate%20attire%2C%20minimalist%20background%2C%20high%20quality%20professional%20headshot&width=100&height=100&seq=10&orientation=squarish"
-                                        alt="Marcus Johnson" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-bold">Marcus Johnson</h4>
-                                    <p class="text-gray-400 text-sm">CEO, NexGen Financial</p>
-                                </div>
-                            </div>
-                            <div class="flex mb-4">
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary"></i>
-                            </div>
-                            <p class="text-gray-300 mb-4">"The blockchain solution developed by TechInnovom
-                                revolutionized our payment processing system. Their team's technical prowess and
-                                understanding of our industry needs resulted in a secure, transparent platform that our
-                                clients trust implicitly."</p>
-                            <p class="text-primary font-medium">April 22, 2025</p>
-                        </div>
+                    <!-- Floating Elements -->
+                    <div
+                        class="absolute -top-6 -left-6 w-12 h-12 border border-primary border-opacity-40 rounded-lg rotating">
                     </div>
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4 snap-start">
-                        <div class="bg-rich-black rounded-xl p-8 h-full border border-gray-800">
-                            <div class="flex items-center mb-6">
-                                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=professional%20business%20woman%20portrait%2C%20caucasian%20ethnicity%2C%20confident%20expression%2C%20corporate%20attire%2C%20minimalist%20background%2C%20high%20quality%20professional%20headshot&width=100&height=100&seq=11&orientation=squarish"
-                                        alt="Emily Richardson" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-bold">Emily Richardson</h4>
-                                    <p class="text-gray-400 text-sm">Director of Innovation, TechFuture</p>
-                                </div>
-                            </div>
-                            <div class="flex mb-4">
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-half-fill text-primary"></i>
-                            </div>
-                            <p class="text-gray-300 mb-4">"Working with TechInnovom on our VR training platform was a
-                                game-changer. Their creative approach and technical expertise delivered an immersive
-                                experience that reduced our training time by 60% and significantly improved knowledge
-                                retention."</p>
-                            <p class="text-primary font-medium">March 18, 2025</p>
-                        </div>
-                    </div>
-                    <!-- Testimonial 4 -->
-                    <div class="testimonial-card min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4 snap-start">
-                        <div class="bg-rich-black rounded-xl p-8 h-full border border-gray-800">
-                            <div class="flex items-center mb-6">
-                                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=professional%20business%20man%20portrait%2C%20middle%20eastern%20ethnicity%2C%20confident%20expression%2C%20corporate%20attire%2C%20minimalist%20background%2C%20high%20quality%20professional%20headshot&width=100&height=100&seq=12&orientation=squarish"
-                                        alt="Rayan Al-Farsi" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="font-bold">Rayan Al-Farsi</h4>
-                                    <p class="text-gray-400 text-sm">CIO, Global Innovations</p>
-                                </div>
-                            </div>
-                            <div class="flex mb-4">
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary mr-1"></i>
-                                <i class="ri-star-fill text-primary"></i>
-                            </div>
-                            <p class="text-gray-300 mb-4">"TechInnovom's cybersecurity team identified vulnerabilities
-                                in our system that other consultants missed. Their comprehensive approach to security
-                                and proactive monitoring has given us peace of mind and protected our sensitive data."
-                            </p>
-                            <p class="text-primary font-medium">February 5, 2025</p>
-                        </div>
-                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-12 h-12 border border-secondary border-opacity-40 rounded-lg rotating"
+                        style="animation-direction: reverse;"></div>
                 </div>
-                <div class="flex justify-center mt-8">
-                    <button id="prevTestimonial"
-                        class="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 text-gray-300 hover:border-primary hover:text-primary transition-colors duration-300 mr-4">
-                        <i class="ri-arrow-left-s-line ri-lg"></i>
-                    </button>
-                    <button id="nextTestimonial"
-                        class="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 text-gray-300 hover:border-primary hover:text-primary transition-colors duration-300">
-                        <i class="ri-arrow-right-s-line ri-lg"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="mt-20">
-                <div class="text-center mb-10">
-                    <h3 class="orbitron text-2xl font-bold mb-4">Trusted By Industry Leaders</h3>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-                    <div
-                        class="flex flex-col items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-12 h-12 flex items-center justify-center mb-2">
-                            <i class="ri-microsoft-fill ri-3x text-gray-400"></i>
-                        </div>
-                        <span class="text-gray-400">Microsoft</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-12 h-12 flex items-center justify-center mb-2">
-                            <i class="ri-amazon-fill ri-3x text-gray-400"></i>
-                        </div>
-                        <span class="text-gray-400">Amazon</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-12 h-12 flex items-center justify-center mb-2">
-                            <i class="ri-google-fill ri-3x text-gray-400"></i>
-                        </div>
-                        <span class="text-gray-400">Google</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-12 h-12 flex items-center justify-center mb-2">
-                            <i class="ri-netflix-fill ri-3x text-gray-400"></i>
-                        </div>
-                        <span class="text-gray-400">Netflix</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-12 h-12 flex items-center justify-center mb-2">
-                            <i class="ri-spotify-fill ri-3x text-gray-400"></i>
-                        </div>
-                        <span class="text-gray-400">Spotify</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-12 h-12 flex items-center justify-center mb-2">
-                            <i class="ri-slack-fill ri-3x text-gray-400"></i>
-                        </div>
-                        <span class="text-gray-400">Slack</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-rich-black relative overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="orbitron text-4xl font-bold mb-4">Get in <span class="gradient-text">Touch</span></h2>
-                <p class="text-xl max-w-2xl mx-auto">Ready to transform your business with cutting-edge technology?
-                    Contact us today.</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                    <div class="bg-dark-bg rounded-xl p-8 mb-8">
-                        <h3 class="orbitron text-2xl font-bold mb-6">Contact Information</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mr-4">
-                                    <i class="ri-map-pin-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Our Location</h4>
-                                    <p class="text-gray-300">1250 Technology Drive, Suite 300<br>Silicon Valley, CA
-                                        94025</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mr-4">
-                                    <i class="ri-mail-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Email Us</h4>
-                                    <p class="text-gray-300">info@techinnovom.com<br>support@techinnovom.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mr-4">
-                                    <i class="ri-phone-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Call Us</h4>
-                                    <p class="text-gray-300">+1 (800) 555-TECH<br>+1 (650) 123-4567</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-dark-bg rounded-xl overflow-hidden h-64">
-                        <div class="h-full w-full"
-                            style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;">
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-dark-bg rounded-xl p-8">
-                    <h3 class="orbitron text-2xl font-bold mb-6">Send Us a Message</h3>
-                    <form>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="name" class="block mb-2 font-medium">Full Name</label>
-                                <input type="text" id="name"
-                                    class="w-full bg-rich-black border border-gray-700 rounded-lg p-3 text-white focus:border-primary transition-colors duration-300"
-                                    placeholder="Your name">
+                <div class="w-full lg:w-1/2">
+                    <h2 class="font-orbitron text-3xl md:text-4xl font-bold mb-6">About <span
+                            class="gradient-text">TechInnovom</span></h2>
+                    <p class="text-gray-300 mb-6">Founded in 2020 by Praise Obasi, a visionary Nigerian Python
+                        developer, TechInnovom has rapidly emerged as a leading force in technological innovation,
+                        pushing boundaries and redefining what's possible in the digital landscape.</p>
+                    <p class="text-gray-300 mb-8">Under her leadership, our growing team of 50+ experts combines deep
+                        technical expertise with creative thinking to deliver solutions that not only meet today's
+                        challenges but anticipate tomorrow's opportunities, with a special focus on Python development
+                        and data analysis.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-award-line text-primary"></i>
                             </div>
                             <div>
-                                <label for="email" class="block mb-2 font-medium">Email Address</label>
-                                <input type="email" id="email"
-                                    class="w-full bg-rich-black border border-gray-700 rounded-lg p-3 text-white focus:border-primary transition-colors duration-300"
-                                    placeholder="Your email">
+                                <h3 class="font-orbitron text-lg font-bold mb-2">Excellence</h3>
+                                <p class="text-gray-400 text-sm">We pursue the highest standards in everything we do.
+                                </p>
                             </div>
                         </div>
-                        <div class="mb-6">
-                            <label for="subject" class="block mb-2 font-medium">Subject</label>
-                            <input type="text" id="subject"
-                                class="w-full bg-rich-black border border-gray-700 rounded-lg p-3 text-white focus:border-primary transition-colors duration-300"
-                                placeholder="How can we help?">
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block mb-2 font-medium">Message</label>
-                            <textarea id="message" rows="5"
-                                class="w-full bg-rich-black border border-gray-700 rounded-lg p-3 text-white focus:border-primary transition-colors duration-300"
-                                placeholder="Your message..."></textarea>
-                        </div>
-                        <div class="flex items-center mb-6">
-                            <div class="relative inline-block w-10 h-6 mr-2">
-                                <input type="checkbox" id="consent" class="opacity-0 w-0 h-0">
-                                <span
-                                    class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-700 rounded-full transition-all duration-300"></span>
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-lightbulb-line text-primary"></i>
                             </div>
-                            <label for="consent" class="text-sm text-gray-300">I agree to the processing of personal
-                                data according to the privacy policy</label>
+                            <div>
+                                <h3 class="font-orbitron text-lg font-bold mb-2">Innovation</h3>
+                                <p class="text-gray-400 text-sm">We constantly explore new ideas and approaches.</p>
+                            </div>
                         </div>
-                        <button type="submit"
-                            class="holographic-glow neon-button !rounded-button bg-primary px-8 py-3 text-rich-black font-bold hover:bg-primary/90 transition-all duration-300 whitespace-nowrap w-full">
-                            Send Message
-                        </button>
-                    </form>
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-team-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-orbitron text-lg font-bold mb-2">Collaboration</h3>
+                                <p class="text-gray-400 text-sm">We believe in the power of diverse perspectives.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-heart-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-orbitron text-lg font-bold mb-2">Integrity</h3>
+                                <p class="text-gray-400 text-sm">We maintain the highest ethical standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="openStoryPopup()"
+                        class="px-8 py-3 bg-transparent border border-primary text-primary font-orbitron text-sm uppercase tracking-wider hover:bg-primary hover:text-black transition-all duration-300 !rounded-button whitespace-nowrap">Our
+                        Story</button>
+                    <!-- Story Popup -->
+                    <div id="storyPopup" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm z-50 hidden">
+                        <div
+                            class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-black bg-opacity-90 rounded-lg gradient-border p-8 max-h-[80vh] overflow-y-auto">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="font-orbitron text-2xl font-bold gradient-text">Our Journey</h3>
+                                <button onclick="closeStoryPopup()"
+                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-800 transition-colors duration-300">
+                                    <i class="ri-close-line text-xl text-gray-400 hover:text-primary"></i>
+                                </button>
+                            </div>
+                            <div class="space-y-6 text-gray-300">
+                                <p>Founded in 2020 by Praise Obasi, TechInnovom emerged from a vision to bridge the gap
+                                    between cutting-edge technology and practical business solutions. As a female
+                                    Nigerian Python developer, Praise recognized the untapped potential in combining
+                                    technical excellence with innovative problem-solving approaches.</p>
+                                <p>Starting with a small team of dedicated developers, TechInnovom quickly gained
+                                    recognition for its expertise in Python development and data analysis. Our
+                                    commitment to quality and innovation attracted top talent from across the globe,
+                                    allowing us to expand our services and impact.</p>
+                                <p>Today, we're proud to have grown into a diverse team of over 50 professionals,
+                                    serving clients worldwide. Our journey has been marked by continuous learning,
+                                    adaptation, and a steadfast commitment to pushing technological boundaries while
+                                    maintaining our core values of excellence, innovation, and integrity.</p>
+                                <div class="mt-8 grid grid-cols-2 gap-6">
+                                    <div class="bg-black bg-opacity-60 p-4 rounded gradient-border">
+                                        <div class="text-2xl font-bold gradient-text mb-2">50+</div>
+                                        <div class="text-sm text-gray-400">Team Members</div>
+                                    </div>
+                                    <div class="bg-black bg-opacity-60 p-4 rounded gradient-border">
+                                        <div class="text-2xl font-bold gradient-text mb-2">200+</div>
+                                        <div class="text-sm text-gray-400">Projects Completed</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <!-- Tech Stack Section -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-orbitron text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Tech
+                        Stack</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">We leverage cutting-edge technologies to build solutions that
+                    are robust, scalable, and future-proof.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div
+                    class="bg-black bg-opacity-60 backdrop-blur-lg p-6 rounded-lg gradient-border flex flex-col items-center justify-center group hover:bg-opacity-80 transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center mb-4">
+                        <i
+                            class="ri-python-line text-4xl text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <span class="font-orbitron text-sm">Python</span>
+                    <span class="text-xs text-gray-400 mt-1">Core Technology</span>
+                </div>
+                <div
+                    class="bg-black bg-opacity-60 backdrop-blur-lg p-6 rounded-lg gradient-border flex flex-col items-center justify-center group hover:bg-opacity-80 transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center mb-4">
+                        <i
+                            class="ri-figma-line text-4xl text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <span class="font-orbitron text-sm">Figma</span>
+                </div>
+                <div
+                    class="bg-black bg-opacity-60 backdrop-blur-lg p-6 rounded-lg gradient-border flex flex-col items-center justify-center group hover:bg-opacity-80 transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center mb-4">
+                        <i
+                            class="ri-database-2-line text-4xl text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <span class="font-orbitron text-sm">MongoDB</span>
+                </div>
+                <div
+                    class="bg-black bg-opacity-60 backdrop-blur-lg p-6 rounded-lg gradient-border flex flex-col items-center justify-center group hover:bg-opacity-80 transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center mb-4">
+                        <i
+                            class="ri-cloud-line text-4xl text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <span class="font-orbitron text-sm">AWS</span>
+                </div>
+                <div
+                    class="bg-black bg-opacity-60 backdrop-blur-lg p-6 rounded-lg gradient-border flex flex-col items-center justify-center group hover:bg-opacity-80 transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center mb-4">
+                        <i
+                            class="ri-flutter-line text-4xl text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <span class="font-orbitron text-sm">Flutter</span>
+                </div>
+                <div
+                    class="bg-black bg-opacity-60 backdrop-blur-lg p-6 rounded-lg gradient-border flex flex-col items-center justify-center group hover:bg-opacity-80 transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center mb-4">
+                        <i
+                            class="ri-tensorflow-line text-4xl text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <span class="font-orbitron text-sm">TensorFlow</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-orbitron text-3xl md:text-4xl font-bold mb-4">Client <span
+                        class="gradient-text">Testimonials</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Discover how our Python expertise and data solutions, led by
+                    founder Praise Obasi, have transformed businesses across industries.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-black bg-opacity-60 backdrop-blur-lg p-8 rounded-lg gradient-border relative">
+                    <div class="absolute -top-5 left-8 text-6xl text-primary opacity-30">"</div>
+                    <p class="text-gray-300 mb-6 relative z-10">TechInnovom's AI solution transformed our customer
+                        service operations, reducing response times by 65% while improving satisfaction scores. Their
+                        team's expertise and dedication were exceptional throughout the project.</p>
+                    <div class="flex items-center">
+                        <div>
+                            <h4 class="font-orbitron font-bold">Emily Chen</h4>
+                            <p class="text-gray-400 text-sm">CTO, GlobalTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-black bg-opacity-60 backdrop-blur-lg p-8 rounded-lg gradient-border relative">
+                    <div class="absolute -top-5 left-8 text-6xl text-primary opacity-30">"</div>
+                    <p class="text-gray-300 mb-6 relative z-10">The cybersecurity infrastructure implemented by
+                        TechInnovom has been rock-solid. In an era of increasing threats, their proactive approach and
+                        continuous monitoring give us peace of mind that our data is protected.</p>
+                    <div class="flex items-center">
+                        <div>
+                            <h4 class="font-orbitron font-bold">Marcus Johnson</h4>
+                            <p class="text-gray-400 text-sm">CISO, FinSecure Bank</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-black bg-opacity-60 backdrop-blur-lg p-8 rounded-lg gradient-border relative">
+                    <div class="absolute -top-5 left-8 text-6xl text-primary opacity-30">"</div>
+                    <p class="text-gray-300 mb-6 relative z-10">Working with TechInnovom on our AR retail experience was
+                        a game-changer. Their innovative approach and technical excellence delivered a solution that
+                        increased customer engagement by 40% and boosted sales significantly.</p>
+                    <div class="flex items-center">
+                        <div>
+                            <h4 class="font-orbitron font-bold">Sophia Müller</h4>
+                            <p class="text-gray-400 text-sm">Innovation Director, RetailNext</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0"
+            style="background-image: url('https://readdy.ai/api/search-image?query=abstract%20futuristic%20technology%20background%20with%20glowing%20blue%20circuit%20patterns%2C%20dark%20space%20with%20digital%20grid%20lines%20and%20particles%2C%20high-tech%20environment%20with%20subtle%20geometric%20elements%2C%20perfect%20for%20a%20tech%20company%20website%20CTA%20section&width=1920&height=600&seq=cta1&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.2;">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-orbitron text-3xl md:text-5xl font-bold mb-6">Ready to <span
+                        class="gradient-text">Transform</span> Your Business?</h2>
+                <p class="text-gray-300 text-lg mb-8">Let's collaborate to build innovative solutions that drive your
+                    business forward in the digital age.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button
+                        class="px-8 py-3 bg-primary text-black font-orbitron text-sm uppercase tracking-wider hover:bg-opacity-80 transition-all duration-300 !rounded-button whitespace-nowrap">Schedule
+                        Consultation</button>
+                    <button
+                        class="px-8 py-3 bg-transparent border border-white text-white font-orbitron text-sm uppercase tracking-wider hover:border-primary hover:text-primary transition-all duration-300 !rounded-button whitespace-nowrap">View
+                        Case Studies</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Newsletter Section -->
-    <section class="py-16 bg-dark-bg relative overflow-hidden">
+    <section class="relative py-16 overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="bg-gradient-to-r from-[#0A0F2D] to-[#1A1A3A] rounded-2xl p-12 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10"
-                    style="background-image: url('https://readdy.ai/api/search-image?query=abstract%20digital%20network%2C%20tech%20particles%2C%20futuristic%20data%20visualization%2C%20blue%20and%20purple%20gradient%2C%20cyberpunk%20aesthetic%2C%20minimalist%20design%2C%20dark%20background&width=800&height=600&seq=13&orientation=landscape'); background-size: cover; background-position: center;">
-                </div>
-                <div class="relative z-10 max-w-3xl">
-                    <h2 class="orbitron text-3xl md:text-4xl font-bold mb-4">Stay Updated with Tech Trends</h2>
-                    <p class="text-xl mb-8">Subscribe to our newsletter for the latest insights, innovations, and
-                        industry updates.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <input type="email" placeholder="Enter your email address"
-                            class="flex-grow bg-rich-black border border-gray-700 rounded-lg p-3 text-white focus:border-primary transition-colors duration-300">
-                        <button
-                            class="holographic-glow neon-button !rounded-button bg-primary px-8 py-3 text-rich-black font-bold hover:bg-primary/90 transition-all duration-300 whitespace-nowrap">
-                            Subscribe
-                        </button>
+            <div class="max-w-4xl mx-auto bg-black bg-opacity-60 backdrop-blur-lg p-10 rounded-lg gradient-border">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="w-full md:w-1/2">
+                        <h3 class="font-orbitron text-2xl font-bold mb-3">Stay <span
+                                class="gradient-text">Updated</span></h3>
+                        <p class="text-gray-300 mb-0">Subscribe to our newsletter for the latest tech insights and
+                            company updates.</p>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <form class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" placeholder="Enter your email"
+                                class="flex-grow px-4 py-3 bg-black border border-gray-700 rounded-lg focus:outline-none focus:border-primary text-white">
+                            <button type="submit"
+                                class="px-6 py-3 bg-primary text-black font-orbitron text-sm uppercase tracking-wider hover:bg-opacity-80 transition-all duration-300 !rounded-button whitespace-nowrap">Subscribe</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
     <!-- Footer -->
-    <footer class="bg-rich-black pt-16 pb-8">
+    <footer class="relative pt-20 pb-10 overflow-hidden bg-black">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent">
+        </div>
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
                 <div>
-                    <a href="#"
-                        class="text-3xl font-['Orbitron'] font-bold gradient-text mb-6 inline-block">TechInnovom</a>
-                    <p class="text-gray-400 mb-6">Pioneering the future through innovative technology solutions that
-                        transform businesses and enhance lives.</p>
+                    <a href="#" class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-black rounded-full gradient-border flex items-center justify-center">
+                            <span class="font-['Pacifico'] text-xl text-primary glow">TI</span>
+                        </div>
+                        <span class="font-orbitron text-xl font-bold gradient-text">TechInnovom</span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Led by Praise Obasi, we're pioneering the future through innovative
+                        Python solutions and data analytics that transform businesses and enhance lives.</p>
                     <div class="flex space-x-4">
                         <a href="#"
-                            class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-colors duration-300">
-                            <i class="ri-twitter-x-fill"></i>
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary transition-colors duration-300">
+                            <i
+                                class="ri-twitter-x-line text-gray-400 hover:text-primary transition-colors duration-300"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-colors duration-300">
-                            <i class="ri-linkedin-fill"></i>
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary transition-colors duration-300">
+                            <i
+                                class="ri-linkedin-line text-gray-400 hover:text-primary transition-colors duration-300"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-colors duration-300">
-                            <i class="ri-facebook-fill"></i>
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary transition-colors duration-300">
+                            <i
+                                class="ri-tiktok-line text-gray-400 hover:text-primary transition-colors duration-300"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:border-primary hover:text-primary transition-colors duration-300">
-                            <i class="ri-instagram-fill"></i>
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary transition-colors duration-300">
+                            <i
+                                class="ri-instagram-line text-gray-400 hover:text-primary transition-colors duration-300"></i>
                         </a>
                     </div>
                 </div>
+
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <h4 class="font-orbitron text-lg font-bold mb-6">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">About
-                                Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Our
-                                Services</a></li>
-                        <li><a href="#"
-                                class="text-gray-400 hover:text-primary transition-colors duration-300">Portfolio</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-gray-400 hover:text-primary transition-colors duration-300">Testimonials</a>
-                        </li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Contact
-                                Us</a></li>
-                        <li><a href="#"
-                                class="text-gray-400 hover:text-primary transition-colors duration-300">Careers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xl font-bold mb-6">Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Custom
-                                Software Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">AI &
-                                Machine Learning</a></li>
-                        <li><a href="#"
-                                class="text-gray-400 hover:text-primary transition-colors duration-300">Blockchain
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Python
                                 Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">AR/VR
-                                Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Data
+                                Analysis</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Tech
+                                Tutorials</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Cloud
                                 Solutions</a></li>
                         <li><a href="#"
-                                class="text-gray-400 hover:text-primary transition-colors duration-300">Cybersecurity
-                                Services</a></li>
+                                class="text-gray-400 hover:text-primary transition-colors duration-300">Cybersecurity</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">AR/VR
+                                Solutions</a></li>
                     </ul>
                 </div>
+
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Contact</h4>
+                    <h4 class="font-orbitron text-lg font-bold mb-6">Company</h4>
                     <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-400">1250 Technology Drive, Suite 300<br>Silicon Valley, CA
-                                94025</span>
+                        <li><a href="#aboutsec" class="text-gray-400 hover:text-primary transition-colors duration-300">About
+                                Us</a></li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-primary transition-colors duration-300">Careers</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-primary transition-colors duration-300">Case
+                                Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Blog</a>
                         </li>
-                        <li class="flex items-start">
-                            <i class="ri-mail-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-400">info@techinnovom.com</span>
+
+                        <li>
+                            <a href="contact.html" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                                Contact
+                            </a>
                         </li>
-                        <li class="flex items-start">
-                            <i class="ri-phone-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-400">+1 (800) 555-TECH</span>
+                    </ul>
+                </div>
+
+                <!-- contact info -->
+                <div>
+                    <h4 class="font-orbitron text-lg font-bold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                     
+                        <li class="flex items-center">
+                            <i class="ri-phone-line text-primary mr-3"></i>
+                            <span class="text-gray-400">+234 81 191 288 50</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="ri-time-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        <li class="flex items-center">
+                            <i class="ri-mail-line text-primary mr-3"></i>
+                            <span class="text-gray-400">techinnovom@proton.me</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-500 mb-4 md:mb-0">© 2025 TechInnovom. All rights reserved.</p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="#"
-                            class="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Privacy
-                            Policy</a>
-                        <a href="#"
-                            class="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Terms of
-                            Service</a>
-                        <a href="#"
-                            class="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Cookie
-                            Policy</a>
-                        <a href="#"
-                            class="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Sitemap</a>
-                    </div>
-                </div>
+
+            <!-- copy -->
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechInnovom. All rights reserved.</p>
+                
             </div>
         </div>
-        <button id="backToTop"
-            class="fixed bottom-6 right-6 w-12 h-12 flex items-center justify-center bg-primary rounded-full text-rich-black shadow-lg shadow-primary/20 transform translate-y-20 opacity-0 transition-all duration-300">
-            <i class="ri-arrow-up-line ri-lg"></i>
-        </button>
     </footer>
-    <!-- Project Modal -->
-    <div id="projectModal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center">
-        <div class="bg-dark-bg rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
-            <div class="relative">
-                <button id="closeModal" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary transition-colors duration-300">
-                    <i class="ri-close-line ri-lg"></i>
-                </button>
-                <div class="p-8">
-                    <div class="aspect-video rounded-xl overflow-hidden mb-6">
-                        <img id="modalImage" src="" alt="Project Image" class="w-full h-full object-cover">
-                    </div>
-                    <h3 id="modalTitle" class="orbitron text-2xl font-bold mb-4"></h3>
-                    <div id="modalTags" class="flex flex-wrap gap-2 mb-6"></div>
-                    <p id="modalDescription" class="text-gray-300 mb-6"></p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <h4 class="font-bold mb-2">Technologies Used</h4>
-                            <ul id="modalTech" class="list-disc list-inside text-gray-300"></ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-2">Key Features</h4>
-                            <ul id="modalFeatures" class="list-disc list-inside text-gray-300"></ul>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <button class="neon-button !rounded-button bg-transparent border border-primary px-6 py-2 text-primary hover:bg-primary/10 transition-all duration-300">
-                            View Live Demo
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script id="headerScroll">
+
+    
+
+    <!-- SCRIPTS -->
+    <script id="particlesScript">
         document.addEventListener('DOMContentLoaded', function () {
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 50) {
-                    header.classList.add('bg-rich-black/90', 'backdrop-blur-md', 'shadow-lg');
-                } else {
-                    header.classList.remove('bg-rich-black/90', 'backdrop-blur-md', 'shadow-lg');
-                }
-            });
-        });
-    </script>
-    <script id="mobileMenuToggle">
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuBtn = document.getElementById('menuBtn');
-            const closeMenuBtn = document.getElementById('closeMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            menuBtn.addEventListener('click', function () {
-                mobileMenu.classList.remove('translate-x-full');
-                document.body.style.overflow = 'hidden';
-            });
-            closeMenuBtn.addEventListener('click', function () {
-                mobileMenu.classList.add('translate-x-full');
-                document.body.style.overflow = '';
-            });
-            // Close mobile menu when clicking on a link
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    mobileMenu.classList.add('translate-x-full');
-                    document.body.style.overflow = '';
-                });
-            });
-        });
-    </script>
-    <script id="testimonialSlider">
-        document.addEventListener('DOMContentLoaded', function () {
-            const slider = document.getElementById('testimonialSlider');
-            const prevBtn = document.getElementById('prevTestimonial');
-            const nextBtn = document.getElementById('nextTestimonial');
-            let slideWidth = 0;
-            let slideIndex = 0;
-            let slidesPerView = 1;
-            function updateSliderDimensions() {
-                if (window.innerWidth >= 1024) {
-                    slidesPerView = 3;
-                } else if (window.innerWidth >= 768) {
-                    slidesPerView = 2;
-                } else {
-                    slidesPerView = 1;
-                }
-                slideWidth = slider.offsetWidth / slidesPerView;
-            }
-            function goToSlide(index) {
-                slideIndex = index;
-                slider.scrollTo({
-                    left: slideIndex * slideWidth,
-                    behavior: 'smooth'
-                });
-            }
-            prevBtn.addEventListener('click', function () {
-                if (slideIndex > 0) {
-                    goToSlide(slideIndex - 1);
-                }
-            });
-            nextBtn.addEventListener('click', function () {
-                const maxIndex = slider.children.length - slidesPerView;
-                if (slideIndex < maxIndex) {
-                    goToSlide(slideIndex + 1);
-                }
-            });
-            window.addEventListener('resize', updateSliderDimensions);
-            updateSliderDimensions();
-        });
-    </script>
-    <script id="backToTopButton">
-        document.addEventListener('DOMContentLoaded', function () {
-            const backToTopBtn = document.getElementById('backToTop');
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 500) {
-                    backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
-                    backToTopBtn.classList.add('translate-y-0', 'opacity-100');
-                } else {
-                    backToTopBtn.classList.add('translate-y-20', 'opacity-0');
-                    backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
-                }
-            });
-            backToTopBtn.addEventListener('click', function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-    <script id="smoothScrolling">
-        document.addEventListener('DOMContentLoaded', function () {
-            const links = document.querySelectorAll('a[href^="#"]');
-            links.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerOffset = 80;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-    <script id="customSwitch">
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggleSwitch = document.getElementById('consent');
-            const slider = document.querySelector('.slider');
-            toggleSwitch.addEventListener('change', function () {
-                if (this.checked) {
-                    slider.style.backgroundColor = '#00F0FF';
-                } else {
-                    slider.style.backgroundColor = '#4B5563';
-                }
-            });
-            // Style the custom switch
-            const style = document.createElement('style');
-            style.textContent = `
-.slider:before {
-content: "";
-position: absolute;
-height: 1.25rem;
-width: 1.25rem;
-left: 0.25rem;
-bottom: 0.25rem;
-background-color: white;
-transition: 0.3s;
-border-radius: 50%;
-}
-input:checked + .slider:before {
-transform: translateX(1.25rem);
-}
-`;
-            document.head.appendChild(style);
-        });
-    </script>
-    <script id="particleEffect">
-        document.addEventListener('DOMContentLoaded', function () {
-            const heroSection = document.getElementById('home');
+            const particlesContainer = document.getElementById('particles-container');
             const particleCount = 50;
             for (let i = 0; i < particleCount; i++) {
-                createParticle(heroSection);
-            }
-            function createParticle(container) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
+                // Random size between 1px and 4px
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
                 // Random position
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
-                // Random size
-                const size = Math.random() * 3 + 1;
-                // Random opacity
-                const opacity = Math.random() * 0.5 + 0.3;
-                // Random animation duration
-                const duration = Math.random() * 20 + 10;
-                // Set styles
                 particle.style.left = `${posX}%`;
                 particle.style.top = `${posY}%`;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.opacity = opacity;
-                // Add animation
-                particle.style.animation = `floatParticle ${duration}s linear infinite`;
-                // Create keyframe animation
-                const keyframes = `
-@keyframes floatParticle {
-0% {
-transform: translate(0, 0);
-}
-25% {
-transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px);
-}
-50% {
-transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px);
-}
-75% {
-transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px);
-}
-100% {
-transform: translate(0, 0);
-}
-}
-`;
-                const styleElement = document.createElement('style');
-                styleElement.textContent = keyframes;
-                document.head.appendChild(styleElement);
-                container.appendChild(particle);
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                // Random animation delay
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                // Add floating animation
+                particle.style.animation = `float ${Math.random() * 10 + 10}s ease-in-out infinite`;
+                particlesContainer.appendChild(particle);
             }
         });
     </script>
-    <script id="projectModal">
+    <script id="navigationScript">
         document.addEventListener('DOMContentLoaded', function () {
-            const modal = document.getElementById('projectModal');
-            const closeModal = document.getElementById('closeModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalTags = document.getElementById('modalTags');
-            const modalDescription = document.getElementById('modalDescription');
-            const modalTech = document.getElementById('modalTech');
-            const modalFeatures = document.getElementById('modalFeatures');
-
-            // Project data
-            const projects = {
-                'nexuschain': {
-                    title: 'NexusChain Platform',
-                    image: 'https://readdy.ai/api/search-image?query=futuristic%20blockchain%20visualization%2C%20digital%20ledger%20technology%2C%20cryptocurrency%20network%2C%20secure%20data%20blocks%2C%20blue%20and%20purple%20neon%20glow%2C%20dark%20background%2C%20high-tech%20interface%2C%203D%20rendering%2C%20minimalist%20design%2C%20cyberpunk%20aesthetic&width=1200&height=675&seq=3&orientation=landscape',
-                    tags: ['Blockchain', 'Fintech'],
-                    description: 'A revolutionary blockchain platform that enables secure, transparent, and efficient financial transactions. The platform leverages advanced cryptography and distributed ledger technology to provide a robust foundation for modern financial services.',
-                    technologies: ['Solidity', 'Web3.js', 'React', 'Node.js', 'Ethereum'],
-                    features: ['Smart Contract Integration', 'Real-time Transaction Monitoring', 'Multi-signature Security', 'Automated Compliance']
-                },
-                'cognisense': {
-                    title: 'CogniSense AI',
-                    image: 'https://readdy.ai/api/search-image?query=futuristic%20AI%20neural%20network%20visualization%2C%20machine%20learning%20algorithm%2C%20data%20processing%2C%20artificial%20intelligence%20brain%2C%20glowing%20connections%2C%20blue%20and%20purple%20digital%20nodes%2C%20dark%20background%2C%20high-tech%20interface%2C%203D%20rendering%2C%20minimalist%20design&width=1200&height=675&seq=4&orientation=landscape',
-                    tags: ['Artificial Intelligence', 'Machine Learning'],
-                    description: 'An advanced AI system that revolutionizes decision-making processes through predictive analytics and machine learning. The platform continuously learns and adapts to optimize business operations and drive innovation.',
-                    technologies: ['TensorFlow', 'Python', 'PyTorch', 'Docker', 'Kubernetes'],
-                    features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision', 'Automated Decision Making']
-                },
-                'immersaverse': {
-                    title: 'ImmersaVerse',
-                    image: 'https://readdy.ai/api/search-image?query=futuristic%20virtual%20reality%20interface%2C%20augmented%20reality%20headset%20view%2C%20immersive%20digital%20environment%2C%203D%20holographic%20display%2C%20interactive%20VR%20space%2C%20blue%20and%20purple%20neon%20elements%2C%20dark%20background%2C%20high-tech%20visualization%2C%20cyberpunk%20aesthetic&width=1200&height=675&seq=5&orientation=landscape',
-                    tags: ['Virtual Reality', 'Augmented Reality'],
-                    description: 'A cutting-edge VR/AR platform that creates immersive experiences for training, education, and entertainment. The platform combines advanced 3D rendering with intuitive interaction design to deliver truly transformative digital experiences.',
-                    technologies: ['Unity', 'Unreal Engine', 'WebXR', 'Three.js', 'ARCore'],
-                    features: ['Immersive Training Simulations', 'Interactive 3D Environments', 'Multi-user Collaboration', 'Real-time Physics']
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            let isMenuOpen = false;
+            menuToggle.addEventListener('click', function () {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    mobileMenu.style.height = '300px';
+                    menuToggle.innerHTML = '<i class="ri-close-line text-primary"></i>';
+                } else {
+                    mobileMenu.style.height = '0';
+                    menuToggle.innerHTML = '<i class="ri-menu-line text-primary"></i>';
                 }
+            });
+            // Nav indicator for desktop menu
+            const navItems = document.querySelectorAll('.nav-item');
+            const navIndicator = document.getElementById('navIndicator');
+            function positionIndicator(item) {
+                const rect = item.getBoundingClientRect();
+                navIndicator.style.width = `${rect.width}px`;
+                navIndicator.style.transform = `translateX(${rect.left - item.parentElement.getBoundingClientRect().left}px)`;
+            }
+            if (navItems.length > 0 && navIndicator) {
+                // Set initial position
+                positionIndicator(navItems[0]);
+                navItems.forEach(item => {
+                    item.addEventListener('mouseenter', () => {
+                        positionIndicator(item);
+                    });
+                });
+                // Return to active item when leaving the menu
+                navItems[0].parentElement.addEventListener('mouseleave', () => {
+                    positionIndicator(navItems[0]);
+                });
+            }
+        });
+    </script>
+    <script id="counterScript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; // The lower the slower
+            const startCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    const updateCount = () => {
+                        const increment = target / speed;
+                        if (count < target) {
+                            count += increment;
+                            counter.innerText = Math.ceil(count);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
             };
-
-            // Add click event listeners to all "View Project" buttons
-            document.querySelectorAll('.project-card button').forEach(button => {
-                button.addEventListener('click', function() {
-                    const projectCard = this.closest('.project-card');
-                    const projectTitle = projectCard.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '');
-                    const project = projects[projectTitle];
-
-                    if (project) {
-                        modalImage.src = project.image;
-                        modalTitle.textContent = project.title;
-                        modalDescription.textContent = project.description;
-                        
-                        // Clear and update tags
-                        modalTags.innerHTML = '';
-                        project.tags.forEach(tag => {
-                            const tagSpan = document.createElement('span');
-                            tagSpan.className = 'bg-primary/20 text-primary px-3 py-1 rounded-full text-sm';
-                            tagSpan.textContent = tag;
-                            modalTags.appendChild(tagSpan);
-                        });
-
-                        // Clear and update technologies
-                        modalTech.innerHTML = '';
-                        project.technologies.forEach(tech => {
-                            const li = document.createElement('li');
-                            li.textContent = tech;
-                            modalTech.appendChild(li);
-                        });
-
-                        // Clear and update features
-                        modalFeatures.innerHTML = '';
-                        project.features.forEach(feature => {
-                            const li = document.createElement('li');
-                            li.textContent = feature;
-                            modalFeatures.appendChild(li);
-                        });
-
-                        modal.classList.remove('hidden');
-                        modal.classList.add('flex');
-                        document.body.style.overflow = 'hidden';
+            // Use Intersection Observer to trigger counters when visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCounters();
+                        observer.unobserve(entry.target);
                     }
                 });
+            }, { threshold: 0.5 });
+            if (counters.length > 0) {
+                observer.observe(counters[0].parentElement.parentElement);
+            }
+        });
+    </script>
+    <script id="popupScript">
+        function openStoryPopup() {
+            const popup = document.getElementById('storyPopup');
+            popup.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeStoryPopup() {
+            const popup = document.getElementById('storyPopup');
+            popup.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        // Close popup when clicking outside
+        document.addEventListener('click', function (event) {
+            const popup = document.getElementById('storyPopup');
+            if (event.target === popup) {
+                closeStoryPopup();
+            }
+        });
+        // Close popup on escape key press
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeStoryPopup();
+            }
+        });
+    </script>
+    <script id="scrollEffectsScript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const serviceCards = document.querySelectorAll('.service-card');
+            // Fade in elements as they scroll into view
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        fadeInObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            serviceCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                fadeInObserver.observe(card);
             });
-
-            // Close modal when clicking the close button
-            closeModal.addEventListener('click', function() {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                document.body.style.overflow = '';
-            });
-
-            // Close modal when clicking outside
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.add('hidden');
-                    modal.classList.remove('flex');
-                    document.body.style.overflow = '';
-                }
-            });
-
-            // Close modal when pressing Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                    modal.classList.add('hidden');
-                    modal.classList.remove('flex');
-                    document.body.style.overflow = '';
-                }
+            // Parallax effect on scroll
+            window.addEventListener('scroll', function () {
+                const scrollPosition = window.pageYOffset;
+                document.querySelectorAll('.floating, .floating-slow, .floating-fast').forEach(element => {
+                    const speed = element.classList.contains('floating-slow') ? 0.03 :
+                        element.classList.contains('floating-fast') ? 0.07 : 0.05;
+                    element.style.transform = `translateY(${scrollPosition * speed}px)`;
+                });
             });
         });
     </script>
