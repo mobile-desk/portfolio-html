@@ -320,8 +320,6 @@
             </div>
         </div>
     </section>
-
-    
     <!-- Works/Portfolio Section -->
     <section id="works" class="py-20 bg-dark-bg relative overflow-hidden">
         <div class="container mx-auto px-6">
@@ -540,9 +538,6 @@
             </div>
         </div>
     </section>
-
-
-
     <!-- Services Section -->
     <section id="services" class="py-20 bg-rich-black relative overflow-hidden">
         <div class="container mx-auto px-6">
@@ -1143,39 +1138,6 @@
             <i class="ri-arrow-up-line ri-lg"></i>
         </button>
     </footer>
-    <!-- Project Modal -->
-    <div id="projectModal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center">
-        <div class="bg-dark-bg rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
-            <div class="relative">
-                <button id="closeModal" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary transition-colors duration-300">
-                    <i class="ri-close-line ri-lg"></i>
-                </button>
-                <div class="p-8">
-                    <div class="aspect-video rounded-xl overflow-hidden mb-6">
-                        <img id="modalImage" src="" alt="Project Image" class="w-full h-full object-cover">
-                    </div>
-                    <h3 id="modalTitle" class="orbitron text-2xl font-bold mb-4"></h3>
-                    <div id="modalTags" class="flex flex-wrap gap-2 mb-6"></div>
-                    <p id="modalDescription" class="text-gray-300 mb-6"></p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <h4 class="font-bold mb-2">Technologies Used</h4>
-                            <ul id="modalTech" class="list-disc list-inside text-gray-300"></ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mb-2">Key Features</h4>
-                            <ul id="modalFeatures" class="list-disc list-inside text-gray-300"></ul>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <button class="neon-button !rounded-button bg-transparent border border-primary px-6 py-2 text-primary hover:bg-primary/10 transition-all duration-300">
-                            View Live Demo
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <script id="headerScroll">
         document.addEventListener('DOMContentLoaded', function () {
             const header = document.getElementById('header');
@@ -1377,115 +1339,6 @@ transform: translate(0, 0);
                 document.head.appendChild(styleElement);
                 container.appendChild(particle);
             }
-        });
-    </script>
-    <script id="projectModal">
-        document.addEventListener('DOMContentLoaded', function () {
-            const modal = document.getElementById('projectModal');
-            const closeModal = document.getElementById('closeModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalTags = document.getElementById('modalTags');
-            const modalDescription = document.getElementById('modalDescription');
-            const modalTech = document.getElementById('modalTech');
-            const modalFeatures = document.getElementById('modalFeatures');
-
-            // Project data
-            const projects = {
-                'nexuschain': {
-                    title: 'NexusChain Platform',
-                    image: 'https://readdy.ai/api/search-image?query=futuristic%20blockchain%20visualization%2C%20digital%20ledger%20technology%2C%20cryptocurrency%20network%2C%20secure%20data%20blocks%2C%20blue%20and%20purple%20neon%20glow%2C%20dark%20background%2C%20high-tech%20interface%2C%203D%20rendering%2C%20minimalist%20design%2C%20cyberpunk%20aesthetic&width=1200&height=675&seq=3&orientation=landscape',
-                    tags: ['Blockchain', 'Fintech'],
-                    description: 'A revolutionary blockchain platform that enables secure, transparent, and efficient financial transactions. The platform leverages advanced cryptography and distributed ledger technology to provide a robust foundation for modern financial services.',
-                    technologies: ['Solidity', 'Web3.js', 'React', 'Node.js', 'Ethereum'],
-                    features: ['Smart Contract Integration', 'Real-time Transaction Monitoring', 'Multi-signature Security', 'Automated Compliance']
-                },
-                'cognisense': {
-                    title: 'CogniSense AI',
-                    image: 'https://readdy.ai/api/search-image?query=futuristic%20AI%20neural%20network%20visualization%2C%20machine%20learning%20algorithm%2C%20data%20processing%2C%20artificial%20intelligence%20brain%2C%20glowing%20connections%2C%20blue%20and%20purple%20digital%20nodes%2C%20dark%20background%2C%20high-tech%20interface%2C%203D%20rendering%2C%20minimalist%20design&width=1200&height=675&seq=4&orientation=landscape',
-                    tags: ['Artificial Intelligence', 'Machine Learning'],
-                    description: 'An advanced AI system that revolutionizes decision-making processes through predictive analytics and machine learning. The platform continuously learns and adapts to optimize business operations and drive innovation.',
-                    technologies: ['TensorFlow', 'Python', 'PyTorch', 'Docker', 'Kubernetes'],
-                    features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision', 'Automated Decision Making']
-                },
-                'immersaverse': {
-                    title: 'ImmersaVerse',
-                    image: 'https://readdy.ai/api/search-image?query=futuristic%20virtual%20reality%20interface%2C%20augmented%20reality%20headset%20view%2C%20immersive%20digital%20environment%2C%203D%20holographic%20display%2C%20interactive%20VR%20space%2C%20blue%20and%20purple%20neon%20elements%2C%20dark%20background%2C%20high-tech%20visualization%2C%20cyberpunk%20aesthetic&width=1200&height=675&seq=5&orientation=landscape',
-                    tags: ['Virtual Reality', 'Augmented Reality'],
-                    description: 'A cutting-edge VR/AR platform that creates immersive experiences for training, education, and entertainment. The platform combines advanced 3D rendering with intuitive interaction design to deliver truly transformative digital experiences.',
-                    technologies: ['Unity', 'Unreal Engine', 'WebXR', 'Three.js', 'ARCore'],
-                    features: ['Immersive Training Simulations', 'Interactive 3D Environments', 'Multi-user Collaboration', 'Real-time Physics']
-                }
-            };
-
-            // Add click event listeners to all "View Project" buttons
-            document.querySelectorAll('.project-card button').forEach(button => {
-                button.addEventListener('click', function() {
-                    const projectCard = this.closest('.project-card');
-                    const projectTitle = projectCard.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '');
-                    const project = projects[projectTitle];
-
-                    if (project) {
-                        modalImage.src = project.image;
-                        modalTitle.textContent = project.title;
-                        modalDescription.textContent = project.description;
-                        
-                        // Clear and update tags
-                        modalTags.innerHTML = '';
-                        project.tags.forEach(tag => {
-                            const tagSpan = document.createElement('span');
-                            tagSpan.className = 'bg-primary/20 text-primary px-3 py-1 rounded-full text-sm';
-                            tagSpan.textContent = tag;
-                            modalTags.appendChild(tagSpan);
-                        });
-
-                        // Clear and update technologies
-                        modalTech.innerHTML = '';
-                        project.technologies.forEach(tech => {
-                            const li = document.createElement('li');
-                            li.textContent = tech;
-                            modalTech.appendChild(li);
-                        });
-
-                        // Clear and update features
-                        modalFeatures.innerHTML = '';
-                        project.features.forEach(feature => {
-                            const li = document.createElement('li');
-                            li.textContent = feature;
-                            modalFeatures.appendChild(li);
-                        });
-
-                        modal.classList.remove('hidden');
-                        modal.classList.add('flex');
-                        document.body.style.overflow = 'hidden';
-                    }
-                });
-            });
-
-            // Close modal when clicking the close button
-            closeModal.addEventListener('click', function() {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                document.body.style.overflow = '';
-            });
-
-            // Close modal when clicking outside
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.add('hidden');
-                    modal.classList.remove('flex');
-                    document.body.style.overflow = '';
-                }
-            });
-
-            // Close modal when pressing Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                    modal.classList.add('hidden');
-                    modal.classList.remove('flex');
-                    document.body.style.overflow = '';
-                }
-            });
         });
     </script>
 </body>
