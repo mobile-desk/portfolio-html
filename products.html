@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBDK9WCPME"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EBDK9WCPME');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our innovative products and solutions at TechInnovom. Discover our cutting-edge Python-based products that transform businesses and enhance lives.">
+    <meta name="keywords" content="TechInnovom products, Python solutions, innovative products, tech solutions, Praise Obasi, Python development">
+    <meta name="author" content="Praise Obasi">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="logo.svg">
+    <link rel="apple-touch-icon" href="logo.svg">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mobile-desk.github.io/portfolio-html/products">
+    <meta property="og:title" content="TechInnovom Products - Innovative Tech Solutions">
+    <meta property="og:description" content="Explore our innovative products and solutions at TechInnovom. Discover our cutting-edge Python-based products that transform businesses and enhance lives.">
+    <meta property="og:image" content="https://mobile-desk.github.io/portfolio-html/og-image.jpg">
+    <meta property="og:site_name" content="TechInnovom">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mobile-desk.github.io/portfolio-html/products">
+    <meta property="twitter:title" content="TechInnovom Products - Innovative Tech Solutions">
+    <meta property="twitter:description" content="Explore our innovative products and solutions at TechInnovom. Discover our cutting-edge Python-based products that transform businesses and enhance lives.">
+    <meta property="twitter:image" content="https://mobile-desk.github.io/portfolio-html/og-image.jpg">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="generator" content="TechInnovom">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="TechInnovom">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mobile-desk.github.io/portfolio-html/products">
+    
+    <title>Our Products - TechInnovom</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        primary: '#00f0ff', 
+                        secondary: '#ff00aa' 
+                    }, 
+                    borderRadius: { 
+                        'none': '0px', 
+                        'sm': '4px', 
+                        DEFAULT: '8px', 
+                        'md': '12px', 
+                        'lg': '16px', 
+                        'xl': '20px', 
+                        '2xl': '24px', 
+                        '3xl': '32px', 
+                        'full': '9999px', 
+                        'button': '8px' 
+                    } 
+                } 
+            } 
+        };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .glow {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.5), 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .glow-box {
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), 0 0 20px rgba(0, 240, 255, 0.1);
+        }
+
+        .glow-border {
+            box-shadow: 0 0 5px rgba(0, 240, 255, 0.5), 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00f0ff, #0099ff, #ff00aa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-border {
+            position: relative;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid transparent;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #00f0ff, #0099ff, #ff00aa) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 240, 255, 0.5);
+            pointer-events: none;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-slow {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-fast {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .rotating {
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .pulse {
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        .grid-lines {
+            background-image:
+                linear-gradient(to right, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #00f0ff, #0099ff);
+            border-radius: 3px;
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at 70% 50%, rgba(0, 240, 255, 0.1), transparent 70%),
+                radial-gradient(circle at 30% 70%, rgba(255, 0, 170, 0.1), transparent 70%);
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00f0ff, #0099ff);
+            transition: all 0.3s ease;
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .slider-nav div {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .slider-nav div.active {
+            background: rgba(0, 240, 255, 0.8);
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(0, 240, 255, 0.8);
+        }
+
+        .slider-arrow.prev {
+            left: 12px;
+        }
+
+        .slider-arrow.next {
+            right: 12px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            background-color: rgba(0, 240, 255, 0.1);
+            color: #fff;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background-color: rgba(0, 240, 255, 0.2);
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .product-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00f0ff, #0099ff);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="custom-scrollbar">
+    <!-- Particles Container -->
+    <div id="particles-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+    <!-- Grid Lines Background -->
+    <div class="fixed top-0 left-0 w-full h-full grid-lines opacity-20 z-0"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-primary border-opacity-20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-black rounded-full gradient-border flex items-center justify-center">
+                    <img src="logo.svg" alt="TechInnovom Logo" class="w-6 h-6">
+                </div>
+                <span class="font-orbitron text-xl font-bold gradient-text">TechInnovom</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-10 relative">
+                <div class="nav-indicator" id="navIndicator"></div>
+                <a href="index.html" class="nav-item font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Home</a>
+                <a href="index.html#aboutsec" class="nav-item font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">About</a>
+                <a href="index.html#servsec" class="nav-item font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Services</a>
+                <a href="projects.html" class="nav-item font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="products.html" class="nav-item font-orbitron text-sm uppercase tracking-wider text-primary transition-colors duration-300">Products</a>
+                <a href="contact.html" class="nav-item font-orbitron text-sm uppercase tracking-wider text-white hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="menuToggle" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-primary border-opacity-50">
+                    <i class="ri-menu-line text-primary"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden h-0 overflow-hidden transition-all duration-500 bg-black bg-opacity-95">
+            <div class="container mx-auto px-6 py-8 flex flex-col space-y-6">
+                <a href="index.html" class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">Home</a>
+                <a href="index.html#aboutsec" class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">About</a>
+                <a href="index.html#servsec" class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">Services</a>
+                <a href="projects.html" class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2 border-b border-gray-800">Projects</a>
+                <a href="products.html" class="font-orbitron text-lg uppercase tracking-wider text-primary transition-colors duration-300 py-2 border-b border-gray-800">Products</a>
+                <a href="contact.html" class="font-orbitron text-lg uppercase tracking-wider text-white hover:text-primary transition-colors duration-300 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 overflow-hidden hero-bg">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="font-orbitron text-4xl md:text-5xl font-bold mb-6">Our <span class="gradient-text">Products</span></h1>
+                <p class="text-gray-300 text-lg mb-0">Explore our innovative solutions that transform businesses and enhance lives.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="relative py-10 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border">
+                    <div class="slider-container h-64">
+                        <div class="slider">
+                            <div class="w-full h-64 flex-shrink-0">
+                                <div style="background-image: url('assests/img/cc/thumb.png');"
+                                    class="w-full h-full bg-cover bg-center"></div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="p-6">
+                        <a href="https://pycommunecodequest.pythonanywhere.com/"><h3 class="font-orbitron text-xl font-bold mb-3">PyCommune Code Quest</h3></a>
+                        <p class="text-gray-300 text-sm mb-4">An interactive Python learning game where players take on the role of an adventurer completing programming challenges. Learn Python while embarking on exciting quests and solving real-world coding problems.</p>
+                        <div class="flex flex-wrap mb-2">
+                            <span class="tag">Python</span>
+                            <span class="tag">Game Development</span>
+                            <span class="tag">Education</span>
+                            <span class="tag">Interactive Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more product cards here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0"
+            style="background-image: url('assests/img/proj/cta.jpg'); background-size: cover; background-position: center; opacity: 0.2;">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-orbitron text-3xl md:text-5xl font-bold mb-6">Ready to <span class="gradient-text">Transform</span> Your Business?</h2>
+                <p class="text-gray-300 text-lg mb-8">Let's collaborate to build innovative solutions that drive your business forward in the digital age.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                   <a href="https://calendly.com/obasip901/techinnovom-consultation"> <button class="px-8 py-3 bg-transparent border border-primary text-primary font-orbitron text-sm uppercase tracking-wider hover:bg-primary hover:text-black transition-all duration-300 !rounded-button whitespace-nowrap">
+                        Schedule Consultation
+                    </button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative pt-20 pb-10 overflow-hidden bg-black">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent">
+        </div>
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-black rounded-full gradient-border flex items-center justify-center">
+                            <img src="logo.svg" alt="TechInnovom Logo" class="w-6 h-6">
+                        </div>
+                        <span class="font-orbitron text-xl font-bold gradient-text">TechInnovom</span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Led by Praise Obasi, we're pioneering the future through innovative Python solutions and data analytics that transform businesses and enhance lives.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://mobile.twitter.com/chibudom_obasi" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300 group">
+                            <i class="ri-twitter-x-line text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/praise-obasi" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300 group">
+                            <i class="ri-linkedin-line text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
+                        </a>
+                        <a href="https://tiktok.com/@mobile.desk" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300 group">
+                            <i class="ri-tiktok-line text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
+                        </a>
+                        <a href="https://instagram.com/_._praiz" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300 group">
+                            <i class="ri-instagram-line text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
+                        </a>
+                        <a href="https://www.youtube.com/c/Chibudomobasi?app=desktop&sub_confirmation=1" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300 group">
+                            <i class="ri-youtube-line text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-orbitron text-lg font-bold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Python Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Data Analysis</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Tech Tutorials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Cloud Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">AR/VR Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-orbitron text-lg font-bold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#aboutsec" class="text-gray-400 hover:text-primary transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-primary transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-orbitron text-lg font-bold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="ri-phone-line text-primary mr-3"></i>
+                            <a href="tel:+2348119128850" class="text-gray-400 hover:text-primary transition-colors duration-300">+234 811 912 8850</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-mail-line text-primary mr-3"></i>
+                            <a href="mailto:techinnovom@proton.me" class="text-gray-400 hover:text-primary transition-colors duration-300">techinnovom@proton.me</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechInnovom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="particles.js"></script>
+    <script src="navigation.js"></script>
+    <script src="slider.js"></script>
+    <script>
+        // Animate product cards on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('show');
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+
+</html>
