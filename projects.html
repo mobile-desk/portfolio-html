@@ -336,6 +336,127 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(0, 240, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .slider-image {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .slider-image:hover {
+            transform: scale(1.05);
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1002;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .modal-nav:hover {
+            background: rgba(0, 240, 255, 0.6);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal-nav.prev {
+            left: 20px;
+        }
+
+        .modal-nav.next {
+            right: 20px;
+        }
+
+        .modal-nav.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .modal-nav.disabled:hover {
+            background: rgba(0, 0, 0, 0.6);
+            transform: translateY(-50%) scale(1);
+        }
     </style>
 </head>
 
@@ -439,6 +560,176 @@
 
             <!-- Projects Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8" id="projectsGrid">
+                <!-- Hotel Lobby OS - Grand Winner KTech 2.0 -->
+                <div class="project-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border" data-tags="web,saas,hotel,management,ai,ml,multi-tenant">
+                    <div class="flex flex-col h-full">
+                        <div class="slider-container h-64 flex-1">
+                            <div class="slider">
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/thumb.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-05 135853.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 113725.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 113744.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 113933.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 113958.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114021.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114040.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114125.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114142.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114208.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114243.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114307.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114323.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114341.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114359.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114505.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114525.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114540.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114552.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114635.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114649.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114717.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114736.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114749.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114806.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114832.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114847.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114902.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 114922.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 115006.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 115039.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 115105.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 115127.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/hotel/Screenshot 2025-12-07 115200.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                            </div>
+                            <div class="slider-nav"></div>
+                            <div class="slider-arrow prev">
+                                <i class="ri-arrow-left-s-line text-white text-xl"></i>
+                            </div>
+                            <div class="slider-arrow next">
+                                <i class="ri-arrow-right-s-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1">
+                            <h3 class="font-orbitron text-xl font-bold mb-3">Hotel Lobby OS</h3>
+                            <p class="text-gray-300 text-sm mb-4">A comprehensive multi-tenant hotel management platform that enables different hotels to register and manage their operations. For guests, the platform features an AI concierge for chat interactions, personalized hotel recommendations based on booking history, amenity requests, and food ordering. For hotels, it provides complete management of bookings, rooms, branches, staff, payroll, and ML-powered trend analysis for data-driven decision making.</p>
+                            <div class="flex flex-wrap mb-2">
+                                <span class="tag" style="background-color: rgba(255, 215, 0, 0.2); color: #ffd700; border: 1px solid rgba(255, 215, 0, 0.5);">🏆 Grand Winner - KTech 2.0</span>
+                                <span class="tag">Web Development</span>
+                                <span class="tag">SaaS</span>
+                                <span class="tag">Hotel Management</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Multi-Tenant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 1 -->
                 <div class="project-card bg-black bg-opacity-60 backdrop-blur-lg rounded-lg overflow-hidden gradient-border"
                     data-tags="web,logistics">
@@ -895,19 +1186,75 @@
                         <div class="slider-container h-64 flex-1">
                             <div class="slider">
                                 <div class="w-full h-64 flex-shrink-0">
-                                    <div style="background-image: url('assests/img/sos-mobile/1.png');"
+                                    <div style="background-image: url('assests/img/vault_mobile/splash.png');"
                                         class="w-full h-full bg-cover bg-center"></div>
                                 </div>
                                 <div class="w-full h-64 flex-shrink-0">
-                                    <div style="background-image: url('assests/img/sos-mobile/2.png');"
+                                    <div style="background-image: url('assests/img/vault_mobile/login.png');"
                                         class="w-full h-full bg-cover bg-center"></div>
                                 </div>
                                 <div class="w-full h-64 flex-shrink-0">
-                                    <div style="background-image: url('assests/img/sos-mobile/3.png');"
+                                    <div style="background-image: url('assests/img/vault_mobile/home.png');"
                                         class="w-full h-full bg-cover bg-center"></div>
                                 </div>
                                 <div class="w-full h-64 flex-shrink-0">
-                                    <div style="background-image: url('assests/img/sos-mobile/4.png');"
+                                    <div style="background-image: url('assests/img/vault_mobile/sos.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/evidence list.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/evidence detail.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/threat profile list.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/threat profile detail.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/crisis guides.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/decision trees.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/helplines.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/tips.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/referral.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/Simulator Screenshot - iPhone 17 Pro - 2025-11-04 at 12.26.53.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/Simulator Screenshot - iPhone 17 Pro - 2025-11-04 at 12.27.03.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/Simulator Screenshot - iPhone 17 Pro - 2025-11-04 at 12.27.13.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/Simulator Screenshot - iPhone 17 Pro - 2025-11-04 at 12.27.22.png');"
+                                        class="w-full h-full bg-cover bg-center"></div>
+                                </div>
+                                <div class="w-full h-64 flex-shrink-0">
+                                    <div style="background-image: url('assests/img/vault_mobile/Simulator Screenshot - iPhone 17 Pro - 2025-11-04 at 12.27.28.png');"
                                         class="w-full h-full bg-cover bg-center"></div>
                                 </div>
                             </div>
@@ -920,7 +1267,7 @@
                             </div>
                         </div>
                         <div class="p-6 flex-1">
-                            <h3 class="font-orbitron text-xl font-bold mb-3">SOS Vault Mobile App</h3>
+                            <h3 class="font-orbitron text-xl font-bold mb-3">Vaultryn Mobile App</h3>
                             <p class="text-gray-300 text-sm mb-4">A personal safety and digital legacy app designed to protect you when it matters most. With just one tap, you can send SOS alerts, share your live location, and store encrypted evidence that can't be tampered with. Features a unique Dead Man's Switch that automatically notifies trusted contacts if you don't check in.</p>
                             <div class="flex flex-wrap mb-2">
                                 <span class="tag">Mobile App</span>
@@ -973,7 +1320,7 @@
                             </div>
                         </div>
                         <div class="p-6 flex-1">
-                            <h3 class="font-orbitron text-xl font-bold mb-3">SOS Vault Web Application</h3>
+                            <h3 class="font-orbitron text-xl font-bold mb-3">Vaultryn Web Application</h3>
                             <p class="text-gray-300 text-sm mb-4">A comprehensive web platform for digital safety and evidence protection. Features secure evidence collection, automated emergency alerts, professional reporting tools, and a user-friendly dashboard designed to protect users when it matters most.</p>
                             <div class="flex flex-wrap mb-2">
                                 <span class="tag">Web App</span>
@@ -1141,7 +1488,6 @@
                         </div>
                     </div>
                 </div>
-
 
             <!-- Pagination -->
             <div class="flex justify-center items-center space-x-2 mt-12 mb-8" id="pagination">
@@ -1486,12 +1832,8 @@
                     goToPage(currentPage + 1);
                 }
             });
-            // Show all projects initially with animation
-            projectCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('show');
-                }, index * 100);
-            });
+            // Initialize pagination on page load
+            updateProjectsDisplay();
             function filterProjects(tag) {
                 filteredProjects = Array.from(projectCards).filter(card => {
                     const cardTags = card.dataset.tags ? card.dataset.tags.split(',') : [];
@@ -1525,6 +1867,150 @@
                 tagButtons.forEach(btn => btn.classList.remove('active'));
                 document.querySelector('.tag[data-tag="all"]').classList.add('active');
                 filterProjects('all');
+            });
+        });
+    </script>
+    <script id="imageModalScript">
+        // Image modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.createElement('div');
+            modal.id = 'imageModal';
+            modal.className = 'image-modal';
+            modal.innerHTML = `
+                <span class="modal-close">&times;</span>
+                <div class="modal-nav prev" id="modalPrev">
+                    <i class="ri-arrow-left-s-line"></i>
+                </div>
+                <div class="modal-nav next" id="modalNext">
+                    <i class="ri-arrow-right-s-line"></i>
+                </div>
+                <div class="modal-content">
+                    <img id="modalImage" class="modal-image" src="" alt="Project Image">
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.modal-close');
+            const prevBtn = document.getElementById('modalPrev');
+            const nextBtn = document.getElementById('modalNext');
+            
+            let currentImages = [];
+            let currentIndex = 0;
+
+            // Function to extract image URL from background-image style
+            function getImageUrl(element) {
+                const bgImage = element.style.backgroundImage;
+                const urlMatch = bgImage.match(/url\(['"]?(.+?)['"]?\)/);
+                return urlMatch ? urlMatch[1] : null;
+            }
+
+            // Function to get all images from a slider
+            function getSliderImages(clickedImage) {
+                const slider = clickedImage.closest('.slider');
+                if (!slider) return [];
+                const images = Array.from(slider.querySelectorAll('div[style*="background-image"]'));
+                return images.map(img => getImageUrl(img)).filter(url => url !== null);
+            }
+
+            // Function to open modal with image
+            function openModal(imageUrl, images, index) {
+                currentImages = images;
+                currentIndex = index;
+                modalImg.src = imageUrl;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                updateNavButtons();
+            }
+
+            // Function to update navigation buttons
+            function updateNavButtons() {
+                if (currentImages.length <= 1) {
+                    prevBtn.classList.add('disabled');
+                    nextBtn.classList.add('disabled');
+                } else {
+                    prevBtn.classList.toggle('disabled', currentIndex === 0);
+                    nextBtn.classList.toggle('disabled', currentIndex === currentImages.length - 1);
+                }
+            }
+
+            // Function to navigate to next image
+            function nextImage() {
+                if (currentIndex < currentImages.length - 1) {
+                    currentIndex++;
+                    modalImg.src = currentImages[currentIndex];
+                    updateNavButtons();
+                }
+            }
+
+            // Function to navigate to previous image
+            function prevImage() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    modalImg.src = currentImages[currentIndex];
+                    updateNavButtons();
+                }
+            }
+
+            // Get all slider images
+            const sliderImages = document.querySelectorAll('.slider > div > div[style*="background-image"]');
+            
+            // Make images clickable
+            sliderImages.forEach((img, index) => {
+                img.classList.add('slider-image');
+                img.style.cursor = 'pointer';
+                
+                img.addEventListener('click', function() {
+                    const images = getSliderImages(this);
+                    const currentUrl = getImageUrl(this);
+                    if (currentUrl) {
+                        const clickedIndex = images.indexOf(currentUrl);
+                        openModal(currentUrl, images, clickedIndex !== -1 ? clickedIndex : 0);
+                    }
+                });
+            });
+
+            // Navigation buttons
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (!nextBtn.classList.contains('disabled')) {
+                    nextImage();
+                }
+            });
+
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (!prevBtn.classList.contains('disabled')) {
+                    prevImage();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (modal.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    } else if (e.key === 'ArrowRight' && !nextBtn.classList.contains('disabled')) {
+                        nextImage();
+                    } else if (e.key === 'ArrowLeft' && !prevBtn.classList.contains('disabled')) {
+                        prevImage();
+                    }
+                }
+            });
+
+            // Close modal
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             });
         });
     </script>
